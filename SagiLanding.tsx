@@ -16,6 +16,9 @@ import {
   Bell,
   ChevronRight,
   Zap,
+  Building2,
+  CircleUser,
+  ShoppingBag,
 } from 'lucide-react';
 
 const GREEN = '#2ABB6F';
@@ -27,7 +30,7 @@ const FEATURES = [
   { icon: <Store size={17} />, label: 'Каталог скидок и предложений' },
   { icon: <Shield size={17} />, label: 'Карта лояльности (QR ID)' },
   { icon: <Bell size={17} />, label: 'Лента событий и новостей' },
-  { icon: <BarChart3 size={17} />, label: 'Аналитика использования предложений' },
+  { icon: <BarChart3 size={17} />, label: 'Аналитика использования' },
   { icon: <RefreshCw size={17} />, label: 'Управление контентом' },
   { icon: <Briefcase size={17} />, label: 'Личный кабинет бизнеса' },
   { icon: <Headphones size={17} />, label: 'Техническая поддержка' },
@@ -51,7 +54,7 @@ const FEATURE_GROUPS = [
     label: 'Для администратора',
     color: 'bg-[#EEF2FF] text-[#4338CA]',
     items: [
-      { icon: <BarChart3 size={15} />, label: 'Аналитика использования предложений' },
+      { icon: <BarChart3 size={15} />, label: 'Аналитика использования' },
       { icon: <RefreshCw size={15} />, label: 'Управление контентом' },
       { icon: <Clock size={15} />, label: 'Контроль сроков действия' },
       { icon: <Briefcase size={15} />, label: 'Личный кабинет бизнеса' },
@@ -98,8 +101,8 @@ function FeatureGroupList() {
 function PainBlock() {
   const groups = [
     {
-      label: 'МФЦА',
-      icon: <Shield size={20} />,
+      label: 'AIFC Expat Centre',
+      icon: <Building2 size={20} />,
       color: '#4338CA',
       bg: '#EEF2FF',
       border: '#C7D2FE',
@@ -112,7 +115,7 @@ function PainBlock() {
     },
     {
       label: 'Резидент',
-      icon: <Users size={20} />,
+      icon: <CircleUser size={20} />,
       color: '#2ABB6F',
       bg: '#EDFAF3',
       border: '#B6EDD2',
@@ -125,15 +128,15 @@ function PainBlock() {
     },
     {
       label: 'Бизнес',
-      icon: <Store size={20} />,
+      icon: <ShoppingBag size={20} />,
       color: '#C2410C',
       bg: '#FFF7ED',
       border: '#FED7AA',
       items: [
-        'Нет простого способа проверить, является ли посетитель действующим резидентом МФЦА',
+        'Нет простого способа проверить, является ли посетитель действующим резидентом AIFC Expat Centre',
         'Сложно оценить реальный поток клиентов, пришедших именно благодаря партнёрству',
         'Обновление условий предложения требует координации с несколькими сторонами',
-        'Не хватает данных, чтобы понять насколько сотрудничество с МФЦА приносит результат',
+        'Не хватает данных, чтобы понять насколько сотрудничество с AIFC Expat Centre приносит результат',
       ],
     },
   ];
@@ -234,8 +237,9 @@ export function SagiLanding() {
       <nav className="sticky top-0 z-50 bg-white border-b border-[#F0F0F0]">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
+            <img src="/logo.png" alt="AIFC Expat Centre" className="h-8 w-auto object-contain" />
             <span className="text-[22px] font-black tracking-tight text-[#111827]">sagi</span>
-            <span className="text-xs font-semibold text-[#2ABB6F] border border-[#B6EDD2] bg-[#EDFAF3] rounded-full px-2.5 py-0.5 ml-1">Community · МФЦА</span>
+            <span className="text-xs font-semibold text-[#2ABB6F] border border-[#B6EDD2] bg-[#EDFAF3] rounded-full px-2.5 py-0.5 ml-1">Community · AIFC Expat Centre</span>
           </div>
           <div className="hidden md:flex items-center gap-8">
             {[['Возможности','#Возможности'],['Для бизнеса','#Бизнес'],['Тарифы','#Тарифы']].map(([l,h]) => (
@@ -255,16 +259,16 @@ export function SagiLanding() {
           <div className="flex-1 text-center lg:text-left">
             <span className="badge-green inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-7">
               <Zap size={11} />
-              Цифровая платформа лояльности для МФЦА
+              Цифровая платформа лояльности для AIFC Expat Centre
             </span>
 
             <h1 className="text-5xl lg:text-[3.6rem] font-black leading-[1.08] tracking-tight mb-6 text-[#111827]">
-              Корпоративная платформа<br />
-              <span className="green-text">лояльности МФЦА</span>
+              Корпоративная платформа лояльности<br />
+              <span className="green-text">AIFC Expat Centre</span>
             </h1>
 
             <p className="text-lg text-[#6B7280] max-w-xl mx-auto lg:mx-0 leading-relaxed mb-10">
-              Цифровая платформа лояльности для резидентов МФЦА.<br />Карты, предложения, аналитика и сообщество - в одном продукте.
+              Цифровая платформа лояльности для резидентов<br />AIFC Expat Centre.<br />Предложения, аналитика и сообщество - в одном продукте.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-14">
@@ -299,7 +303,7 @@ export function SagiLanding() {
                 <div className="absolute -top-12 -right-12 w-52 h-52 rounded-full bg-white/10" />
                 <div className="absolute -bottom-14 -left-12 w-44 h-44 rounded-full bg-white/10" />
                 <div className="relative">
-                  <div className="text-[11px] text-white/60 font-semibold tracking-[0.15em] uppercase mb-1">AIFC Member</div>
+                  <div className="text-[11px] text-white/60 font-semibold tracking-[0.15em] uppercase mb-1">AIFC Expat Centre</div>
                   <div className="text-white font-black text-[38px] tracking-tight mb-10">Premium</div>
                   <div className="mb-10">
                     <div className="text-[10px] text-white/50 uppercase tracking-widest mb-1">Cardholder</div>
@@ -421,7 +425,7 @@ export function SagiLanding() {
             {[
               { src: '/profile.png', label: 'Профиль резидента', sub: 'Карта лояльности + QR-код', offset: 'md:mb-10', objPos: 'calc(20% - 9.5px) -1px' },
               { src: '/news.png', label: 'Лента сообщества', sub: 'Предложения и мои сообщества', offset: '', objPos: 'calc(20% - 6.5px) -2px' },
-              { src: '/offers.png', label: 'Каталог предложений', sub: 'Категории и партнёры AIFC', offset: 'md:mb-10', objPos: 'calc(20% - 7px) -2.5px' },
+              { src: '/offers.png', label: 'Каталог предложений', sub: 'Категории и партнёры AIFC Expat Centre', offset: 'md:mb-10', objPos: 'calc(20% - 7px) -2.5px' },
             ].map(({ src, label, sub, offset, objPos }) => (
               <div key={src} className={`flex flex-col items-center gap-5 ${offset}`}>
                 <div className="relative" style={{ width: 220 }}>
@@ -475,7 +479,7 @@ export function SagiLanding() {
             </span>
             <h2 className="text-4xl font-black text-[#111827] mb-4">12 возможностей<br />в одной подписке</h2>
             <p className="text-[#6B7280] text-lg max-w-xl mx-auto">
-              Каждый инструмент разработан под задачи клуба лояльности МФЦА.
+              Каждый инструмент разработан под задачи клуба лояльности AIFC Expat Centre
             </p>
           </div>
 
@@ -565,7 +569,7 @@ export function SagiLanding() {
                   <Shield size={18} />
                 </div>
                 <div>
-                  <div className="text-[11px] text-[#9CA3AF] uppercase tracking-wider font-semibold">Для администратора МФЦА</div>
+                  <div className="text-[11px] text-[#9CA3AF] uppercase tracking-wider font-semibold">Для администратора AIFC Expat Centre</div>
                   <h3 className="text-xl font-black text-[#111827]">Панель управления</h3>
                 </div>
               </div>
@@ -602,7 +606,7 @@ export function SagiLanding() {
                 {[
                   { icon: <Smartphone size={15} />, t: 'Сканирование QR-карт', d: 'Мгновенная верификация участника при посещении без пластиковых карт.' },
                   { icon: <RefreshCw size={15} />, t: 'Управление предложениями', d: 'Создание и редактирование скидок, акций и эксклюзивных условий.' },
-                  { icon: <BarChart3 size={15} />, t: 'Статистика визитов', d: 'Измеримый поток клиентов из МФЦА, данные о проверках карт.' },
+                  { icon: <BarChart3 size={15} />, t: 'Статистика визитов', d: 'Измеримый поток клиентов из AIFC Expat Centre, данные о проверках карт.' },
                   { icon: <Users size={15} />, t: 'Персональный менеджер', d: 'Выделенный менеджер Sagi сопровождает партнёра на всех этапах.' },
                 ].map(item => (
                   <div key={item.t} className="card-border card-lift flex gap-4 p-4 rounded-2xl bg-white">
@@ -770,7 +774,7 @@ export function SagiLanding() {
             <div className="grid sm:grid-cols-3 gap-6">
               {[
                 { icon: <Clock size={17} />, t: 'Предотвращение убытков', d: 'Жёсткий контроль сроков не допускает использования просроченного членства у партнёров.' },
-                { icon: <Zap size={17} />, t: 'Снижение операционных затрат', d: 'Нет перепечатки каталогов, нет ручного управления базой. Всё обновляется за клики.' },
+                { icon: <Zap size={17} />, t: 'Снижение операционных затрат', d: 'Каталог и база клиентов обновляются в пару кликов - без ручной работы.' },
                 { icon: <Users size={17} />, t: 'Рост удержания', d: 'Цифровой продукт повышает воспринимаемую ценность членства и снижает отток.' },
               ].map(v => (
                 <div key={v.t} className="flex gap-4">
@@ -805,7 +809,7 @@ export function SagiLanding() {
                 Платформа готова к внедрению
               </div>
               <h2 className="text-3xl sm:text-4xl font-black text-white mb-5 leading-tight">
-                Sagi Community.<br />Технологическое лицо гостеприимства МФЦА
+                Sagi Community<br />Технологическое лицо гостеприимства AIFC Expat Centre
               </h2>
               <p className="text-white/60 text-lg max-w-xl mx-auto mb-10 leading-relaxed">
                 Современная платформа для цифровизации клуба лояльности. Полный контроль. Живое сообщество. Измеримый результат.
