@@ -109,7 +109,7 @@ function PainBlock() {
     {
       icon: <Search size={20} />,
       title: 'Объявления просто пролистывают',
-      desc: 'Люди давно научились игнорировать баннеры и холодные объявления в ленте. Доверия к незнакомым брендам нет — конверсия стремится к нулю.',
+      desc: 'Люди давно научились игнорировать баннеры и холодные объявления в ленте. Доверия к незнакомым брендам нет -конверсия стремится к нулю.',
       bg: '#F8F9FF',
       border: '#E0E7FF',
       iconBg: '#EEF2FF',
@@ -127,7 +127,7 @@ function PainBlock() {
     {
       icon: <Shield size={20} />,
       title: 'Нет доступа к лояльной аудитории',
-      desc: 'Холодный трафик почти не конвертируется. А люди, которые уже доверяют кому-то — закрыты в сообществах, куда бизнес просто не заходит.',
+      desc: 'Холодный трафик почти не конвертируется. А люди, которые уже доверяют кому-то -закрыты в сообществах, куда бизнес просто не заходит.',
       bg: '#F0FDF4',
       border: '#B6EDD2',
       iconBg: '#EDFAF3',
@@ -180,7 +180,7 @@ function SolutionBlock() {
             <span className="green-text">уже собраны здесь</span>
           </h2>
           <p className="text-[#6B7280] text-lg max-w-2xl mx-auto">
-            Выбирайте сообщества, где живёт ваша аудитория. Будь то профессиональный клуб или локальное комьюнити — мы приводим вас к людям, которые готовы покупать.
+            Выбирайте сообщества, где живёт ваша аудитория. Будь то профессиональный клуб или локальное комьюнити -мы приводим вас к людям, которые готовы покупать.
           </p>
         </div>
 
@@ -191,7 +191,7 @@ function SolutionBlock() {
                 <Target size={28} className="text-white" />
               </div>
               <h3 className="text-2xl font-black text-white mb-4 leading-tight">
-                Это не просто объявление — это прямой доступ к лояльной аудитории
+                Это не просто объявление -это прямой доступ к лояльной аудитории
               </h3>
               <p className="text-white/60 leading-relaxed mb-8">
                 Без посредников, без лишних затрат. Ваше предложение попадает к людям, которые уже объединены общим интересом и доверяют рекомендациям внутри своего круга.
@@ -307,7 +307,7 @@ function CommunityLedGrowth() {
     {
       icon: <Shield size={20} />,
       title: 'Доверие',
-      desc: 'В Sagi ваше предложение выглядит как рекомендация внутри сообщества. Люди доверяют своим — поэтому покупают чаще и охотнее.',
+      desc: 'В Sagi ваше предложение выглядит как рекомендация внутри сообщества. Люди доверяют своим -поэтому покупают чаще и охотнее.',
       stat: '-40%',
       statLabel: 'ниже CAC',
       color: GREEN_DARK,
@@ -481,8 +481,8 @@ export function SagiLanding() {
 
             <h1 className="text-5xl lg:text-[3.6rem] font-black leading-[1.08] tracking-tight mb-6 text-[#111827]">
               Ваши клиенты уже здесь.<br />
-              <span className="green-text">Экономьте время на поиске</span><br />
-              и деньги на продвижении.
+              <span className="green-text">Экономьте время</span><br />
+              <span className="green-text">на поиске</span> и деньги на продвижении
             </h1>
 
             <p className="text-lg text-[#6B7280] max-w-xl mx-auto lg:mx-0 leading-relaxed mb-10">
@@ -609,7 +609,7 @@ export function SagiLanding() {
       <div className="divider h-px" />
 
       {/* ══════════════════════════
-          FEATURES — ADVERTISERS ONLY
+          FEATURES -ADVERTISERS ONLY
       ══════════════════════════ */}
       <section id="Возможности" className="py-24 px-6 section-alt">
         <div className="max-w-5xl mx-auto">
