@@ -98,27 +98,27 @@ function HowItWorks() {
 function PainBlock() {
   const pains = [
     {
-      icon: <Search size={20} />,
-      title: 'Нет единого места',
-      desc: 'Сложно найти сообщества с нужной целевой аудиторией в одном месте, всё разбросано по разным платформам.',
-      bg: '#F8F9FF',
-      border: '#E0E7FF',
-      iconBg: '#EEF2FF',
-      iconColor: '#4338CA',
-    },
-    {
       icon: <Target size={20} />,
-      title: 'Таргет дорожает',
-      desc: 'Таргетинг в Instagram и Google дорожает каждый год. Средний клик в Instagram от 800 ₸, 1000 показов от 6000 ₸. А конверсия падает. CAC уже не окупается.',
+      title: 'Стоимость клиента растёт',
+      desc: 'Таргетинг в Instagram и Google дорожает каждый год. Средний клик от 800 ₸, 1000 показов от 6000 ₸. Вы платите за клики, но не всегда получаете продажи.',
       bg: '#FFF8F8',
       border: '#FED7D7',
       iconBg: '#FEE2E2',
       iconColor: '#DC2626',
     },
     {
+      icon: <Search size={20} />,
+      title: 'Объявления просто пролистывают',
+      desc: 'Люди давно научились игнорировать баннеры и холодные объявления в ленте. Доверия к незнакомым брендам нет — конверсия стремится к нулю.',
+      bg: '#F8F9FF',
+      border: '#E0E7FF',
+      iconBg: '#EEF2FF',
+      iconColor: '#4338CA',
+    },
+    {
       icon: <BarChart3 size={20} />,
-      title: 'Непрозрачная цена охвата',
-      desc: 'Сложно заранее просчитать реальную стоимость охвата нужной аудитории, приходится сливать тестовый бюджет.',
+      title: 'Бюджет уходит на тесты',
+      desc: 'Невозможно заранее просчитать реальную стоимость охвата нужной аудитории. Приходится сливать деньги на эксперименты без гарантий результата.',
       bg: '#FFFBF0',
       border: '#FDE68A',
       iconBg: '#FEF3C7',
@@ -126,8 +126,8 @@ function PainBlock() {
     },
     {
       icon: <Shield size={20} />,
-      title: 'Аудитория не доверяет',
-      desc: 'Классическое продвижение не работает: люди не доверяют баннерам и холодным объявлениям от незнакомых брендов.',
+      title: 'Нет доступа к лояльной аудитории',
+      desc: 'Холодный трафик почти не конвертируется. А люди, которые уже доверяют кому-то — закрыты в сообществах, куда бизнес просто не заходит.',
       bg: '#F0FDF4',
       border: '#B6EDD2',
       iconBg: '#EDFAF3',
@@ -140,14 +140,14 @@ function PainBlock() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-14">
           <span className="badge-green inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-4">
-            Контекст
+            Проблема
           </span>
           <h2 className="text-4xl font-black text-[#111827] mb-4">
-            С чем сталкивается<br />
-            <span className="green-text">бизнес при продвижении</span>
+            Хватит тратить бюджет<br />
+            <span className="green-text">на продвижение, которое не окупается</span>
           </h2>
-          <p className="text-[#6B7280] text-lg max-w-xl mx-auto">
-            Традиционные каналы перестают работать.<br />Sagi даёт альтернативу.
+          <p className="text-[#6B7280] text-lg max-w-2xl mx-auto">
+            Сегодня стоимость привлечения одного клиента постоянно растёт, а обычные объявления в ленте люди просто пролистывают.
           </p>
         </div>
 
@@ -167,12 +167,137 @@ function PainBlock() {
   );
 }
 
+function SolutionBlock() {
+  return (
+    <section className="py-24 px-6 bg-white">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-14">
+          <span className="badge-green inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-4">
+            Решение
+          </span>
+          <h2 className="text-4xl font-black text-[#111827] mb-4">
+            Ваши идеальные клиенты<br />
+            <span className="green-text">уже собраны здесь</span>
+          </h2>
+          <p className="text-[#6B7280] text-lg max-w-2xl mx-auto">
+            Выбирайте сообщества, где живёт ваша аудитория. Будь то профессиональный клуб или локальное комьюнити — мы приводим вас к людям, которые готовы покупать.
+          </p>
+        </div>
+
+        <div className="rounded-2xl overflow-hidden" style={{ background: 'linear-gradient(140deg, #1D3828 0%, #0F2218 100%)' }}>
+          <div className="grid md:grid-cols-2 gap-0">
+            <div className="p-10 lg:p-14 flex flex-col justify-center">
+              <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style={{ background: GREEN }}>
+                <Target size={28} className="text-white" />
+              </div>
+              <h3 className="text-2xl font-black text-white mb-4 leading-tight">
+                Это не просто объявление — это прямой доступ к лояльной аудитории
+              </h3>
+              <p className="text-white/60 leading-relaxed mb-8">
+                Без посредников, без лишних затрат. Ваше предложение попадает к людям, которые уже объединены общим интересом и доверяют рекомендациям внутри своего круга.
+              </p>
+              <div className="flex flex-col gap-3">
+                {[
+                  'Аудитория сегментирована по интересам и геолокации',
+                  'Предложение выглядит как рекомендация, а не объявление',
+                  'Прямой контакт без агентств и лишних наценок',
+                ].map(item => (
+                  <div key={item} className="flex items-start gap-3">
+                    <CheckCircle size={16} style={{ color: GREEN, flexShrink: 0, marginTop: 2 }} />
+                    <span className="text-white/80 text-sm leading-relaxed">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="p-10 lg:p-14 flex flex-col justify-center gap-5" style={{ borderLeft: '1px solid rgba(255,255,255,0.08)' }}>
+              {[
+                { icon: <Target size={18} />, title: 'Точность', desc: 'Вы бьёте точно в цель. Никакого "слива" бюджета на тех, кому ваш продукт не интересен.' },
+                { icon: <Users size={18} />, title: 'Доверие', desc: 'Ваше предложение выглядит как рекомендация внутри сообщества. Люди доверяют своим.' },
+                { icon: <TrendingUp size={18} />, title: 'Экономия', desc: 'Стоимость привлечения реального покупателя через сообщество в разы ниже, чем в соцсетях.' },
+              ].map(item => (
+                <div key={item.title} className="flex gap-4 p-5 rounded-2xl" style={{ background: 'rgba(255,255,255,0.06)' }}>
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: GREEN }}>
+                    <div className="text-white">{item.icon}</div>
+                  </div>
+                  <div>
+                    <div className="text-white font-black text-sm mb-1">{item.title}</div>
+                    <div className="text-white/60 text-sm leading-relaxed">{item.desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ResultBlock() {
+  return (
+    <section className="py-24 px-6 section-alt">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-14">
+          <span className="badge-green inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-4">
+            Результат
+          </span>
+          <h2 className="text-4xl font-black text-[#111827] mb-4">
+            Sagi превращает<br />
+            <span className="green-text">общение в продажи</span>
+          </h2>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {[
+            {
+              icon: <TrendingUp size={22} />,
+              stat: 'Ниже CAC',
+              title: 'Снижение стоимости привлечения',
+              desc: 'Вы платите за доступ к уже прогретой аудитории, а не за холодные клики. Стоимость нового клиента падает.',
+              color: GREEN,
+              bg: '#EDFAF3',
+              border: '#B6EDD2',
+            },
+            {
+              icon: <Target size={22} />,
+              stat: 'Выше CR',
+              title: 'Высокая конверсия в покупку',
+              desc: 'Предложение внутри сообщества конвертирует в разы лучше баннерной и таргетированной рекламы.',
+              color: '#4338CA',
+              bg: '#EEF2FF',
+              border: '#C7D2FE',
+            },
+            {
+              icon: <Users size={22} />,
+              stat: 'LTV растёт',
+              title: 'Клиенты становятся постоянными',
+              desc: 'Люди из сообществ приходят с доверием. Они возвращаются, рекомендуют и остаются с вами надолго.',
+              color: '#C2410C',
+              bg: '#FFF7ED',
+              border: '#FED7AA',
+            },
+          ].map(item => (
+            <div key={item.title} className="rounded-2xl p-7 border card-lift" style={{ background: item.bg, borderColor: item.border }}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: item.color, color: 'white' }}>
+                {item.icon}
+              </div>
+              <div className="text-2xl font-black mb-1" style={{ color: item.color }}>{item.stat}</div>
+              <h3 className="text-base font-black text-[#111827] mb-2">{item.title}</h3>
+              <p className="text-sm text-[#6B7280] leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function CommunityLedGrowth() {
   const pillars = [
     {
-      icon: <Shield size={20} />,
-      title: 'Доверие сообщества',
-      desc: 'Предложение внутри доверенного сообщества воспринимается как рекомендация, а не прерывание. Конверсия в 3–5 раз выше холодных каналов.',
+      icon: <Target size={20} />,
+      title: 'Точность',
+      desc: 'Вы бьёте точно в цель. Никакого "слива" бюджета на тех, кому ваш продукт не интересен. Только нужная аудитория.',
       stat: '3–5×',
       statLabel: 'выше конверсия',
       color: '#4338CA',
@@ -180,9 +305,9 @@ function CommunityLedGrowth() {
       border: '#C7D2FE',
     },
     {
-      icon: <Share2 size={20} />,
-      title: 'Органический охват',
-      desc: 'Предложение от вашего бизнеса попадает точно в контекст сообщества и воспринимается как ценное, а не спам. Меньше отторжения, больше отклика.',
+      icon: <Shield size={20} />,
+      title: 'Доверие',
+      desc: 'В Sagi ваше предложение выглядит как рекомендация внутри сообщества. Люди доверяют своим — поэтому покупают чаще и охотнее.',
       stat: '-40%',
       statLabel: 'ниже CAC',
       color: GREEN_DARK,
@@ -191,8 +316,8 @@ function CommunityLedGrowth() {
     },
     {
       icon: <TrendingUp size={20} />,
-      title: 'Долгосрочные отношения',
-      desc: 'Бренды, встроенные в сообщество, остаются в поле зрения аудитории постоянно. Это формирует лояльность, а не разовую транзакцию.',
+      title: 'Экономия',
+      desc: 'Стоимость привлечения одного реального покупателя через сообщество в разы ниже, чем в социальных сетях.',
       stat: '+60%',
       statLabel: 'выше LTV',
       color: '#C2410C',
@@ -336,7 +461,7 @@ export function SagiLanding() {
             ))}
           </div>
           <a href="#Тарифы" className="btn-green hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm">
-            Найти аудиторию <ArrowRight size={14} />
+            Найти своих клиентов <ArrowRight size={14} />
           </a>
         </div>
       </nav>
@@ -355,9 +480,9 @@ export function SagiLanding() {
             </span>
 
             <h1 className="text-5xl lg:text-[3.6rem] font-black leading-[1.08] tracking-tight mb-6 text-[#111827]">
-              Выберите community вашей аудитории.<br />
-              <span className="green-text">Размещайте предложения там,</span><br />
-              где находится ваш клиент.
+              Ваши клиенты уже здесь.<br />
+              <span className="green-text">Экономьте время на поиске</span><br />
+              и деньги на продвижении.
             </h1>
 
             <p className="text-lg text-[#6B7280] max-w-xl mx-auto lg:mx-0 leading-relaxed mb-10">
@@ -366,7 +491,7 @@ export function SagiLanding() {
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-14">
               <a href="#Тарифы" className="btn-green inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-bold text-base shadow-md">
-                Найти сообщество <Search size={17} />
+                Найти своих клиентов в Sagi <Search size={17} />
               </a>
               <a href="#CLG" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-bold text-base border-2 border-[#E5E7EB] text-[#374151] hover:border-[#B6EDD2] hover:text-[#1E9E5A] transition">
                 Как это работает <ChevronRight size={17} />
@@ -463,9 +588,17 @@ export function SagiLanding() {
 
       <div className="divider h-px" />
 
+      <SolutionBlock />
+
+      <div className="divider h-px" />
+
       <div id="CLG">
         <CommunityLedGrowth />
       </div>
+
+      <div className="divider h-px" />
+
+      <ResultBlock />
 
       <div className="divider h-px" />
 
@@ -615,7 +748,7 @@ export function SagiLanding() {
               ))}
             </div>
             <a href="mailto:info@sagi.kz" className="btn-green w-full flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-base shadow-md">
-              Найти сообщество <ArrowRight size={17} />
+              Найти своих клиентов в Sagi <ArrowRight size={17} />
             </a>
           </div>
 
@@ -651,7 +784,7 @@ export function SagiLanding() {
                 1000+ сообществ. Найдите свою аудиторию и размещайте предложения там, где находится ваш клиент.
               </p>
               <a href="mailto:info@sagi.kz" className="btn-green inline-flex items-center justify-center gap-2 px-10 py-4 rounded-xl font-bold text-base shadow-md">
-                Найти сообщество <Search size={17} />
+                Найти своих клиентов в Sagi <Search size={17} />
               </a>
             </div>
           </div>
