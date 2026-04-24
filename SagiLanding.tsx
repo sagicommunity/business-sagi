@@ -1,6 +1,6 @@
 import {
   Shield,
-  CreditCard,
+  Search,
   Store,
   Clock,
   RefreshCw,
@@ -19,125 +19,119 @@ import {
   Building2,
   CircleUser,
   ShoppingBag,
+  Globe,
+  Target,
+  Share2,
+  MessageCircle,
+  Star,
+  Layers,
 } from 'lucide-react';
 
 const GREEN = '#2ABB6F';
 const GREEN_DARK = '#1E9E5A';
 
-const FEATURES = [
-  { icon: <Smartphone size={17} />, label: 'Доступ к платформе' },
-  { icon: <CreditCard size={17} />, label: 'Apple Wallet карта' },
-  { icon: <Store size={17} />, label: 'Каталог скидок и предложений' },
-  { icon: <Shield size={17} />, label: 'Карта лояльности (QR ID)' },
-  { icon: <Bell size={17} />, label: 'Лента событий и новостей' },
-  { icon: <BarChart3 size={17} />, label: 'Аналитика использования' },
-  { icon: <RefreshCw size={17} />, label: 'Управление контентом' },
-  { icon: <Briefcase size={17} />, label: 'Личный кабинет бизнеса' },
-  { icon: <Headphones size={17} />, label: 'Техническая поддержка' },
-  { icon: <Clock size={17} />, label: 'Контроль сроков действия' },
-  { icon: <GraduationCap size={17} />, label: 'Онбординг и обучение' },
-  { icon: <Users size={17} />, label: 'Менеджер по работе с бизнесами' },
-];
+function HowItWorks() {
+  const steps = [
+    {
+      num: '01',
+      icon: <Search size={22} />,
+      title: 'Найдите нужное сообщество',
+      desc: 'Используйте каталог с фильтрами по нише, городу и размеру аудитории. Найдите площадку, где уже собрана ваша целевая аудитория.',
+      color: '#EEF2FF',
+      border: '#C7D2FE',
+      iconColor: '#4338CA',
+    },
+    {
+      num: '02',
+      icon: <Target size={22} />,
+      title: 'Сформируйте оффер для участников',
+      desc: 'Скидка, бонус, специальные условия или эксклюзивное предложение только для членов сообщества. Участники получают реальную ценность.',
+      color: '#EDFAF3',
+      border: '#B6EDD2',
+      iconColor: GREEN_DARK,
+    },
+    {
+      num: '03',
+      icon: <TrendingUp size={22} />,
+      title: 'Получайте клиентов и растите',
+      desc: 'Оффер попадает к аудитории, которой он действительно релевантен. Участники приходят уже с доверием к вашему бренду.',
+      color: '#FFF7ED',
+      border: '#FED7AA',
+      iconColor: '#C2410C',
+    },
+  ];
 
-const FEATURE_GROUPS = [
-  {
-    label: 'Для резидента',
-    color: 'bg-[#EDFAF3] text-[#1E9E5A]',
-    items: [
-      { icon: <CreditCard size={15} />, label: 'Apple Wallet карта' },
-      { icon: <Shield size={15} />, label: 'Карта лояльности (QR ID)' },
-      { icon: <Store size={15} />, label: 'Каталог скидок и предложений' },
-      { icon: <Bell size={15} />, label: 'Лента событий и новостей' },
-    ],
-  },
-  {
-    label: 'Для администратора',
-    color: 'bg-[#EEF2FF] text-[#4338CA]',
-    items: [
-      { icon: <BarChart3 size={15} />, label: 'Аналитика использования' },
-      { icon: <RefreshCw size={15} />, label: 'Управление контентом' },
-      { icon: <Clock size={15} />, label: 'Контроль сроков действия' },
-      { icon: <Briefcase size={15} />, label: 'Личный кабинет бизнеса' },
-    ],
-  },
-  {
-    label: 'Сервис и поддержка',
-    color: 'bg-[#FFF7ED] text-[#C2410C]',
-    items: [
-      { icon: <Headphones size={15} />, label: 'Техническая поддержка' },
-      { icon: <GraduationCap size={15} />, label: 'Онбординг и обучение' },
-      { icon: <Users size={15} />, label: 'Менеджер по работе с бизнесами' },
-      { icon: <Smartphone size={15} />, label: 'Доступ к платформе' },
-    ],
-  },
-];
-
-
-function FeatureGroupList() {
   return (
-    <div className="space-y-8">
-      {FEATURE_GROUPS.map(g => (
-        <div key={g.label}>
-          <div className="flex justify-center mb-5">
-            <div className={`inline-flex items-center px-3 py-1.5 rounded-lg text-[11px] font-bold uppercase tracking-wider ${g.color}`}>
-              {g.label}
-            </div>
-          </div>
-          <div className="grid grid-cols-2 max-w-2xl mx-auto gap-y-3">
-            {g.items.map(f => (
-              <div key={f.label} className="flex items-center gap-3 px-4">
-                <CheckCircle size={16} style={{ color: GREEN, flexShrink: 0 }} />
-                <span className="text-[15px] font-semibold text-[#1F2937]">{f.label}</span>
-              </div>
-            ))}
-          </div>
+    <section className="py-24 px-6 bg-white">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-14">
+          <span className="badge-green inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-4">
+            Как это работает
+          </span>
+          <h2 className="text-4xl font-black text-[#111827] mb-4">
+            От поиска аудитории<br />
+            <span className="green-text">до первого клиента</span>
+          </h2>
+          <p className="text-[#6B7280] text-lg max-w-xl mx-auto">
+            Три шага, чтобы начать размещать предложения в нужных сообществах.
+          </p>
         </div>
-      ))}
-    </div>
+        <div className="grid md:grid-cols-3 gap-6">
+          {steps.map(s => (
+            <div key={s.num} className="rounded-2xl p-7 border" style={{ background: s.color, borderColor: s.border }}>
+              <div className="flex items-center justify-between mb-5">
+                <div className="w-11 h-11 rounded-xl flex items-center justify-center" style={{ background: s.iconColor, color: 'white' }}>
+                  {s.icon}
+                </div>
+                <span className="text-4xl font-black" style={{ color: s.iconColor, opacity: 0.15 }}>{s.num}</span>
+              </div>
+              <h3 className="text-lg font-black text-[#111827] mb-2">{s.title}</h3>
+              <p className="text-sm text-[#6B7280] leading-relaxed">{s.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
-
 function PainBlock() {
-  const groups = [
+  const pains = [
     {
-      label: 'AIFC Expat Centre',
-      icon: <Building2 size={20} />,
-      color: '#4338CA',
-      bg: '#EEF2FF',
-      border: '#C7D2FE',
-      items: [
-        'Сложно оперативно обновлять каталог привилегий для всех резидентов одновременно',
-        'Контроль сроков действия членских карт требует ручной проверки и времени команды',
-        'Трудно получить чёткую картину того, какими привилегиями резиденты пользуются чаще всего',
-        'Операционная нагрузка на администраторов растёт вместе с базой участников',
-      ],
+      icon: <Search size={20} />,
+      title: 'Нет единого места',
+      desc: 'Сложно найти сообщества с нужной целевой аудиторией в одном месте, всё разбросано по разным платформам.',
+      bg: '#F8F9FF',
+      border: '#E0E7FF',
+      iconBg: '#EEF2FF',
+      iconColor: '#4338CA',
     },
     {
-      label: 'Резидент',
-      icon: <CircleUser size={20} />,
-      color: '#2ABB6F',
-      bg: '#EDFAF3',
+      icon: <Target size={20} />,
+      title: 'Таргет дорожает',
+      desc: 'Таргетинг в Instagram и Google дорожает каждый год. Средний клик в Instagram от 800 ₸, 1000 показов от 6000 ₸. А конверсия падает. CAC уже не окупается.',
+      bg: '#FFF8F8',
+      border: '#FED7D7',
+      iconBg: '#FEE2E2',
+      iconColor: '#DC2626',
+    },
+    {
+      icon: <BarChart3 size={20} />,
+      title: 'Непрозрачная цена охвата',
+      desc: 'Сложно заранее просчитать реальную стоимость охвата нужной аудитории, приходится сливать тестовый бюджет.',
+      bg: '#FFFBF0',
+      border: '#FDE68A',
+      iconBg: '#FEF3C7',
+      iconColor: '#D97706',
+    },
+    {
+      icon: <Shield size={20} />,
+      title: 'Аудитория не доверяет',
+      desc: 'Классическое продвижение не работает: люди не доверяют баннерам и холодным объявлениям от незнакомых брендов.',
+      bg: '#F0FDF4',
       border: '#B6EDD2',
-      items: [
-        'Чтобы узнать о привилегиях, нужно искать письмо в почте, писать менеджеру или листать старые документы - слишком много шагов',
-        'Нет единого места, где можно быстро показать свой статус резидента при посещении партнёра',
-        'Актуальный список партнёров и условий не всегда под рукой - непонятно, куда идти и что предъявить',
-        'Ценность членства не ощущается в повседневной жизни, если нет удобного цифрового доступа',
-      ],
-    },
-    {
-      label: 'Бизнес',
-      icon: <ShoppingBag size={20} />,
-      color: '#C2410C',
-      bg: '#FFF7ED',
-      border: '#FED7AA',
-      items: [
-        'Нет простого способа проверить, является ли посетитель действующим резидентом AIFC Expat Centre',
-        'Сложно оценить реальный поток клиентов, пришедших именно благодаря партнёрству',
-        'Обновление условий предложения требует координации с несколькими сторонами',
-        'Не хватает данных, чтобы понять насколько сотрудничество с AIFC Expat Centre приносит результат',
-      ],
+      iconBg: '#EDFAF3',
+      iconColor: GREEN_DARK,
     },
   ];
 
@@ -149,31 +143,129 @@ function PainBlock() {
             Контекст
           </span>
           <h2 className="text-4xl font-black text-[#111827] mb-4">
-            Sagi Community -<br />
-            <span className="green-text">решение для всех сторон</span>
+            С чем сталкивается<br />
+            <span className="green-text">бизнес при продвижении</span>
           </h2>
           <p className="text-[#6B7280] text-lg max-w-xl mx-auto">
-            Каждая сторона сталкивается со своими вызовами. Sagi создан, чтобы их снять.
+            Традиционные каналы перестают работать.<br />Sagi даёт альтернативу.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {groups.map(g => (
-            <div key={g.label} className="rounded-2xl p-6 border" style={{ background: g.bg, borderColor: g.border }}>
-              <div className="flex items-center gap-3 mb-5">
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: g.color, color: 'white' }}>
-                  {g.icon}
-                </div>
-                <div className="text-base font-black" style={{ color: g.color }}>{g.label}</div>
+        <div className="grid sm:grid-cols-2 gap-5 max-w-4xl mx-auto">
+          {pains.map(p => (
+            <div key={p.title} className="rounded-2xl p-6 border card-lift" style={{ background: p.bg, borderColor: p.border }}>
+              <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style={{ background: p.iconBg }}>
+                <div style={{ color: p.iconColor }}>{p.icon}</div>
               </div>
-              <div className="space-y-3">
-                {g.items.map((text, i) => (
-                  <div key={i} className="flex items-start gap-2.5">
-                    <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style={{ background: g.color }} />
-                    <p className="text-sm text-[#374151] leading-relaxed">{text}</p>
-                  </div>
+              <h3 className="text-base font-black text-[#111827] mb-2">{p.title}</h3>
+              <p className="text-sm text-[#6B7280] leading-relaxed">{p.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CommunityLedGrowth() {
+  const pillars = [
+    {
+      icon: <Shield size={20} />,
+      title: 'Доверие сообщества',
+      desc: 'Предложение внутри доверенного сообщества воспринимается как рекомендация, а не прерывание. Конверсия в 3–5 раз выше холодных каналов.',
+      stat: '3–5×',
+      statLabel: 'выше конверсия',
+      color: '#4338CA',
+      bg: '#EEF2FF',
+      border: '#C7D2FE',
+    },
+    {
+      icon: <Share2 size={20} />,
+      title: 'Органический охват',
+      desc: 'Предложение от вашего бизнеса попадает точно в контекст сообщества и воспринимается как ценное, а не спам. Меньше отторжения, больше отклика.',
+      stat: '-40%',
+      statLabel: 'ниже CAC',
+      color: GREEN_DARK,
+      bg: '#EDFAF3',
+      border: '#B6EDD2',
+    },
+    {
+      icon: <TrendingUp size={20} />,
+      title: 'Долгосрочные отношения',
+      desc: 'Бренды, встроенные в сообщество, остаются в поле зрения аудитории постоянно. Это формирует лояльность, а не разовую транзакцию.',
+      stat: '+60%',
+      statLabel: 'выше LTV',
+      color: '#C2410C',
+      bg: '#FFF7ED',
+      border: '#FED7AA',
+    },
+  ];
+
+  return (
+    <section className="py-24 px-6 bg-white">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-14">
+          <span className="badge-green inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-4">
+            <Layers size={11} />
+            Community Led Growth
+          </span>
+          <h2 className="text-4xl font-black text-[#111827] mb-4">
+            Рост через сообщества:<br />
+            <span className="green-text">новый стандарт B2C маркетинга</span>
+          </h2>
+          <p className="text-[#6B7280] text-lg max-w-2xl mx-auto">
+            Community Led Growth (CLG) это стратегия, при которой бизнес растёт не за счёт маркетинговых бюджетов,
+            а за счёт доверия внутри сообществ. Sagi делает этот канал доступным для любого бизнеса.
+          </p>
+        </div>
+
+        <div className="rounded-2xl p-8 mb-10" style={{ background: 'linear-gradient(140deg, #1D3828 0%, #0F2218 100%)' }}>
+          <div className="grid md:grid-cols-3 gap-8 items-center">
+            <div className="md:col-span-2">
+              <div className="text-xs font-bold uppercase tracking-widest text-[#2ABB6F] mb-3">Почему это работает</div>
+              <h3 className="text-2xl font-black text-white mb-4">
+                Люди доверяют сообществам,<br />а не холодным объявлениям
+              </h3>
+              <p className="text-white/60 leading-relaxed mb-6">
+                92% потребителей доверяют предложениям внутри сообществ больше, чем прямым объявлениям.
+                Бренды, которые встраиваются в контекст сообщества, получают аудиторию с уже сформированным доверием, вместо того чтобы его строить с нуля.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {['Меньше бюджет', 'Выше конверсия', 'Органический рост', 'Лояльная аудитория'].map(tag => (
+                  <span key={tag} className="text-xs font-semibold px-3 py-1.5 rounded-full bg-white/10 text-white/80">{tag}</span>
                 ))}
               </div>
+            </div>
+            <div className="flex flex-col gap-4">
+              {[
+                { label: 'Таргетинг / холодные объявления', bar: 18, val: '~2%', color: '#6B7280' },
+                { label: 'Community Led Growth', bar: 85, val: '~12%', color: GREEN },
+              ].map(item => (
+                <div key={item.label}>
+                  <div className="flex justify-between items-center mb-1.5">
+                    <span className="text-xs text-white/60">{item.label}</span>
+                    <span className="text-sm font-black text-white">{item.val}</span>
+                  </div>
+                  <div className="h-2 rounded-full bg-white/10">
+                    <div className="h-2 rounded-full transition-all" style={{ width: `${item.bar}%`, background: item.color }} />
+                  </div>
+                  <div className="text-[10px] text-white/30 mt-1">Средняя конверсия</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {pillars.map(p => (
+            <div key={p.title} className="rounded-2xl p-6 border card-lift" style={{ background: p.bg, borderColor: p.border }}>
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style={{ background: p.color, color: 'white' }}>
+                {p.icon}
+              </div>
+              <div className="text-3xl font-black mb-0.5" style={{ color: p.color }}>{p.stat}</div>
+              <div className="text-xs font-semibold mb-3" style={{ color: p.color }}>{p.statLabel}</div>
+              <h4 className="text-base font-black text-[#111827] mb-2">{p.title}</h4>
+              <p className="text-sm text-[#6B7280] leading-relaxed">{p.desc}</p>
             </div>
           ))}
         </div>
@@ -212,15 +304,6 @@ export function SagiLanding() {
         .hero-bg { background: linear-gradient(160deg, #F2FDF7 0%, #FFFFFF 55%); }
         .section-alt { background: #FAFAFA; }
 
-        .phone-shell {
-          background: linear-gradient(160deg, #1a2e22 0%, #0f1f16 100%);
-          box-shadow: 0 32px 80px rgba(0,0,0,0.22), 0 0 0 1px rgba(255,255,255,0.06);
-        }
-
-        .annual-pill {
-          background: ${GREEN};
-          color: #fff;
-        }
         .price-card-featured {
           border: 2px solid ${GREEN} !important;
           box-shadow: 0 16px 48px rgba(42,187,111,0.12);
@@ -231,6 +314,13 @@ export function SagiLanding() {
           background: linear-gradient(140deg, #1D3828 0%, #0F2218 100%);
         }
         .green-text { color: ${GREEN}; }
+
+        .community-card {
+          background: white;
+          border-radius: 20px;
+          padding: 24px;
+          box-shadow: 0 32px 80px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.06);
+        }
       `}</style>
 
       {/* ─── NAV ─── */}
@@ -238,13 +328,16 @@ export function SagiLanding() {
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <span className="text-[22px] font-black tracking-tight text-[#111827]">sagi</span>
-            <span className="text-xs font-semibold text-[#2ABB6F] border border-[#B6EDD2] bg-[#EDFAF3] rounded-full px-2.5 py-0.5 ml-1">Community · AIFC Expat Centre</span>
+            <span className="text-xs font-semibold text-[#2ABB6F] border border-[#B6EDD2] bg-[#EDFAF3] rounded-full px-2.5 py-0.5 ml-1">Community</span>
           </div>
           <div className="hidden md:flex items-center gap-8">
-            {[['Возможности','#Возможности'],['Для бизнеса','#Бизнес'],['Тарифы','#Тарифы']].map(([l,h]) => (
+            {[['Как это работает','#КакРаботает'],['Community Led Growth','#CLG'],['Тарифы','#Тарифы']].map(([l,h]) => (
               <a key={l} href={h} className="text-sm text-[#6B7280] hover:text-[#111827] transition font-medium">{l}</a>
             ))}
           </div>
+          <a href="#Тарифы" className="btn-green hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm">
+            Найти аудиторию <ArrowRight size={14} />
+          </a>
         </div>
       </nav>
 
@@ -258,29 +351,33 @@ export function SagiLanding() {
           <div className="flex-1 text-center lg:text-left">
             <span className="badge-green inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-7">
               <Zap size={11} />
-              Цифровая платформа лояльности для AIFC Expat Centre
+              Платформа сообществ
             </span>
 
             <h1 className="text-5xl lg:text-[3.6rem] font-black leading-[1.08] tracking-tight mb-6 text-[#111827]">
-              Корпоративная платформа лояльности<br />
-              <span className="green-text">AIFC Expat Centre</span>
+              Выберите community вашей аудитории.<br />
+              <span className="green-text">Размещайте предложения там,</span><br />
+              где находится ваш клиент.
             </h1>
 
             <p className="text-lg text-[#6B7280] max-w-xl mx-auto lg:mx-0 leading-relaxed mb-10">
-              Цифровая платформа лояльности для резидентов<br />AIFC Expat Centre.<br />Предложения, аналитика и сообщество - в одном продукте.
+              Находите готовые сообщества, где уже сидит ваша аудитория, и предлагайте свои офферы напрямую участникам.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-14">
               <a href="#Тарифы" className="btn-green inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-bold text-base shadow-md">
-                Посмотреть тарифы <ArrowRight size={17} />
+                Найти сообщество <Search size={17} />
+              </a>
+              <a href="#CLG" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-bold text-base border-2 border-[#E5E7EB] text-[#374151] hover:border-[#B6EDD2] hover:text-[#1E9E5A] transition">
+                Как это работает <ChevronRight size={17} />
               </a>
             </div>
 
             <div className="flex flex-wrap justify-center lg:justify-start gap-x-10 gap-y-4">
               {[
-                { v: '12', l: 'функций в одной подписке' },
-                { v: '$20', l: 'в месяц за резидента' },
-                { v: '30%', l: 'скидка при оплате за год' },
+                { v: '1000+', l: 'сообществ' },
+                { v: '3 млн+', l: 'участников в сети' },
+                { v: '7 лет', l: 'на рынке' },
               ].map(s => (
                 <div key={s.l} className="text-center lg:text-left">
                   <div className="text-2xl font-black green-text">{s.v}</div>
@@ -290,173 +387,72 @@ export function SagiLanding() {
             </div>
           </div>
 
-          {/* Apple Wallet Card */}
+          {/* Community card mockup */}
           <div className="flex-shrink-0 relative">
             <div className="relative w-[340px] mx-auto">
               <div className="absolute -inset-8 rounded-full opacity-30" style={{ background: `radial-gradient(ellipse, ${GREEN}55, transparent 70%)` }} />
-              <div className="relative rounded-[2.6rem] overflow-hidden" style={{
-                background: `linear-gradient(135deg, ${GREEN} 0%, ${GREEN_DARK} 100%)`,
-                padding: '36px 32px 40px',
-                boxShadow: '0 40px 96px rgba(42,187,111,0.32), 0 8px 24px rgba(0,0,0,0.10)',
-              }}>
-                <div className="absolute -top-12 -right-12 w-52 h-52 rounded-full bg-white/10" />
-                <div className="absolute -bottom-14 -left-12 w-44 h-44 rounded-full bg-white/10" />
-                <div className="relative">
-                  <div className="text-[11px] text-white/60 font-semibold tracking-[0.15em] uppercase mb-1">AIFC Expat Centre</div>
-                  <div className="text-white font-black text-[38px] tracking-tight mb-10">Premium</div>
-                  <div className="mb-10">
-                    <div className="text-[10px] text-white/50 uppercase tracking-widest mb-1">Cardholder</div>
-                    <div className="text-white font-bold text-lg">Alima Alieva</div>
+
+              <div className="community-card relative z-10">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center text-white font-black text-lg flex-shrink-0" style={{ background: `linear-gradient(135deg, ${GREEN}, ${GREEN_DARK})` }}>
+                    T
                   </div>
-                  <div className="flex justify-between items-end">
-                    <div>
-                      <div className="text-[10px] text-white/50 uppercase tracking-widest mb-1">Valid thru</div>
-                      <div className="text-white font-mono font-bold text-lg">08/26</div>
-                    </div>
-                    {/* QR code SVG */}
-                    <div className="w-[72px] h-[72px] bg-white rounded-2xl flex items-center justify-center p-1.5">
-                      <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        {/* Top-left finder */}
-                        <rect x="0" y="0" width="18" height="18" rx="2" fill="#111"/>
-                        <rect x="3" y="3" width="12" height="12" rx="1" fill="white"/>
-                        <rect x="6" y="6" width="6" height="6" fill="#111"/>
-                        {/* Top-right finder */}
-                        <rect x="36" y="0" width="18" height="18" rx="2" fill="#111"/>
-                        <rect x="39" y="3" width="12" height="12" rx="1" fill="white"/>
-                        <rect x="42" y="6" width="6" height="6" fill="#111"/>
-                        {/* Bottom-left finder */}
-                        <rect x="0" y="36" width="18" height="18" rx="2" fill="#111"/>
-                        <rect x="3" y="39" width="12" height="12" rx="1" fill="white"/>
-                        <rect x="6" y="42" width="6" height="6" fill="#111"/>
-                        {/* Data modules */}
-                        <rect x="21" y="0" width="3" height="3" fill="#111"/>
-                        <rect x="27" y="0" width="3" height="3" fill="#111"/>
-                        <rect x="24" y="3" width="3" height="3" fill="#111"/>
-                        <rect x="30" y="3" width="3" height="3" fill="#111"/>
-                        <rect x="21" y="6" width="3" height="3" fill="#111"/>
-                        <rect x="27" y="6" width="6" height="3" fill="#111"/>
-                        <rect x="21" y="12" width="6" height="3" fill="#111"/>
-                        <rect x="30" y="12" width="3" height="3" fill="#111"/>
-                        <rect x="0" y="21" width="3" height="3" fill="#111"/>
-                        <rect x="6" y="21" width="6" height="3" fill="#111"/>
-                        <rect x="15" y="21" width="3" height="3" fill="#111"/>
-                        <rect x="21" y="21" width="3" height="3" fill="#111"/>
-                        <rect x="27" y="21" width="6" height="3" fill="#111"/>
-                        <rect x="36" y="21" width="3" height="3" fill="#111"/>
-                        <rect x="42" y="21" width="6" height="3" fill="#111"/>
-                        <rect x="51" y="21" width="3" height="3" fill="#111"/>
-                        <rect x="3" y="24" width="6" height="3" fill="#111"/>
-                        <rect x="12" y="24" width="3" height="3" fill="#111"/>
-                        <rect x="18" y="24" width="6" height="3" fill="#111"/>
-                        <rect x="27" y="24" width="3" height="3" fill="#111"/>
-                        <rect x="33" y="24" width="6" height="3" fill="#111"/>
-                        <rect x="45" y="24" width="3" height="3" fill="#111"/>
-                        <rect x="0" y="27" width="3" height="3" fill="#111"/>
-                        <rect x="9" y="27" width="3" height="3" fill="#111"/>
-                        <rect x="15" y="27" width="6" height="3" fill="#111"/>
-                        <rect x="24" y="27" width="6" height="3" fill="#111"/>
-                        <rect x="36" y="27" width="6" height="3" fill="#111"/>
-                        <rect x="48" y="27" width="6" height="3" fill="#111"/>
-                        <rect x="21" y="33" width="3" height="3" fill="#111"/>
-                        <rect x="27" y="33" width="6" height="3" fill="#111"/>
-                        <rect x="36" y="33" width="3" height="3" fill="#111"/>
-                        <rect x="42" y="33" width="3" height="3" fill="#111"/>
-                        <rect x="51" y="33" width="3" height="3" fill="#111"/>
-                        <rect x="21" y="36" width="6" height="3" fill="#111"/>
-                        <rect x="30" y="36" width="3" height="3" fill="#111"/>
-                        <rect x="39" y="36" width="6" height="3" fill="#111"/>
-                        <rect x="21" y="42" width="3" height="3" fill="#111"/>
-                        <rect x="27" y="42" width="6" height="3" fill="#111"/>
-                        <rect x="36" y="42" width="3" height="3" fill="#111"/>
-                        <rect x="45" y="42" width="6" height="3" fill="#111"/>
-                        <rect x="24" y="45" width="3" height="3" fill="#111"/>
-                        <rect x="30" y="45" width="6" height="3" fill="#111"/>
-                        <rect x="39" y="45" width="3" height="3" fill="#111"/>
-                        <rect x="48" y="45" width="3" height="3" fill="#111"/>
-                        <rect x="21" y="48" width="6" height="3" fill="#111"/>
-                        <rect x="30" y="48" width="3" height="3" fill="#111"/>
-                        <rect x="36" y="48" width="6" height="3" fill="#111"/>
-                        <rect x="45" y="48" width="6" height="3" fill="#111"/>
-                        <rect x="24" y="51" width="6" height="3" fill="#111"/>
-                        <rect x="33" y="51" width="3" height="3" fill="#111"/>
-                        <rect x="42" y="51" width="3" height="3" fill="#111"/>
-                        <rect x="51" y="51" width="3" height="3" fill="#111"/>
-                      </svg>
+                  <div>
+                    <div className="text-sm font-black text-[#111827]">Tech Founders Kazakhstan</div>
+                    <div className="text-xs text-[#9CA3AF]">Алматы · Технологии</div>
+                  </div>
+                  <div className="ml-auto flex-shrink-0">
+                    <div className="flex items-center gap-1 px-2 py-1 rounded-lg bg-[#EDFAF3]">
+                      <Star size={11} style={{ color: GREEN }} />
+                      <span className="text-xs font-bold" style={{ color: GREEN_DARK }}>4.9</span>
                     </div>
                   </div>
                 </div>
+
+                <div className="flex gap-2 mb-4">
+                  {['B2B', 'Стартапы', 'Инвестиции'].map(tag => (
+                    <span key={tag} className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-[#F3F4F6] text-[#6B7280]">{tag}</span>
+                  ))}
+                </div>
+
+                <div className="grid grid-cols-3 gap-3 mb-5">
+                  {[
+                    { v: '2 400', l: 'участников' },
+                    { v: '38', l: 'событий/мес' },
+                    { v: '94%', l: 'активность' },
+                  ].map(s => (
+                    <div key={s.l} className="text-center bg-[#F9FAFB] rounded-xl p-2.5">
+                      <div className="text-base font-black text-[#111827]">{s.v}</div>
+                      <div className="text-[10px] text-[#9CA3AF]">{s.l}</div>
+                    </div>
+                  ))}
+                </div>
+
+                <button className="w-full btn-green py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2">
+                  Предложить оффер <ArrowRight size={15} />
+                </button>
               </div>
-              {/* Wallet badge */}
-              <div className="absolute -right-14 top-10 bg-white rounded-2xl shadow-xl px-3 py-2.5 flex items-center gap-2.5 border border-[#F0F0F0]">
-                <div className="w-8 h-8 rounded-xl bg-black flex items-center justify-center">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.7 9.05 7.4c1.36.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.39-1.32 2.76-2.53 4zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+
+              <div className="absolute -right-14 top-8 bg-white rounded-2xl shadow-xl px-3 py-2.5 flex items-center gap-2.5 border border-[#F0F0F0] z-20">
+                <div className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: GREEN }}>
+                  <CheckCircle size={15} className="text-white" />
                 </div>
                 <div>
-                  <div className="text-[11px] font-bold text-[#111827]">Apple Wallet</div>
-                  <div className="text-[9px] text-[#9CA3AF]">Карта добавлена</div>
+                  <div className="text-[11px] font-bold text-[#111827]">Оффер отправлен</div>
+                  <div className="text-[9px] text-[#9CA3AF]">Верифицировано Sagi</div>
+                </div>
+              </div>
+
+              <div className="absolute -left-16 bottom-10 bg-white rounded-2xl shadow-xl px-3 py-2.5 flex items-center gap-2.5 border border-[#F0F0F0] z-20">
+                <div className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0 bg-[#EEF2FF]">
+                  <TrendingUp size={15} style={{ color: '#4338CA' }} />
+                </div>
+                <div>
+                  <div className="text-[11px] font-bold text-[#111827]">Охват +340</div>
+                  <div className="text-[9px] text-[#9CA3AF]">за последние 7 дней</div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <div className="divider h-px" />
-
-      {/* ══════════════════════════
-          APP PREVIEW
-      ══════════════════════════ */}
-      <section className="py-24 px-6 bg-white overflow-hidden">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="badge-green inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-4">
-              <Smartphone size={11} />
-              Интерфейс приложения
-            </span>
-            <h2 className="text-4xl font-black text-[#111827] mb-4">Как это выглядит<br />в реальном использовании</h2>
-            <p className="text-[#6B7280] text-lg max-w-xl mx-auto">
-              Три ключевых экрана: профиль резидента, лента сообщества и каталог предложений.
-            </p>
-          </div>
-
-          <div className="flex flex-col md:flex-row items-end justify-center gap-8 lg:gap-12">
-
-            {[
-              { src: '/profile.png', label: 'Профиль резидента', sub: 'Карта лояльности + QR-код', offset: 'md:mb-10', objPos: 'calc(20% - 9.5px) -1px' },
-              { src: '/news.png', label: 'Лента сообщества', sub: 'Предложения и мои сообщества', offset: '', objPos: 'calc(20% - 6.5px) -2px' },
-              { src: '/offers.png', label: 'Каталог предложений', sub: 'Категории и партнёры AIFC Expat Centre', offset: 'md:mb-10', objPos: 'calc(20% - 7px) -2.5px' },
-            ].map(({ src, label, sub, offset, objPos }) => (
-              <div key={src} className={`flex flex-col items-center gap-5 ${offset}`}>
-                <div className="relative" style={{ width: 220 }}>
-                  <div className="relative rounded-[3rem] overflow-hidden"
-                    style={{
-                      background: '#1A1A1A',
-                      padding: '10px',
-                      boxShadow: '0 0 0 1px #3a3a3a, 0 32px 64px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.08)',
-                    }}>
-                    <div className="relative rounded-[2.3rem] overflow-hidden bg-black" style={{ aspectRatio: '9/19.5' }}>
-                      <div className="absolute top-3 left-1/2 -translate-x-1/2 z-10 w-[72px] h-[22px] bg-black rounded-full" />
-                      <img
-                        src={src}
-                        alt={label}
-                        className="absolute inset-0 w-full h-full object-cover"
-                        style={{ objectPosition: objPos }}
-                        draggable={false}
-                      />
-                    </div>
-                  </div>
-                  <div className="absolute left-[-3px] top-[88px] w-[3px] h-[34px] rounded-l-sm" style={{ background: '#2a2a2a' }} />
-                  <div className="absolute left-[-3px] top-[132px] w-[3px] h-[34px] rounded-l-sm" style={{ background: '#2a2a2a' }} />
-                  <div className="absolute left-[-3px] top-[176px] w-[3px] h-[34px] rounded-l-sm" style={{ background: '#2a2a2a' }} />
-                  <div className="absolute right-[-3px] top-[120px] w-[3px] h-[56px] rounded-r-sm" style={{ background: '#2a2a2a' }} />
-                </div>
-                <div className="text-center">
-                  <div className="text-sm font-bold text-[#111827]">{label}</div>
-                  <div className="text-xs text-[#9CA3AF] mt-0.5">{sub}</div>
-                </div>
-              </div>
-            ))}
-
           </div>
         </div>
       </section>
@@ -467,157 +463,53 @@ export function SagiLanding() {
 
       <div className="divider h-px" />
 
-      {/* ══════════════════════════
-          12 ФУНКЦИЙ
-      ══════════════════════════ */}
-      <section id="Возможности" className="py-24 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
-            <span className="badge-green inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-4">
-              Всё включено
-            </span>
-            <h2 className="text-4xl font-black text-[#111827] mb-4">12 возможностей<br />в одной подписке</h2>
-            <p className="text-[#6B7280] text-lg max-w-xl mx-auto">
-              Каждый инструмент разработан под задачи клуба лояльности AIFC Expat Centre
-            </p>
-          </div>
+      <div id="CLG">
+        <CommunityLedGrowth />
+      </div>
 
-          {/* 11 features grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3.5 mb-5">
-            {FEATURES.filter(f => f.label !== 'Менеджер по работе с бизнесами' && f.label !== 'Apple Wallet карта' && f.label !== 'Контроль сроков действия').map((f, i) => (
-              <div key={i} className="card-border card-lift flex items-center gap-4 p-4 rounded-2xl bg-white hover:bg-[#FAFFFE] transition-colors group">
-                <div className="icon-green w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0">
-                  {f.icon}
-                </div>
-                <span className="text-sm font-semibold text-[#374151]">{f.label}</span>
-              </div>
-            ))}
+      <div className="divider h-px" />
 
-            {/* Apple Wallet - featured card */}
-            <div
-              className="card-lift flex items-center gap-4 p-4 rounded-2xl row-span-1"
-              style={{ background: `linear-gradient(135deg, ${GREEN} 0%, ${GREEN_DARK} 100%)`, border: `1.5px solid ${GREEN}` }}
-            >
-              <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 bg-white/20">
-                <CreditCard size={17} className="text-white" />
-              </div>
-              <div>
-                <div className="text-sm font-bold text-white">Apple Wallet карта</div>
-                <div className="text-[11px] text-white/70 mt-0.5">Членство прямо в смартфоне</div>
-              </div>
-            </div>
-
-            {/* Контроль сроков - span 2 */}
-            <div className="card-border card-lift flex items-center gap-4 p-4 rounded-2xl bg-white hover:bg-[#FAFFFE] transition-colors sm:col-span-2 lg:col-span-2">
-              <div className="icon-green w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0">
-                <Clock size={17} />
-              </div>
-              <div>
-                <div className="text-sm font-semibold text-[#374151]">Контроль сроков действия</div>
-                <div className="text-xs text-[#9CA3AF] mt-0.5">Карта автоматически деактивируется по окончании членства - доступ к скидкам сохраняется только у активных участников</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Manager highlight card */}
-          <div className="rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center gap-5" style={{ background: 'linear-gradient(135deg, #EDFAF3 0%, #F7FDF9 100%)', border: '1.5px solid #B6EDD2' }}>
-            <div className="icon-green w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
-              <Users size={22} />
-            </div>
-            <div className="flex-1">
-              <div className="text-xs font-bold uppercase tracking-wider mb-1" style={{ color: GREEN }}>Персональный менеджер</div>
-              <div className="text-base font-black text-[#111827] mb-1.5">Менеджер по работе с бизнесами</div>
-              <p className="text-sm text-[#6B7280] leading-relaxed">
-                Выделенный менеджер Sagi самостоятельно ведёт переговоры с партнёрами, договаривается об условиях и наполняет каталог скидок актуальными предложениями - вам не нужно тратить на это время.
-              </p>
-            </div>
-            <div className="flex flex-col gap-2 flex-shrink-0">
-              {['Переговоры с бизнесами', 'Наполнение каталога', 'Контроль условий'].map(t => (
-                <div key={t} className="flex items-center gap-2 text-xs font-semibold" style={{ color: GREEN_DARK }}>
-                  <CheckCircle size={13} style={{ color: GREEN }} />
-                  {t}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <div id="КакРаботает">
+        <HowItWorks />
+      </div>
 
       <div className="divider h-px" />
 
       {/* ══════════════════════════
-          ADMIN + BUSINESS
+          FEATURES — ADVERTISERS ONLY
       ══════════════════════════ */}
-      <section id="Бизнес" className="py-24 px-6 section-alt">
-        <div className="max-w-6xl mx-auto">
+      <section id="Возможности" className="py-24 px-6 section-alt">
+        <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <span className="badge-green inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-4">
-              Операционный контроль
+              Инструменты платформы
             </span>
-            <h2 className="text-4xl font-black text-[#111827] mb-4">Инструменты</h2>
+            <h2 className="text-4xl font-black text-[#111827] mb-4">Всё для поиска аудитории<br />и размещения предложений</h2>
             <p className="text-[#6B7280] text-lg max-w-xl mx-auto">
-              Полный цикл управления в одном дашборде.
+              Полный набор инструментов, чтобы найти нужное сообщество и разместить предложение с измеримым результатом.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Admin column */}
-            <div>
-              <div className="flex items-center gap-3 mb-5">
-                <div className="icon-green w-10 h-10 rounded-xl flex items-center justify-center">
-                  <Shield size={18} />
-                </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { icon: <Search size={17} />, t: 'Каталог сообществ с фильтрами', d: 'Поиск по нише, городу, размеру и уровню активности аудитории.' },
+              { icon: <Target size={17} />, t: 'Точный выбор аудитории', d: 'Выбирайте сообщества по демографии и интересам участников.' },
+              { icon: <MessageCircle size={17} />, t: 'Нативное предложение в ленте', d: 'Ваш оффер встраивается в контекст сообщества естественно.' },
+              { icon: <BarChart3 size={17} />, t: 'Аналитика размещений', d: 'Охват, клики, вовлечённость по каждому предложению в реальном времени.' },
+              { icon: <Globe size={17} />, t: 'Фильтры по интересам и геолокации', d: 'Сообщества организованы по интересам, нише и городу. Находите именно ту аудиторию, которая вам нужна.' },
+              { icon: <Share2 size={17} />, t: 'Прямой оффер сообществу', d: 'Отправляйте офферы напрямую через платформу без посредников.' },
+              { icon: <TrendingUp size={17} />, t: 'ROI по каждому каналу', d: 'Понятные данные о возврате инвестиций для каждого размещения.' },
+              { icon: <Users size={17} />, t: 'Портрет аудитории сообщества', d: 'Демографика, интересы и активность участников до размещения.' },
+              { icon: <Shield size={17} />, t: 'Верифицированные сообщества', d: 'Только реальные активные сообщества с подтверждённой аудиторией.' },
+            ].map(item => (
+              <div key={item.t} className="card-border card-lift flex gap-4 p-5 rounded-2xl bg-white">
+                <div className="icon-green w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">{item.icon}</div>
                 <div>
-                  <div className="text-[11px] text-[#9CA3AF] uppercase tracking-wider font-semibold">Для администратора AIFC Expat Centre</div>
-                  <h3 className="text-xl font-black text-[#111827]">Панель управления</h3>
+                  <div className="text-sm font-bold text-[#111827] mb-1">{item.t}</div>
+                  <div className="text-xs text-[#6B7280] leading-relaxed">{item.d}</div>
                 </div>
               </div>
-              <div className="space-y-3">
-                {[
-                  { icon: <Clock size={15} />, t: 'Контроль сроков действия', d: 'Автоблокировка карт при истечении периода. Push-уведомления о продлении.' },
-                  { icon: <RefreshCw size={15} />, t: 'Управление контентом', d: 'Мгновенное обновление предложений, партнёров и условий без перепечатки.' },
-                  { icon: <BarChart3 size={15} />, t: 'Аналитика предложений', d: 'Статистика использования: какие категории востребованы и у кого.' },
-                  { icon: <Users size={15} />, t: 'База участников', d: 'Управление резидентами, история продлений, статусы карт в реальном времени.' },
-                ].map(item => (
-                  <div key={item.t} className="card-border card-lift flex gap-4 p-4 rounded-2xl bg-white">
-                    <div className="icon-green w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">{item.icon}</div>
-                    <div>
-                      <div className="text-sm font-bold text-[#111827] mb-0.5">{item.t}</div>
-                      <div className="text-sm text-[#6B7280] leading-relaxed">{item.d}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Business column */}
-            <div>
-              <div className="flex items-center gap-3 mb-5">
-                <div className="icon-green w-10 h-10 rounded-xl flex items-center justify-center">
-                  <Store size={18} />
-                </div>
-                <div>
-                  <div className="text-[11px] text-[#9CA3AF] uppercase tracking-wider font-semibold">Для партнёров</div>
-                  <h3 className="text-xl font-black text-[#111827]">Кабинет бизнеса</h3>
-                </div>
-              </div>
-              <div className="space-y-3">
-                {[
-                  { icon: <Smartphone size={15} />, t: 'Сканирование QR-карт', d: 'Мгновенная верификация участника при посещении без пластиковых карт.' },
-                  { icon: <RefreshCw size={15} />, t: 'Управление предложениями', d: 'Создание и редактирование скидок, акций и эксклюзивных условий.' },
-                  { icon: <BarChart3 size={15} />, t: 'Статистика визитов', d: 'Измеримый поток клиентов из AIFC Expat Centre, данные о проверках карт.' },
-                  { icon: <Users size={15} />, t: 'Персональный менеджер', d: 'Выделенный менеджер Sagi сопровождает партнёра на всех этапах.' },
-                ].map(item => (
-                  <div key={item.t} className="card-border card-lift flex gap-4 p-4 rounded-2xl bg-white">
-                    <div className="icon-green w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">{item.icon}</div>
-                    <div>
-                      <div className="text-sm font-bold text-[#111827] mb-0.5">{item.t}</div>
-                      <div className="text-sm text-[#6B7280] leading-relaxed">{item.d}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -639,36 +531,31 @@ export function SagiLanding() {
 
         <div className="max-w-6xl mx-auto px-6 mb-16">
           <div className="flex flex-col lg:flex-row items-center gap-16">
-
-            {/* Left */}
             <div className="flex-1 text-center lg:text-left">
               <div className="flex items-center justify-center lg:justify-start gap-2.5 mb-6">
                 <span className="text-[42px] font-black tracking-tight text-[#111827]">sagi</span>
                 <span className="text-sm font-semibold text-[#2ABB6F] border border-[#B6EDD2] bg-[#EDFAF3] rounded-full px-3.5 py-1">Community</span>
               </div>
               <p className="text-[#6B7280] text-lg leading-relaxed max-w-md mx-auto lg:mx-0">
-                Платформа лояльности для бизнеса в Казахстане и СНГ. Возвращаем до 70% клиентов и автоматизируем маркетинг.
+                Ведущая платформа сообществ в Казахстане и СНГ. Помогаем бизнесам находить свою аудиторию и размещать предложения там, где она находится.
               </p>
             </div>
 
-            {/* Stats */}
             <div className="flex gap-8 lg:gap-12">
               {[
-                { v: '1000', unit: '', l: 'бизнесов доверяют нам' },
-                { v: '3 млн+', unit: '', l: 'пользователей' },
-                { v: '7 лет', unit: '', l: 'на рынке' },
+                { v: '1000+', l: 'сообществ на платформе' },
+                { v: '3 млн+', l: 'участников в сети' },
+                { v: '7 лет', l: 'на рынке' },
               ].map(s => (
                 <div key={s.l} className="text-center">
-                  <div className="text-4xl font-black green-text leading-none">{s.v}<span className="text-2xl">{s.unit}</span></div>
+                  <div className="text-4xl font-black green-text leading-none">{s.v}</div>
                   <div className="text-sm text-[#9CA3AF] mt-1.5">{s.l}</div>
                 </div>
               ))}
             </div>
-
           </div>
         </div>
 
-        {/* Marquee brand strip */}
         <div className="border-t border-b border-[#F0F0F0] py-6 bg-[#FAFAFA]">
           <div className="text-xs font-bold uppercase tracking-widest text-[#C4C4C4] text-center mb-6">Нам доверяют</div>
           <div className="max-w-4xl mx-auto overflow-hidden">
@@ -688,7 +575,6 @@ export function SagiLanding() {
             </div>
           </div>
         </div>
-
       </section>
 
       <div className="divider h-px" />
@@ -697,95 +583,45 @@ export function SagiLanding() {
           PRICING
       ══════════════════════════ */}
       <section id="Тарифы" className="py-24 px-6 bg-white">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-2xl mx-auto">
           <div className="text-center mb-14">
             <span className="badge-green inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-4">
               Прозрачная тарификация
             </span>
-            <h2 className="text-4xl font-black text-[#111827] mb-4">Простая цена,<br />полный функционал</h2>
+            <h2 className="text-4xl font-black text-[#111827] mb-4">Начните прямо сейчас</h2>
             <p className="text-[#6B7280] text-lg max-w-xl mx-auto">
-              Один тариф, все 12 функций. Выберите удобный период оплаты.
+              Доступ к каталогу сообществ и инструментам для размещения предложений.
             </p>
           </div>
 
-          {/* Price cards */}
-          <div className="grid md:grid-cols-2 gap-6 mb-6">
-            {/* Monthly */}
-            <div className="card-border card-lift rounded-2xl p-8 bg-white">
-              <div className="text-xs font-bold text-[#9CA3AF] uppercase tracking-widest mb-4">Ежемесячно</div>
-              <div className="flex items-end gap-1.5 mb-1">
-                <span className="text-5xl font-black text-[#111827]">$20</span>
-                <span className="text-[#9CA3AF] text-sm pb-2">/мес · за резидента</span>
+          <div className="price-card-featured card-lift rounded-2xl p-8 bg-white">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="icon-green w-8 h-8 rounded-xl flex items-center justify-center">
+                <Target size={15} />
               </div>
-              <div className="text-[#9CA3AF] text-sm mb-7">Оплата каждый месяц, без обязательств</div>
-              <a href="mailto:info@sagi.kz" className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl border-2 font-bold text-sm hover:bg-[#FAFFFE] transition" style={{ borderColor: GREEN, color: GREEN }}>
-                Начать внедрение <ChevronRight size={15} />
-              </a>
+              <div className="text-xs font-bold uppercase tracking-widest text-[#9CA3AF]">Для бизнеса</div>
             </div>
-
-            {/* Annual */}
-            <div className="price-card-featured card-lift rounded-2xl p-8 bg-white relative">
-              <div className="absolute top-5 right-5 annual-pill text-xs font-bold px-3 py-1.5 rounded-full">
-                -30% · Выгоднее
-              </div>
-              <div className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: GREEN }}>Ежегодно</div>
-              <div className="flex items-end gap-1.5 mb-1">
-                <span className="text-5xl font-black text-[#111827]">$170</span>
-                <span className="text-[#9CA3AF] text-sm pb-2">/год · за резидента</span>
-              </div>
-              <div className="flex items-center gap-2 mb-7">
-                <span className="text-[#D1D5DB] text-sm line-through">$240/год</span>
-                <span className="text-sm font-bold text-emerald-600">Экономия $70 на резиденте</span>
-              </div>
-              <a href="mailto:info@sagi.kz" className="btn-green w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-bold text-sm shadow-md">
-                Получить годовой тариф <ChevronRight size={15} />
-              </a>
+            <div className="flex items-center gap-3 mb-1">
+              <span className="text-5xl font-black text-[#111827]">Бесплатно</span>
+              <span className="text-xl font-semibold text-[#D1D5DB] line-through">10 000 ₸</span>
             </div>
-          </div>
-
-          {/* What's included - shared block */}
-          <div className="card-border rounded-2xl p-8 bg-white">
-            <FeatureGroupList />
-          </div>
-
-          <p className="text-center text-sm text-[#9CA3AF] mt-6">
-            Цена указана за одного активного резидента. Оплата единым счётом за всю базу.
-          </p>
-        </div>
-      </section>
-
-      <div className="divider h-px" />
-
-      {/* ══════════════════════════
-          ROI
-      ══════════════════════════ */}
-      <section id="ROI" className="py-24 px-6 section-alt">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
-            <span className="badge-green inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-4">
-              <TrendingUp size={11} />
-              Почему это выгодно
-            </span>
-            <h2 className="text-4xl font-black text-[#111827] mb-4">Что вы получаете<br />помимо продукта</h2>
-          </div>
-
-          <div className="card-border rounded-2xl bg-white p-8">
-            <div className="grid sm:grid-cols-3 gap-6">
-              {[
-                { icon: <Clock size={17} />, t: 'Предотвращение убытков', d: 'Жёсткий контроль сроков не допускает использования просроченного членства у партнёров.' },
-                { icon: <Zap size={17} />, t: 'Снижение операционных затрат', d: 'Каталог и база клиентов обновляются в пару кликов - без ручной работы.' },
-                { icon: <Users size={17} />, t: 'Рост удержания', d: 'Цифровой продукт повышает воспринимаемую ценность членства и снижает отток.' },
-              ].map(v => (
-                <div key={v.t} className="flex gap-4">
-                  <div className="icon-green w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">{v.icon}</div>
-                  <div>
-                    <div className="text-base font-bold text-[#111827] mb-1.5">{v.t}</div>
-                    <div className="text-base text-[#6B7280] leading-relaxed">{v.d}</div>
-                  </div>
+            <div className="text-[#9CA3AF] text-sm mb-7">Полный доступ к платформе без скрытых платежей</div>
+            <div className="space-y-2.5 mb-8">
+              {['Аналитика по предложениям', 'Возможность размещать предложения в определённых сообществах'].map(f => (
+                <div key={f} className="flex items-center gap-2 text-sm text-[#374151]">
+                  <CheckCircle size={14} style={{ color: GREEN }} />
+                  {f}
                 </div>
               ))}
             </div>
+            <a href="mailto:info@sagi.kz" className="btn-green w-full flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-base shadow-md">
+              Найти сообщество <ArrowRight size={17} />
+            </a>
           </div>
+
+          <p className="text-center text-sm text-[#9CA3AF] mt-6">
+            Корпоративные тарифы и пакеты по запросу на sagibonus@gmail.com
+          </p>
         </div>
       </section>
 
@@ -802,17 +638,21 @@ export function SagiLanding() {
             <div className="relative">
               <div className="flex items-center justify-center gap-2 mb-8">
                 <span className="text-white text-3xl font-black tracking-tight">sagi</span>
+                <span className="text-sm font-semibold border border-white/20 bg-white/10 text-white/80 rounded-full px-3 py-1">Community</span>
               </div>
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-white/80 text-xs font-semibold mb-7">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#2ABB6F]" />
-                Платформа готова к внедрению
+                Community Led Growth для вашего бизнеса
               </div>
               <h2 className="text-3xl sm:text-4xl font-black text-white mb-5 leading-tight">
-                Sagi Community<br />Технологическое лицо гостеприимства AIFC Expat Centre
+                Найдите своё сообщество<br />и начните размещать предложения
               </h2>
               <p className="text-white/60 text-lg max-w-xl mx-auto mb-10 leading-relaxed">
-                Современная платформа для цифровизации клуба лояльности. Полный контроль. Живое сообщество. Измеримый результат.
+                1000+ сообществ. Найдите свою аудиторию и размещайте предложения там, где находится ваш клиент.
               </p>
+              <a href="mailto:info@sagi.kz" className="btn-green inline-flex items-center justify-center gap-2 px-10 py-4 rounded-xl font-bold text-base shadow-md">
+                Найти сообщество <Search size={17} />
+              </a>
             </div>
           </div>
         </div>
