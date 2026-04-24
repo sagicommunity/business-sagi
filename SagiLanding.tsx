@@ -778,7 +778,7 @@ export function SagiLanding() {
                 Community Led Growth для вашего бизнеса
               </div>
               <h2 className="text-3xl sm:text-4xl font-black text-white mb-5 leading-tight">
-                Найдите своё сообщество<br />и начните размещать предложения
+                Найдите сообщество<br />с вашей аудиторией
               </h2>
               <p className="text-white/60 text-lg max-w-xl mx-auto mb-10 leading-relaxed">
                 1000+ сообществ. Найдите свою аудиторию и размещайте предложения там, где находится ваш клиент.
