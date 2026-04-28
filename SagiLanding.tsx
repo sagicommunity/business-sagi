@@ -307,7 +307,7 @@ function CommunityLedGrowth() {
     {
       icon: <Shield size={20} />,
       title: 'Доверие',
-      desc: 'В Sagi ваше предложение выглядит как рекомендация внутри сообщества. Люди доверяют своим -поэтому покупают чаще и охотнее.',
+      desc: 'Участники сообществ активно следят за офферами, бонусами и штампиками. Ваше предложение попадает к людям, которые уже привыкли взаимодействовать с брендами внутри платформы.',
       stat: '-40%',
       statLabel: 'ниже CAC',
       color: GREEN_DARK,
@@ -486,7 +486,7 @@ export function SagiLanding() {
             </h1>
 
             <p className="text-lg text-[#6B7280] max-w-xl mx-auto lg:mx-0 leading-relaxed mb-10">
-              Находите готовые сообщества, где уже сидит ваша аудитория, и предлагайте свои офферы напрямую участникам.
+              Участники сообществ уже мотивированы: у них есть бонусные уровни, кэшбэк и штампики. Ваш оффер они увидят — и воспользуются.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-14">
@@ -518,39 +518,48 @@ export function SagiLanding() {
               <div className="absolute -inset-8 rounded-full opacity-30" style={{ background: `radial-gradient(ellipse, ${GREEN}55, transparent 70%)` }} />
 
               <div className="community-card relative z-10">
+                {/* Header */}
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center text-white font-black text-lg flex-shrink-0" style={{ background: `linear-gradient(135deg, ${GREEN}, ${GREEN_DARK})` }}>
-                    T
+                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center font-black text-lg flex-shrink-0 overflow-hidden" style={{ background: '#F5A623' }}>
+                    <span className="text-white text-xl font-black">h</span>
                   </div>
                   <div>
-                    <div className="text-sm font-black text-[#111827]">Tech Founders Kazakhstan</div>
-                    <div className="text-xs text-[#9CA3AF]">Алматы · Технологии</div>
+                    <div className="text-sm font-black text-[#111827]">hani</div>
+                    <div className="text-xs text-[#9CA3AF]">Кондитерские-кофейни · Астана</div>
                   </div>
-                  <div className="ml-auto flex-shrink-0">
-                    <div className="flex items-center gap-1 px-2 py-1 rounded-lg bg-[#EDFAF3]">
-                      <Star size={11} style={{ color: GREEN }} />
-                      <span className="text-xs font-bold" style={{ color: GREEN_DARK }}>4.9</span>
-                    </div>
-                  </div>
+                  <div className="ml-auto flex-shrink-0 text-xs font-semibold text-[#9CA3AF]">4 партнёра</div>
                 </div>
 
-                <div className="flex gap-2 mb-4">
-                  {['B2B', 'Стартапы', 'Инвестиции'].map(tag => (
-                    <span key={tag} className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-[#F3F4F6] text-[#6B7280]">{tag}</span>
-                  ))}
-                </div>
-
-                <div className="grid grid-cols-3 gap-3 mb-5">
+                {/* Feature buttons */}
+                <div className="grid grid-cols-2 gap-2 mb-4">
                   {[
-                    { v: '2 400', l: 'участников' },
-                    { v: '38', l: 'событий/мес' },
-                    { v: '94%', l: 'активность' },
-                  ].map(s => (
-                    <div key={s.l} className="text-center bg-[#F9FAFB] rounded-xl p-2.5">
-                      <div className="text-base font-black text-[#111827]">{s.v}</div>
-                      <div className="text-[10px] text-[#9CA3AF]">{s.l}</div>
+                    { label: 'Бонусы', active: true },
+                    { label: 'Офферы', active: false },
+                    { label: 'Кросс', active: false },
+                    { label: 'Штампики', active: false },
+                  ].map(btn => (
+                    <div key={btn.label} className="flex items-center justify-center gap-1.5 py-2 rounded-xl text-xs font-semibold"
+                      style={btn.active
+                        ? { background: '#F5A623', color: 'white' }
+                        : { background: '#F3F4F6', color: '#6B7280' }}>
+                      {btn.label}
                     </div>
                   ))}
+                </div>
+
+                {/* Level bar */}
+                <div className="rounded-xl p-3 mb-4" style={{ background: '#FFFBF0', border: '1px solid #FDE68A' }}>
+                  <div className="flex items-center justify-between mb-1.5">
+                    <div className="flex items-center gap-1.5">
+                      <Star size={13} style={{ color: '#F5A623' }} />
+                      <span className="text-xs font-black text-[#111827]">Уровень: Silver</span>
+                    </div>
+                    <span className="text-xs text-[#9CA3AF]">760 / 2000</span>
+                  </div>
+                  <div className="h-2 rounded-full bg-[#F3F4F6]">
+                    <div className="h-2 rounded-full" style={{ width: '38%', background: '#F5A623' }} />
+                  </div>
+                  <div className="text-[10px] text-[#9CA3AF] mt-1.5">Ещё 1 240 бонусов до Gold - кэшбэк вырастет до 7%</div>
                 </div>
 
                 <button className="w-full btn-green py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2">
@@ -625,15 +634,15 @@ export function SagiLanding() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { icon: <Search size={17} />, t: 'Каталог сообществ с фильтрами', d: 'Поиск по нише, городу, размеру и уровню активности аудитории.' },
-              { icon: <Target size={17} />, t: 'Точный выбор аудитории', d: 'Выбирайте сообщества по демографии и интересам участников.' },
-              { icon: <MessageCircle size={17} />, t: 'Нативное предложение в ленте', d: 'Ваш оффер встраивается в контекст сообщества естественно.' },
-              { icon: <BarChart3 size={17} />, t: 'Аналитика размещений', d: 'Охват, клики, вовлечённость по каждому предложению в реальном времени.' },
-              { icon: <Globe size={17} />, t: 'Фильтры по интересам и геолокации', d: 'Сообщества организованы по интересам, нише и городу. Находите именно ту аудиторию, которая вам нужна.' },
-              { icon: <Share2 size={17} />, t: 'Прямой оффер сообществу', d: 'Отправляйте офферы напрямую через платформу без посредников.' },
-              { icon: <TrendingUp size={17} />, t: 'ROI по каждому каналу', d: 'Понятные данные о возврате инвестиций для каждого размещения.' },
-              { icon: <Users size={17} />, t: 'Портрет аудитории сообщества', d: 'Демографика, интересы и активность участников до размещения.' },
-              { icon: <Shield size={17} />, t: 'Верифицированные сообщества', d: 'Только реальные активные сообщества с подтверждённой аудиторией.' },
+              { icon: <Search size={17} />, t: 'Каталог сообществ с фильтрами', d: 'Поиск по нише, городу, размеру и уровню активности. Находите именно ту аудиторию, которая вам нужна.' },
+              { icon: <Target size={17} />, t: 'Офферы для участников', d: 'Размещайте специальные предложения напрямую в ленте сообщества. Скидки, акции, эксклюзивные условия.' },
+              { icon: <Share2 size={17} />, t: 'Кросс-продвижение', d: 'Предлагайте свои условия участникам смежных сообществ. Расширяйте охват через партнёрские базы.' },
+              { icon: <Star size={17} />, t: 'Бонусы и штампики', d: 'Интегрируйтесь в механики лояльности сообщества: начисляйте бонусы и штампики за покупки у вас.' },
+              { icon: <Globe size={17} />, t: 'Фильтры по интересам и геолокации', d: 'Сообщества организованы по интересам и городу. Географический таргетинг без лишних показов.' },
+              { icon: <BarChart3 size={17} />, t: 'Аналитика размещений', d: 'Охват, просмотры и вовлечённость по каждому предложению в реальном времени.' },
+              { icon: <TrendingUp size={17} />, t: 'ROI по каждому каналу', d: 'Понятные данные о возврате инвестиций — сравнивайте эффективность разных сообществ.' },
+              { icon: <Users size={17} />, t: 'Мотивированная аудитория', d: 'Участники имеют бонусные уровни и кэшбэк. Они активно следят за офферами и реагируют на предложения.' },
+              { icon: <Shield size={17} />, t: 'Верифицированные сообщества', d: 'Только реальные активные сообщества с подтверждённой и вовлечённой аудиторией.' },
             ].map(item => (
               <div key={item.t} className="card-border card-lift flex gap-4 p-5 rounded-2xl bg-white">
                 <div className="icon-green w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">{item.icon}</div>
