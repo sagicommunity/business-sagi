@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Shield,
   Search,
@@ -180,7 +181,7 @@ function SolutionBlock() {
             <span className="green-text">уже собраны здесь</span>
           </h2>
           <p className="text-[#6B7280] text-lg max-w-2xl mx-auto">
-            Выбирайте сообщества, где живёт ваша аудитория. Будь то профессиональный клуб или локальное комьюнити -мы приводим вас к людям, которые готовы покупать.
+            Выбирайте сообщества, где живёт ваша аудитория. Будь то профессиональный клуб или локальное комьюнити -мы приводим вас к вашей целевой аудитории.
           </p>
         </div>
 
@@ -399,6 +400,238 @@ function CommunityLedGrowth() {
   );
 }
 
+function TwoWaysBlock() {
+  return (
+    <section className="py-24 px-6 section-alt">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-14">
+          <span className="badge-green inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-4">
+            Возможности платформы
+          </span>
+          <h2 className="text-4xl font-black text-[#111827] mb-4">
+            Два способа работать<br />
+            <span className="green-text">с аудиторией в Sagi</span>
+          </h2>
+          <p className="text-[#6B7280] text-lg max-w-xl mx-auto">
+            Рекламируйтесь в чужих сообществах или стройте своё — оба пути ведут к росту продаж.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          {/* Своё сообщество */}
+          <div className="rounded-2xl overflow-hidden border border-[#B6EDD2]" style={{ background: 'linear-gradient(160deg, #F2FDF7 0%, #EDFAF3 100%)' }}>
+            <div className="p-8">
+              <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5" style={{ background: GREEN, color: 'white' }}>
+                <Building2 size={22} />
+              </div>
+              <div className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: GREEN }}>Для тех, кто хочет удержать клиентов</div>
+              <h3 className="text-2xl font-black text-[#111827] mb-3">Постройте своё сообщество</h3>
+              <p className="text-[#6B7280] leading-relaxed mb-6">
+                Создайте пространство для ваших клиентов внутри Sagi. Запустите программу лояльности, публикуйте новости и акции — и клиенты будут возвращаться снова и снова.
+              </p>
+              <div className="space-y-3">
+                {[
+                  { icon: <Star size={14} />, text: 'Бонусы, штампики и кэшбэк для постоянных клиентов' },
+                  { icon: <Bell size={14} />, text: 'Лента новостей, акций и событий вашего бренда' },
+                  { icon: <Users size={14} />, text: 'Прямое взаимодействие с аудиторией без посредников' },
+                  { icon: <TrendingUp size={14} />, text: 'Аналитика активности и вовлечённости участников' },
+                  { icon: <RefreshCw size={14} />, text: 'Клиенты возвращаются — LTV растёт' },
+                ].map(item => (
+                  <div key={item.text} className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: '#EDFAF3', color: GREEN }}>
+                      {item.icon}
+                    </div>
+                    <span className="text-sm text-[#374151] leading-relaxed">{item.text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="px-8 pb-8">
+              <a href="mailto:sagibonus@gmail.com" className="btn-green w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-bold text-sm shadow-md">
+                Создать сообщество <ArrowRight size={15} />
+              </a>
+            </div>
+          </div>
+
+          {/* Чужие сообщества */}
+          <div className="rounded-2xl overflow-hidden border border-[#C7D2FE]" style={{ background: 'linear-gradient(160deg, #F8F9FF 0%, #EEF2FF 100%)' }}>
+            <div className="p-8">
+              <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5" style={{ background: '#4338CA', color: 'white' }}>
+                <Target size={22} />
+              </div>
+              <div className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: '#4338CA' }}>Для тех, кто ищет новых клиентов</div>
+              <h3 className="text-2xl font-black text-[#111827] mb-3">Размещайте офферы в чужих сообществах</h3>
+              <p className="text-[#6B7280] leading-relaxed mb-6">
+                Найдите сообщества, где уже собрана ваша аудитория. Предложите участникам скидку, бонус или специальные условия — и получите новых клиентов с доверием к вашему бренду.
+              </p>
+              <div className="space-y-3">
+                {[
+                  { icon: <Search size={14} />, text: 'Каталог сообществ с фильтрами по нише и городу' },
+                  { icon: <Share2 size={14} />, text: 'Кросс-продвижение между смежными сообществами' },
+                  { icon: <MessageCircle size={14} />, text: 'Нативный оффер в ленте — не баннер, а предложение' },
+                  { icon: <BarChart3 size={14} />, text: 'Аналитика охвата и отклика по каждому размещению' },
+                  { icon: <Shield size={14} />, text: 'Только верифицированные сообщества с живой аудиторией' },
+                ].map(item => (
+                  <div key={item.text} className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: '#EEF2FF', color: '#4338CA' }}>
+                      {item.icon}
+                    </div>
+                    <span className="text-sm text-[#374151] leading-relaxed">{item.text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="px-8 pb-8">
+              <a href="mailto:sagibonus@gmail.com" className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-bold text-sm border-2 transition" style={{ borderColor: '#4338CA', color: '#4338CA' }}>
+                Найти сообщество <ArrowRight size={15} />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ROICalculator() {
+  const [budget, setBudget] = useState(100000);
+  const [niche, setNiche] = useState('cafe');
+
+  const niches: Record<string, { label: string; sagiCPL: number; instaCPL: number }> = {
+    cafe:     { label: 'Кафе / Рестораны',  sagiCPL: 3000,  instaCPL: 10000 },
+    fitness:  { label: 'Фитнес',            sagiCPL: 4000,  instaCPL: 13000 },
+    beauty:   { label: 'Красота и уход',    sagiCPL: 3500,  instaCPL: 12000 },
+    retail:   { label: 'Retail / Магазины', sagiCPL: 4500,  instaCPL: 15000 },
+    services: { label: 'Услуги',            sagiCPL: 5000,  instaCPL: 16000 },
+  };
+
+  const current = niches[niche];
+  const sagiClients = Math.round(budget / current.sagiCPL);
+  const instaClients = Math.round(budget / current.instaCPL);
+  const extraClients = sagiClients - instaClients;
+  const savings = extraClients * current.sagiCPL;
+  const sagiBar = 100;
+  const instaBar = Math.round((current.sagiCPL / current.instaCPL) * 100);
+
+  const fmt = (n: number) => n.toLocaleString('ru-RU');
+
+  return (
+    <section className="py-24 px-6 bg-white">
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-14">
+          <span className="badge-green inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-4">
+            <BarChart3 size={11} />
+            Калькулятор выгоды
+          </span>
+          <h2 className="text-4xl font-black text-[#111827] mb-4">
+            Сколько клиентов вы получите<br />
+            <span className="green-text">на тот же бюджет?</span>
+          </h2>
+          <p className="text-[#6B7280] text-lg max-w-xl mx-auto">
+            Введите ваш бюджет и нишу — посмотрите разницу между Sagi и обычным таргетингом.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8 items-start">
+          {/* Inputs */}
+          <div className="rounded-2xl p-8 border border-[#F0F0F0] bg-[#FAFAFA]">
+            <div className="mb-8">
+              <label className="text-sm font-bold text-[#111827] mb-3 block">Ниша бизнеса</label>
+              <div className="grid grid-cols-1 gap-2">
+                {Object.entries(niches).map(([key, val]) => (
+                  <button
+                    key={key}
+                    onClick={() => setNiche(key)}
+                    className="text-left px-4 py-3 rounded-xl text-sm font-semibold transition-all"
+                    style={niche === key
+                      ? { background: GREEN, color: 'white' }
+                      : { background: 'white', color: '#374151', border: '1.5px solid #F0F0F0' }
+                    }
+                  >
+                    {val.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <label className="text-sm font-bold text-[#111827] mb-1 block">
+                Бюджет на продвижение
+              </label>
+              <div className="text-3xl font-black mb-4" style={{ color: GREEN }}>
+                {fmt(budget)} ₸
+              </div>
+              <input
+                type="range"
+                min={30000}
+                max={500000}
+                step={10000}
+                value={budget}
+                onChange={e => setBudget(Number(e.target.value))}
+                className="w-full accent-[#2ABB6F] cursor-pointer"
+              />
+              <div className="flex justify-between text-xs text-[#9CA3AF] mt-1">
+                <span>30 000 ₸</span>
+                <span>500 000 ₸</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Results */}
+          <div className="flex flex-col gap-5">
+            {/* Comparison bars */}
+            <div className="rounded-2xl p-6 border border-[#F0F0F0] bg-white">
+              <div className="text-xs font-bold uppercase tracking-wider text-[#9CA3AF] mb-5">Стоимость одного клиента</div>
+
+              <div className="space-y-4">
+                <div>
+                  <div className="flex justify-between items-center mb-1.5">
+                    <span className="text-sm font-semibold text-[#374151]">Instagram / Google</span>
+                    <span className="text-sm font-black text-[#DC2626]">{fmt(current.instaCPL)} ₸</span>
+                  </div>
+                  <div className="h-3 rounded-full bg-[#F3F4F6]">
+                    <div className="h-3 rounded-full bg-[#FCA5A5]" style={{ width: '100%' }} />
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between items-center mb-1.5">
+                    <span className="text-sm font-semibold text-[#374151]">Sagi Community</span>
+                    <span className="text-sm font-black" style={{ color: GREEN }}>{fmt(current.sagiCPL)} ₸</span>
+                  </div>
+                  <div className="h-3 rounded-full bg-[#F3F4F6]">
+                    <div className="h-3 rounded-full" style={{ width: `${instaBar}%`, background: GREEN }} />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Client count */}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="rounded-2xl p-5 border border-[#FED7D7] bg-[#FFF8F8] text-center">
+                <div className="text-3xl font-black text-[#DC2626] mb-1">{fmt(instaClients)}</div>
+                <div className="text-xs font-semibold text-[#9CA3AF]">клиентов через таргет</div>
+              </div>
+              <div className="rounded-2xl p-5 text-center" style={{ background: '#EDFAF3', border: '1px solid #B6EDD2' }}>
+                <div className="text-3xl font-black mb-1" style={{ color: GREEN }}>{fmt(sagiClients)}</div>
+                <div className="text-xs font-semibold text-[#9CA3AF]">клиентов через Sagi</div>
+              </div>
+            </div>
+
+            {/* Savings highlight */}
+            <div className="rounded-2xl p-6 text-white" style={{ background: 'linear-gradient(135deg, #1D3828 0%, #0F2218 100%)' }}>
+              <div className="text-xs font-bold uppercase tracking-wider text-white/50 mb-2">Ваша выгода</div>
+              <div className="text-4xl font-black mb-1">+{fmt(extraClients)} клиентов</div>
+              <div className="text-white/60 text-sm">
+                на тот же бюджет — или экономия <span className="text-white font-bold">{fmt(savings)} ₸</span> для того же результата
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function SagiLanding() {
   return (
     <div className="min-h-screen bg-white text-[#111827]" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif" }}>
@@ -520,8 +753,8 @@ export function SagiLanding() {
               <div className="community-card relative z-10">
                 {/* Header */}
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center font-black text-lg flex-shrink-0 overflow-hidden" style={{ background: '#F5A623' }}>
-                    <span className="text-white text-xl font-black">h</span>
+                  <div className="w-12 h-12 rounded-2xl flex-shrink-0 overflow-hidden">
+                    <img src="/brands/hani.jpeg" alt="hani" className="w-full h-full object-cover" />
                   </div>
                   <div>
                     <div className="text-sm font-black text-[#111827]">hani</div>
@@ -608,6 +841,10 @@ export function SagiLanding() {
       <div className="divider h-px" />
 
       <ResultBlock />
+
+      <div className="divider h-px" />
+
+      <ROICalculator />
 
       <div className="divider h-px" />
 
