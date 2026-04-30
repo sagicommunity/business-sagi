@@ -1,34 +1,16 @@
+import { useState } from 'react';
 import {
-  Shield,
-  Search,
-  Store,
-  Clock,
-  RefreshCw,
-  BarChart3,
-  CheckCircle,
-  ArrowRight,
-  Smartphone,
-  Users,
-  TrendingUp,
-  Headphones,
-  GraduationCap,
-  Briefcase,
-  Bell,
-  ChevronRight,
-  Zap,
-  Building2,
-  CircleUser,
-  ShoppingBag,
-  Globe,
-  Target,
-  Share2,
-  MessageCircle,
-  Star,
-  Layers,
+  Shield, Search, Store, Clock, RefreshCw, BarChart3, CheckCircle,
+  ArrowRight, Smartphone, Users, TrendingUp, Headphones, GraduationCap,
+  Briefcase, Bell, ChevronRight, Zap, Building2, CircleUser, ShoppingBag,
+  Globe, Target, Share2, MessageCircle, Star, Layers,
+  Gift, Award, CreditCard, Percent, MapPin, Settings, DollarSign,
 } from 'lucide-react';
 
 const GREEN = '#2ABB6F';
 const GREEN_DARK = '#1E9E5A';
+
+// ─── BUSINESS COMPONENTS ──────────────────────────────────────────────────────
 
 function HowItWorks() {
   const steps = [
@@ -37,27 +19,21 @@ function HowItWorks() {
       icon: <Search size={22} />,
       title: 'Найдите нужное сообщество',
       desc: 'Используйте каталог с фильтрами по нише, городу и размеру аудитории. Найдите площадку, где уже собрана ваша целевая аудитория.',
-      color: '#EEF2FF',
-      border: '#C7D2FE',
-      iconColor: '#4338CA',
+      color: '#EEF2FF', border: '#C7D2FE', iconColor: '#4338CA',
     },
     {
       num: '02',
       icon: <Target size={22} />,
       title: 'Сформируйте предложение для участников',
       desc: 'Скидка, бонус, специальные условия или эксклюзивное предложение только для членов сообщества. Участники получают реальную ценность.',
-      color: '#EDFAF3',
-      border: '#B6EDD2',
-      iconColor: GREEN_DARK,
+      color: '#EDFAF3', border: '#B6EDD2', iconColor: GREEN_DARK,
     },
     {
       num: '03',
       icon: <TrendingUp size={22} />,
       title: 'Получайте клиентов и растите',
-      desc: 'Оффер попадает к аудитории, которой он действительно релевантен. Участники приходят уже с доверием к вашему бренду.',
-      color: '#FFF7ED',
-      border: '#FED7AA',
-      iconColor: '#C2410C',
+      desc: 'Предложение попадает к аудитории, которой оно действительно релевантно. Участники приходят уже с доверием к вашему бренду.',
+      color: '#FFF7ED', border: '#FED7AA', iconColor: '#C2410C',
     },
   ];
 
@@ -98,40 +74,24 @@ function HowItWorks() {
 function PainBlock() {
   const pains = [
     {
-      icon: <Target size={20} />,
-      title: 'Стоимость клиента растёт',
+      icon: <Target size={20} />, title: 'Стоимость клиента растёт',
       desc: 'Таргетинг в Instagram и Google дорожает каждый год. Средний клик от 800 ₸, 1000 показов от 6000 ₸. Вы платите за клики, но не всегда получаете продажи.',
-      bg: '#FFF8F8',
-      border: '#FED7D7',
-      iconBg: '#FEE2E2',
-      iconColor: '#DC2626',
+      bg: '#FFF8F8', border: '#FED7D7', iconBg: '#FEE2E2', iconColor: '#DC2626',
     },
     {
-      icon: <Search size={20} />,
-      title: 'Объявления просто пролистывают',
-      desc: 'Люди давно научились игнорировать баннеры и холодные объявления в ленте. Доверия к незнакомым брендам нет -конверсия стремится к нулю.',
-      bg: '#F8F9FF',
-      border: '#E0E7FF',
-      iconBg: '#EEF2FF',
-      iconColor: '#4338CA',
+      icon: <Search size={20} />, title: 'Объявления просто пролистывают',
+      desc: 'Люди давно научились игнорировать баннеры и холодные объявления в ленте. Доверия к незнакомым брендам нет - конверсия стремится к нулю.',
+      bg: '#F8F9FF', border: '#E0E7FF', iconBg: '#EEF2FF', iconColor: '#4338CA',
     },
     {
-      icon: <BarChart3 size={20} />,
-      title: 'Бюджет уходит на тесты',
+      icon: <BarChart3 size={20} />, title: 'Бюджет уходит на тесты',
       desc: 'Невозможно заранее просчитать реальную стоимость охвата нужной аудитории. Приходится сливать деньги на эксперименты без гарантий результата.',
-      bg: '#FFFBF0',
-      border: '#FDE68A',
-      iconBg: '#FEF3C7',
-      iconColor: '#D97706',
+      bg: '#FFFBF0', border: '#FDE68A', iconBg: '#FEF3C7', iconColor: '#D97706',
     },
     {
-      icon: <Shield size={20} />,
-      title: 'Нет доступа к лояльной аудитории',
-      desc: 'Холодный трафик почти не конвертируется. А люди, которые уже доверяют кому-то -закрыты в сообществах, куда бизнес просто не заходит.',
-      bg: '#F0FDF4',
-      border: '#B6EDD2',
-      iconBg: '#EDFAF3',
-      iconColor: GREEN_DARK,
+      icon: <Shield size={20} />, title: 'Нет доступа к лояльной аудитории',
+      desc: 'Холодный трафик почти не конвертируется. А люди, которые уже доверяют кому-то - закрыты в сообществах, куда бизнес просто не заходит.',
+      bg: '#F0FDF4', border: '#B6EDD2', iconBg: '#EDFAF3', iconColor: GREEN_DARK,
     },
   ];
 
@@ -150,7 +110,6 @@ function PainBlock() {
             Сегодня стоимость привлечения одного клиента постоянно растёт, а обычные объявления в ленте люди просто пролистывают.
           </p>
         </div>
-
         <div className="grid sm:grid-cols-2 gap-5 max-w-4xl mx-auto">
           {pains.map(p => (
             <div key={p.title} className="rounded-2xl p-6 border card-lift" style={{ background: p.bg, borderColor: p.border }}>
@@ -180,10 +139,9 @@ function SolutionBlock() {
             <span className="green-text">уже собраны здесь</span>
           </h2>
           <p className="text-[#6B7280] text-lg max-w-2xl mx-auto">
-            Выбирайте сообщества, где живёт ваша аудитория. Будь то профессиональный клуб или локальное комьюнити -мы приводим вас к вашей целевой аудитории.
+            Выбирайте сообщества, где живёт ваша аудитория. Будь то профессиональный клуб или локальное комьюнити - мы приводим вас к вашей целевой аудитории.
           </p>
         </div>
-
         <div className="rounded-2xl overflow-hidden" style={{ background: 'linear-gradient(140deg, #1D3828 0%, #0F2218 100%)' }}>
           <div className="grid md:grid-cols-2 gap-0">
             <div className="p-10 lg:p-14 flex flex-col justify-center">
@@ -191,7 +149,7 @@ function SolutionBlock() {
                 <Target size={28} className="text-white" />
               </div>
               <h3 className="text-2xl font-black text-white mb-4 leading-tight">
-                Это не просто объявление -это прямой доступ к лояльной аудитории
+                Это не просто объявление - это прямой доступ к лояльной аудитории
               </h3>
               <p className="text-white/60 leading-relaxed mb-8">
                 Без посредников, без лишних затрат. Ваше предложение попадает к людям, которые уже объединены общим интересом и доверяют рекомендациям внутри своего круга.
@@ -246,36 +204,11 @@ function ResultBlock() {
             <span className="green-text">общение в продажи</span>
           </h2>
         </div>
-
         <div className="grid md:grid-cols-3 gap-6">
           {[
-            {
-              icon: <TrendingUp size={22} />,
-              stat: 'Ниже CAC',
-              title: 'Снижение стоимости привлечения',
-              desc: 'Вы платите за доступ к уже прогретой аудитории, а не за холодные клики. Стоимость нового клиента падает.',
-              color: GREEN,
-              bg: '#EDFAF3',
-              border: '#B6EDD2',
-            },
-            {
-              icon: <Target size={22} />,
-              stat: 'Выше CR',
-              title: 'Высокая конверсия в покупку',
-              desc: 'Предложение внутри сообщества конвертирует в разы лучше баннерной и таргетированной рекламы.',
-              color: '#4338CA',
-              bg: '#EEF2FF',
-              border: '#C7D2FE',
-            },
-            {
-              icon: <Users size={22} />,
-              stat: 'LTV растёт',
-              title: 'Клиенты становятся постоянными',
-              desc: 'Люди из сообществ приходят с доверием. Они возвращаются, рекомендуют и остаются с вами надолго.',
-              color: '#C2410C',
-              bg: '#FFF7ED',
-              border: '#FED7AA',
-            },
+            { icon: <TrendingUp size={22} />, stat: 'Ниже CAC', title: 'Снижение стоимости привлечения', desc: 'Вы платите за доступ к уже прогретой аудитории, а не за холодные клики. Стоимость нового клиента падает.', color: GREEN, bg: '#EDFAF3', border: '#B6EDD2' },
+            { icon: <Target size={22} />, stat: 'Выше CR', title: 'Высокая конверсия в покупку', desc: 'Предложение внутри сообщества конвертирует в разы лучше баннерной и таргетированной рекламы.', color: '#4338CA', bg: '#EEF2FF', border: '#C7D2FE' },
+            { icon: <Users size={22} />, stat: 'LTV растёт', title: 'Клиенты становятся постоянными', desc: 'Люди из сообществ приходят с доверием. Они возвращаются, рекомендуют и остаются с вами надолго.', color: '#C2410C', bg: '#FFF7ED', border: '#FED7AA' },
           ].map(item => (
             <div key={item.title} className="rounded-2xl p-7 border card-lift" style={{ background: item.bg, borderColor: item.border }}>
               <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: item.color, color: 'white' }}>
@@ -294,36 +227,9 @@ function ResultBlock() {
 
 function CommunityLedGrowth() {
   const pillars = [
-    {
-      icon: <Target size={20} />,
-      title: 'Точность',
-      desc: 'Вы бьёте точно в цель. Никакого "слива" бюджета на тех, кому ваш продукт не интересен. Только нужная аудитория.',
-      stat: '3–5×',
-      statLabel: 'выше конверсия',
-      color: '#4338CA',
-      bg: '#EEF2FF',
-      border: '#C7D2FE',
-    },
-    {
-      icon: <Shield size={20} />,
-      title: 'Доверие',
-      desc: 'Участники сообществ активно следят за предложениями, бонусами и штампиками. Ваше предложение попадает к людям, которые уже привыкли взаимодействовать с брендами внутри платформы.',
-      stat: '-40%',
-      statLabel: 'ниже CAC',
-      color: GREEN_DARK,
-      bg: '#EDFAF3',
-      border: '#B6EDD2',
-    },
-    {
-      icon: <TrendingUp size={20} />,
-      title: 'Экономия',
-      desc: 'Стоимость привлечения одного реального покупателя через сообщество в разы ниже, чем в социальных сетях.',
-      stat: '+60%',
-      statLabel: 'выше LTV',
-      color: '#C2410C',
-      bg: '#FFF7ED',
-      border: '#FED7AA',
-    },
+    { icon: <Target size={20} />, title: 'Точность', desc: 'Вы бьёте точно в цель. Никакого "слива" бюджета на тех, кому ваш продукт не интересен. Только нужная аудитория.', stat: '3–5×', statLabel: 'выше конверсия', color: '#4338CA', bg: '#EEF2FF', border: '#C7D2FE' },
+    { icon: <Shield size={20} />, title: 'Доверие', desc: 'Участники сообществ активно следят за предложениями, бонусами и штампиками. Ваше предложение попадает к людям, которые уже привыкли взаимодействовать с брендами внутри платформы.', stat: '-40%', statLabel: 'ниже CAC', color: GREEN_DARK, bg: '#EDFAF3', border: '#B6EDD2' },
+    { icon: <TrendingUp size={20} />, title: 'Экономия', desc: 'Стоимость привлечения одного реального покупателя через сообщество в разы ниже, чем в социальных сетях.', stat: '+60%', statLabel: 'выше LTV', color: '#C2410C', bg: '#FFF7ED', border: '#FED7AA' },
   ];
 
   return (
@@ -353,7 +259,7 @@ function CommunityLedGrowth() {
               </h3>
               <p className="text-white/60 leading-relaxed mb-6">
                 92% потребителей доверяют предложениям внутри сообществ больше, чем прямым объявлениям.
-                Бренды, которые встраиваются в контекст сообщества, получают аудиторию с уже сформированным доверием, вместо того чтобы его строить с нуля.
+                Бренды, которые встраиваются в контекст сообщества, получают аудиторию с уже сформированным доверием.
               </p>
               <div className="flex flex-wrap gap-3">
                 {['Меньше бюджет', 'Выше конверсия', 'Органический рост', 'Лояльная аудитория'].map(tag => (
@@ -417,7 +323,6 @@ function TwoWaysBlock() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {/* Своё сообщество */}
           <div className="rounded-2xl overflow-hidden border border-[#B6EDD2]" style={{ background: 'linear-gradient(160deg, #F2FDF7 0%, #EDFAF3 100%)' }}>
             <div className="p-8">
               <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5" style={{ background: GREEN, color: 'white' }}>
@@ -452,7 +357,6 @@ function TwoWaysBlock() {
             </div>
           </div>
 
-          {/* Чужие сообщества */}
           <div className="rounded-2xl overflow-hidden border border-[#C7D2FE]" style={{ background: 'linear-gradient(160deg, #F8F9FF 0%, #EEF2FF 100%)' }}>
             <div className="p-8">
               <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5" style={{ background: '#4338CA', color: 'white' }}>
@@ -492,112 +396,36 @@ function TwoWaysBlock() {
   );
 }
 
+// ─── PAGE: БИЗНЕС ─────────────────────────────────────────────────────────────
 
-export function SagiLanding() {
+function BusinessPage() {
   return (
-    <div className="min-h-screen bg-white text-[#111827]" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif" }}>
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-
-        .btn-green {
-          background: ${GREEN};
-          color: #fff;
-          transition: background 0.18s;
-        }
-        .btn-green:hover { background: ${GREEN_DARK}; }
-
-        .badge-green {
-          background: #EDFAF3;
-          color: ${GREEN_DARK};
-          border: 1px solid #B6EDD2;
-        }
-        .icon-green {
-          background: #EDFAF3;
-          color: ${GREEN_DARK};
-        }
-        .card-border { border: 1.5px solid #F0F0F0; }
-        .card-border:hover { border-color: #B6EDD2; }
-        .card-lift { transition: transform 0.2s, box-shadow 0.2s; }
-        .card-lift:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(42,187,111,0.10); }
-
-        .hero-bg { background: linear-gradient(160deg, #F2FDF7 0%, #FFFFFF 55%); }
-        .section-alt { background: #FAFAFA; }
-
-        .price-card-featured {
-          border: 2px solid ${GREEN} !important;
-          box-shadow: 0 16px 48px rgba(42,187,111,0.12);
-        }
-        .divider { background: linear-gradient(90deg, transparent, #E8E8E8, transparent); }
-
-        .cta-card {
-          background: linear-gradient(140deg, #1D3828 0%, #0F2218 100%);
-        }
-        .green-text { color: ${GREEN}; }
-
-        .community-card {
-          background: white;
-          border-radius: 20px;
-          padding: 24px;
-          box-shadow: 0 32px 80px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.06);
-        }
-      `}</style>
-
-      {/* ─── NAV ─── */}
-      <nav className="sticky top-0 z-50 bg-white border-b border-[#F0F0F0]">
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2.5">
-            <span className="text-[22px] font-black tracking-tight text-[#111827]">sagi</span>
-            <span className="text-xs font-semibold text-[#2ABB6F] border border-[#B6EDD2] bg-[#EDFAF3] rounded-full px-2.5 py-0.5 ml-1">Community</span>
-          </div>
-          <div className="hidden md:flex items-center gap-8">
-            {[['Как это работает','#КакРаботает'],['Community Led Growth','#CLG'],['Тарифы','#Тарифы']].map(([l,h]) => (
-              <a key={l} href={h} className="text-sm text-[#6B7280] hover:text-[#111827] transition font-medium">{l}</a>
-            ))}
-          </div>
-          <a href="#Тарифы" className="btn-green hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm">
-            Найти своих клиентов <ArrowRight size={14} />
-          </a>
-        </div>
-      </nav>
-
-      {/* ══════════════════════════
-          HERO
-      ══════════════════════════ */}
+    <>
       <section className="hero-bg pt-20 pb-28 px-6 overflow-hidden">
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-16">
-
-          {/* Left */}
           <div className="flex-1 text-center lg:text-left">
             <span className="badge-green inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-7">
               <Zap size={11} />
               Платформа сообществ
             </span>
-
             <h1 className="text-5xl lg:text-[3.6rem] font-black leading-[1.08] tracking-tight mb-6 text-[#111827]">
               Ваши клиенты уже здесь.<br />
               <span className="green-text">Экономьте время</span><br />
               <span className="green-text">на поиске</span> и деньги на продвижении
             </h1>
-
             <p className="text-lg text-[#6B7280] max-w-xl mx-auto lg:mx-0 leading-relaxed mb-10">
               Участники сообществ уже мотивированы: у них есть бонусные уровни, кэшбэк и штампики. Ваше предложение они увидят и воспользуются.
             </p>
-
             <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-14">
-              <a href="#Тарифы" className="btn-green inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-bold text-base shadow-md">
+              <a href="#БизнесТарифы" className="btn-green inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-bold text-base shadow-md">
                 Найти своих клиентов в Sagi <Search size={17} />
               </a>
-              <a href="#CLG" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-bold text-base border-2 border-[#E5E7EB] text-[#374151] hover:border-[#B6EDD2] hover:text-[#1E9E5A] transition">
+              <a href="#БизнесCLG" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-bold text-base border-2 border-[#E5E7EB] text-[#374151] hover:border-[#B6EDD2] hover:text-[#1E9E5A] transition">
                 Как это работает <ChevronRight size={17} />
               </a>
             </div>
-
             <div className="flex flex-wrap justify-center lg:justify-start gap-x-10 gap-y-4">
-              {[
-                { v: '1000+', l: 'сообществ' },
-                { v: '3 млн+', l: 'участников в сети' },
-                { v: '7 лет', l: 'на рынке' },
-              ].map(s => (
+              {[{ v: '1000+', l: 'сообществ' }, { v: '3 млн+', l: 'участников в сети' }, { v: '7 лет', l: 'на рынке' }].map(s => (
                 <div key={s.l} className="text-center lg:text-left">
                   <div className="text-2xl font-black green-text">{s.v}</div>
                   <div className="text-xs text-[#9CA3AF] mt-0.5">{s.l}</div>
@@ -606,13 +434,10 @@ export function SagiLanding() {
             </div>
           </div>
 
-          {/* Community card mockup */}
           <div className="flex-shrink-0 relative">
             <div className="relative w-[340px] mx-auto">
               <div className="absolute -inset-8 rounded-full opacity-30" style={{ background: `radial-gradient(ellipse, ${GREEN}55, transparent 70%)` }} />
-
               <div className="community-card relative z-10">
-                {/* Header */}
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-12 h-12 rounded-2xl flex-shrink-0 overflow-hidden">
                     <img src="/brands/hani.jpeg" alt="hani" className="w-full h-full object-cover" />
@@ -623,25 +448,14 @@ export function SagiLanding() {
                   </div>
                   <div className="ml-auto flex-shrink-0 text-xs font-semibold text-[#9CA3AF]">4 партнёра</div>
                 </div>
-
-                {/* Feature buttons */}
                 <div className="grid grid-cols-2 gap-2 mb-4">
-                  {[
-                    { label: 'Бонусы', active: true },
-                    { label: 'Офферы', active: false },
-                    { label: 'Кросс', active: false },
-                    { label: 'Штампики', active: false },
-                  ].map(btn => (
+                  {[{ label: 'Бонусы', active: true }, { label: 'Предложения', active: false }, { label: 'Кросс', active: false }, { label: 'Штампики', active: false }].map(btn => (
                     <div key={btn.label} className="flex items-center justify-center gap-1.5 py-2 rounded-xl text-xs font-semibold"
-                      style={btn.active
-                        ? { background: '#F5A623', color: 'white' }
-                        : { background: '#F3F4F6', color: '#6B7280' }}>
+                      style={btn.active ? { background: '#F5A623', color: 'white' } : { background: '#F3F4F6', color: '#6B7280' }}>
                       {btn.label}
                     </div>
                   ))}
                 </div>
-
-                {/* Level bar */}
                 <div className="rounded-xl p-3 mb-4" style={{ background: '#FFFBF0', border: '1px solid #FDE68A' }}>
                   <div className="flex items-center justify-between mb-1.5">
                     <div className="flex items-center gap-1.5">
@@ -655,22 +469,19 @@ export function SagiLanding() {
                   </div>
                   <div className="text-[10px] text-[#9CA3AF] mt-1.5">Ещё 1 240 бонусов до Gold - кэшбэк вырастет до 7%</div>
                 </div>
-
                 <button className="w-full btn-green py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2">
                   Разместить предложение <ArrowRight size={15} />
                 </button>
               </div>
-
               <div className="absolute -right-14 top-8 bg-white rounded-2xl shadow-xl px-3 py-2.5 flex items-center gap-2.5 border border-[#F0F0F0] z-20">
                 <div className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: GREEN }}>
                   <CheckCircle size={15} className="text-white" />
                 </div>
                 <div>
-                  <div className="text-[11px] font-bold text-[#111827]">Оффер отправлен</div>
+                  <div className="text-[11px] font-bold text-[#111827]">Предложение отправлено</div>
                   <div className="text-[9px] text-[#9CA3AF]">Верифицировано Sagi</div>
                 </div>
               </div>
-
               <div className="absolute -left-16 bottom-10 bg-white rounded-2xl shadow-xl px-3 py-2.5 flex items-center gap-2.5 border border-[#F0F0F0] z-20">
                 <div className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0 bg-[#EEF2FF]">
                   <TrendingUp size={15} style={{ color: '#4338CA' }} />
@@ -686,36 +497,21 @@ export function SagiLanding() {
       </section>
 
       <div className="divider h-px" />
-
       <PainBlock />
-
       <div className="divider h-px" />
-
       <SolutionBlock />
-
       <div className="divider h-px" />
-
-      <div id="CLG">
-        <CommunityLedGrowth />
-      </div>
-
+      <div id="БизнесCLG"><CommunityLedGrowth /></div>
       <div className="divider h-px" />
-
       <ResultBlock />
-
+      <div className="divider h-px" />
+      <TwoWaysBlock />
+      <div className="divider h-px" />
+      <HowItWorks />
       <div className="divider h-px" />
 
-
-      <div id="КакРаботает">
-        <HowItWorks />
-      </div>
-
-      <div className="divider h-px" />
-
-      {/* ══════════════════════════
-          FEATURES -ADVERTISERS ONLY
-      ══════════════════════════ */}
-      <section id="Возможности" className="py-24 px-6 section-alt">
+      {/* Features */}
+      <section className="py-24 px-6 section-alt">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <span className="badge-green inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-4">
@@ -726,16 +522,15 @@ export function SagiLanding() {
               Полный набор инструментов, чтобы найти нужное сообщество и разместить предложение с измеримым результатом.
             </p>
           </div>
-
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
               { icon: <Search size={17} />, t: 'Каталог сообществ с фильтрами', d: 'Поиск по нише, городу, размеру и уровню активности. Находите именно ту аудиторию, которая вам нужна.' },
-              { icon: <Target size={17} />, t: 'Офферы для участников', d: 'Размещайте специальные предложения напрямую в ленте сообщества. Скидки, акции, эксклюзивные условия.' },
+              { icon: <Target size={17} />, t: 'Предложения для участников', d: 'Размещайте специальные предложения напрямую в ленте сообщества. Скидки, акции, эксклюзивные условия.' },
               { icon: <Share2 size={17} />, t: 'Кросс-продвижение', d: 'Предлагайте свои условия участникам смежных сообществ. Расширяйте охват через партнёрские базы.' },
               { icon: <Star size={17} />, t: 'Бонусы и штампики', d: 'Интегрируйтесь в механики лояльности сообщества: начисляйте бонусы и штампики за покупки у вас.' },
               { icon: <Globe size={17} />, t: 'Фильтры по интересам и геолокации', d: 'Сообщества организованы по интересам и городу. Географический таргетинг без лишних показов.' },
               { icon: <BarChart3 size={17} />, t: 'Аналитика размещений', d: 'Охват, просмотры и вовлечённость по каждому предложению в реальном времени.' },
-              { icon: <TrendingUp size={17} />, t: 'ROI по каждому каналу', d: 'Понятные данные о возврате инвестиций — сравнивайте эффективность разных сообществ.' },
+              { icon: <TrendingUp size={17} />, t: 'ROI по каждому каналу', d: 'Понятные данные о возврате инвестиций - сравнивайте эффективность разных сообществ.' },
               { icon: <Users size={17} />, t: 'Мотивированная аудитория', d: 'Участники имеют бонусные уровни и кэшбэк. Они активно следят за предложениями и реагируют на них.' },
               { icon: <Shield size={17} />, t: 'Верифицированные сообщества', d: 'Только реальные активные сообщества с подтверждённой и вовлечённой аудиторией.' },
             ].map(item => (
@@ -753,19 +548,13 @@ export function SagiLanding() {
 
       <div className="divider h-px" />
 
-      {/* ══════════════════════════
-          WHO WE ARE
-      ══════════════════════════ */}
+      {/* WHO WE ARE */}
       <section className="py-24 bg-white overflow-hidden">
         <style>{`
-          @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-          }
+          @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
           .marquee-track { animation: marquee 22s linear infinite; }
           .marquee-track:hover { animation-play-state: paused; }
         `}</style>
-
         <div className="max-w-6xl mx-auto px-6 mb-16">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="flex-1 text-center lg:text-left">
@@ -774,16 +563,11 @@ export function SagiLanding() {
                 <span className="text-sm font-semibold text-[#2ABB6F] border border-[#B6EDD2] bg-[#EDFAF3] rounded-full px-3.5 py-1">Community</span>
               </div>
               <p className="text-[#6B7280] text-lg leading-relaxed max-w-md mx-auto lg:mx-0">
-                Ведущая платформа сообществ в Казахстане и СНГ. Помогаем бизнесам находить свою аудиторию и размещать предложения там, где она находится.
+                Ведущая платформа сообществ в Казахстане. Помогаем бизнесам находить свою аудиторию и размещать предложения там, где она находится.
               </p>
             </div>
-
             <div className="flex gap-8 lg:gap-12">
-              {[
-                { v: '1000+', l: 'сообществ на платформе' },
-                { v: '3 млн+', l: 'участников в сети' },
-                { v: '7 лет', l: 'на рынке' },
-              ].map(s => (
+              {[{ v: '1000+', l: 'сообществ на платформе' }, { v: '3 млн+', l: 'участников в сети' }, { v: '7 лет', l: 'на рынке' }].map(s => (
                 <div key={s.l} className="text-center">
                   <div className="text-4xl font-black green-text leading-none">{s.v}</div>
                   <div className="text-sm text-[#9CA3AF] mt-1.5">{s.l}</div>
@@ -792,7 +576,6 @@ export function SagiLanding() {
             </div>
           </div>
         </div>
-
         <div className="border-t border-b border-[#F0F0F0] py-6 bg-[#FAFAFA]">
           <div className="text-xs font-bold uppercase tracking-widest text-[#C4C4C4] text-center mb-6">Нам доверяют</div>
           <div className="max-w-4xl mx-auto overflow-hidden">
@@ -800,12 +583,7 @@ export function SagiLanding() {
               {[...Array(2)].map((_, repeat) =>
                 [1,2,3,4,5,6,7,8].map(i => (
                   <div key={`${repeat}-${i}`} className="w-32 h-24 rounded-xl overflow-hidden bg-white border border-[#EFEFEF] flex items-center justify-center flex-shrink-0 shadow-sm">
-                    <img
-                      src={`/brands/brand${i}.jpeg`}
-                      alt={`brand ${i}`}
-                      className="w-full h-full object-cover"
-                      draggable={false}
-                    />
+                    <img src={`/brands/brand${i}.jpeg`} alt={`brand ${i}`} className="w-full h-full object-cover" draggable={false} />
                   </div>
                 ))
               )}
@@ -816,10 +594,8 @@ export function SagiLanding() {
 
       <div className="divider h-px" />
 
-      {/* ══════════════════════════
-          PRICING
-      ══════════════════════════ */}
-      <section id="Тарифы" className="py-24 px-6 bg-white">
+      {/* Pricing */}
+      <section id="БизнесТарифы" className="py-24 px-6 bg-white">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-14">
             <span className="badge-green inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-4">
@@ -830,7 +606,6 @@ export function SagiLanding() {
               Доступ к каталогу сообществ и инструментам для размещения предложений.
             </p>
           </div>
-
           <div className="price-card-featured card-lift rounded-2xl p-8 bg-white">
             <div className="flex items-center gap-2 mb-4">
               <div className="icon-green w-8 h-8 rounded-xl flex items-center justify-center">
@@ -855,7 +630,6 @@ export function SagiLanding() {
               Найти своих клиентов в Sagi <ArrowRight size={17} />
             </a>
           </div>
-
           <p className="text-center text-sm text-[#9CA3AF] mt-6">
             Корпоративные тарифы и пакеты по запросу на sagibonus@gmail.com
           </p>
@@ -864,9 +638,7 @@ export function SagiLanding() {
 
       <div className="divider h-px" />
 
-      {/* ══════════════════════════
-          CTA FOOTER
-      ══════════════════════════ */}
+      {/* CTA */}
       <footer className="py-24 px-6 bg-white">
         <div className="max-w-4xl mx-auto text-center">
           <div className="cta-card rounded-3xl p-12 sm:p-16 relative overflow-hidden">
@@ -894,6 +666,496 @@ export function SagiLanding() {
           </div>
         </div>
       </footer>
+    </>
+  );
+}
+
+// ─── PAGE: АДМИНИСТРАТОР ──────────────────────────────────────────────────────
+
+function AdminPage() {
+  const INDIGO = '#4F46E5';
+  const INDIGO_DARK = '#3730A3';
+
+  return (
+    <>
+      {/* Hero */}
+      <section className="pt-20 pb-28 px-6 overflow-hidden" style={{ background: 'linear-gradient(160deg, #F5F3FF 0%, #FFFFFF 55%)' }}>
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+          <div className="flex-1 text-center lg:text-left">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-7" style={{ background: '#EDE9FE', color: INDIGO_DARK, border: '1px solid #C4B5FD' }}>
+              <Building2 size={11} />
+              Для администраторов сообществ
+            </span>
+            <h1 className="text-5xl lg:text-[3.6rem] font-black leading-[1.08] tracking-tight mb-6 text-[#111827]">
+              Для бизнеса важно<br />
+              <span style={{ color: INDIGO }}>как воздух</span> собирать<br />вокруг себя комьюнити
+            </h1>
+            <p className="text-lg text-[#6B7280] max-w-xl mx-auto lg:mx-0 leading-relaxed mb-10">
+              Запустите программу лояльности, подключите партнёров и сделайте своё сообщество источником ценности для участников и дохода для себя.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-14">
+              <a href="mailto:sagibonus@gmail.com" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-bold text-base shadow-md text-white" style={{ background: INDIGO }}>
+                Создать сообщество <ArrowRight size={17} />
+              </a>
+              <a href="#АдминКакРаботает" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-bold text-base border-2 border-[#E5E7EB] text-[#374151] hover:border-[#C4B5FD] transition" style={{}}>
+                Как это устроено <ChevronRight size={17} />
+              </a>
+            </div>
+            <div className="flex flex-wrap justify-center lg:justify-start gap-x-10 gap-y-4">
+              {[{ v: '1000+', l: 'сообществ на платформе' }, { v: '3 млн+', l: 'активных участников' }, { v: '500+', l: 'партнёрских интеграций' }].map(s => (
+                <div key={s.l} className="text-center lg:text-left">
+                  <div className="text-2xl font-black" style={{ color: INDIGO }}>{s.v}</div>
+                  <div className="text-xs text-[#9CA3AF] mt-0.5">{s.l}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Admin dashboard mockup */}
+          <div className="flex-shrink-0 relative">
+            <div className="relative w-[340px] mx-auto">
+              <div className="absolute -inset-8 rounded-full opacity-20" style={{ background: `radial-gradient(ellipse, ${INDIGO}88, transparent 70%)` }} />
+              <div className="community-card relative z-10">
+                <div className="flex items-center justify-between mb-5">
+                  <div>
+                    <div className="text-sm font-black text-[#111827]">Моё сообщество</div>
+                    <div className="text-xs text-[#9CA3AF]">Панель управления</div>
+                  </div>
+                  <div className="px-2.5 py-1 rounded-full text-xs font-bold text-white" style={{ background: GREEN }}>Активно</div>
+                </div>
+                <div className="grid grid-cols-2 gap-3 mb-5">
+                  {[{ v: '1 248', l: 'участников', color: INDIGO }, { v: '+34', l: 'за неделю', color: GREEN }, { v: '87%', l: 'вовлечённость', color: '#D97706' }, { v: '6 партнёров', l: 'активны сейчас', color: '#DC2626' }].map(s => (
+                    <div key={s.l} className="rounded-xl p-3 bg-[#FAFAFA] border border-[#F0F0F0]">
+                      <div className="text-base font-black" style={{ color: s.color }}>{s.v}</div>
+                      <div className="text-[10px] text-[#9CA3AF]">{s.l}</div>
+                    </div>
+                  ))}
+                </div>
+                <div className="rounded-xl p-3 mb-4" style={{ background: '#F5F3FF', border: '1px solid #C4B5FD' }}>
+                  <div className="text-xs font-bold text-[#4F46E5] mb-2">Новый запрос от партнёра</div>
+                  <div className="text-xs text-[#374151]">Кафе «Sunrise» хочет разместить предложение для ваших участников</div>
+                  <div className="flex gap-2 mt-3">
+                    <button className="flex-1 py-1.5 rounded-lg text-xs font-bold text-white" style={{ background: INDIGO }}>Принять</button>
+                    <button className="flex-1 py-1.5 rounded-lg text-xs font-semibold text-[#6B7280] bg-[#F3F4F6]">Отклонить</button>
+                  </div>
+                </div>
+                <button className="w-full py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2 text-white" style={{ background: INDIGO }}>
+                  Открыть дашборд <ArrowRight size={15} />
+                </button>
+              </div>
+              <div className="absolute -right-14 top-8 bg-white rounded-2xl shadow-xl px-3 py-2.5 flex items-center gap-2.5 border border-[#F0F0F0] z-20">
+                <div className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: INDIGO }}>
+                  <DollarSign size={15} className="text-white" />
+                </div>
+                <div>
+                  <div className="text-[11px] font-bold text-[#111827]">Доход +45 000 ₸</div>
+                  <div className="text-[9px] text-[#9CA3AF]">от партнёров за месяц</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="divider h-px" />
+
+      {/* Admin pains */}
+      <section className="py-24 px-6 section-alt">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-4" style={{ background: '#EDE9FE', color: INDIGO_DARK, border: '1px solid #C4B5FD' }}>
+              С чем вы сталкиваетесь
+            </span>
+            <h2 className="text-4xl font-black text-[#111827] mb-4">
+              Управлять сообществом<br />
+              <span style={{ color: INDIGO }}>сложнее, чем кажется</span>
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-5 max-w-4xl mx-auto">
+            {[
+              { icon: <Users size={20} />, title: 'Участники теряют интерес', desc: 'Без механик удержания вовлечённость падает. Люди вступают и забывают про сообщество через неделю.', bg: '#FFF8F8', border: '#FED7D7', iconBg: '#FEE2E2', iconColor: '#DC2626' },
+              { icon: <DollarSign size={20} />, title: 'Непонятно как монетизировать', desc: 'Вы вкладываете время и силы в сообщество, но нет понятного способа зарабатывать на своей аудитории.', bg: '#FFFBF0', border: '#FDE68A', iconBg: '#FEF3C7', iconColor: '#D97706' },
+              { icon: <Settings size={20} />, title: 'Всё делается вручную', desc: 'Каждая акция, рассылка, отчёт — вручную. Инструментов нет, всё разбросано по разным приложениям.', bg: '#F5F3FF', border: '#C4B5FD', iconBg: '#EDE9FE', iconColor: INDIGO },
+            ].map(p => (
+              <div key={p.title} className="rounded-2xl p-6 border card-lift" style={{ background: p.bg, borderColor: p.border }}>
+                <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style={{ background: p.iconBg }}>
+                  <div style={{ color: p.iconColor }}>{p.icon}</div>
+                </div>
+                <h3 className="text-base font-black text-[#111827] mb-2">{p.title}</h3>
+                <p className="text-sm text-[#6B7280] leading-relaxed">{p.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div className="divider h-px" />
+
+      {/* Admin features */}
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-14">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-4" style={{ background: '#EDE9FE', color: INDIGO_DARK, border: '1px solid #C4B5FD' }}>
+              Что вы получаете
+            </span>
+            <h2 className="text-4xl font-black text-[#111827] mb-4">Всё для управления<br /><span style={{ color: INDIGO }}>и монетизации сообщества</span></h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { icon: <Star size={17} />, t: 'Программа лояльности', d: 'Бонусы, штампики, кэшбэк и уровни. Настройте под свой бренд — участники получают ценность, вы — их лояльность.' },
+              { icon: <DollarSign size={17} />, t: 'Монетизация через партнёров', d: 'Бизнесы платят за доступ к вашей аудитории. Вы принимаете или отклоняете каждый запрос на размещение.' },
+              { icon: <BarChart3 size={17} />, t: 'Аналитика активности', d: 'Кто активен, что работает, как растёт сообщество. Все данные в одном месте в реальном времени.' },
+              { icon: <Bell size={17} />, t: 'Лента и уведомления', d: 'Публикуйте новости, акции и события. Участники получают пуш-уведомления и остаются в курсе.' },
+              { icon: <Award size={17} />, t: 'Геймификация и уровни', d: 'Bronze, Silver, Gold. Чем активнее участник — тем больше привилегий. Это мотивирует возвращаться.' },
+              { icon: <Shield size={17} />, t: 'Модерация и контроль', d: 'Вы управляете тем, кто и что видит. Верифицируйте участников и контролируйте предложения партнёров.' },
+            ].map(item => (
+              <div key={item.t} className="flex gap-4 p-5 rounded-2xl border card-lift bg-white" style={{ borderColor: '#E0E7FF' }}>
+                <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: '#EDE9FE', color: INDIGO }}>
+                  {item.icon}
+                </div>
+                <div>
+                  <div className="text-sm font-bold text-[#111827] mb-1">{item.t}</div>
+                  <div className="text-xs text-[#6B7280] leading-relaxed">{item.d}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div className="divider h-px" />
+
+      {/* Admin how it works */}
+      <section id="АдминКакРаботает" className="py-24 px-6 section-alt">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-4" style={{ background: '#EDE9FE', color: INDIGO_DARK, border: '1px solid #C4B5FD' }}>
+              Как это работает
+            </span>
+            <h2 className="text-4xl font-black text-[#111827] mb-4">
+              От создания<br />
+              <span style={{ color: INDIGO }}>до первого дохода</span>
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { num: '01', title: 'Создайте сообщество', desc: 'Зарегистрируйте своё сообщество на платформе. Добавьте описание, фото и категорию. Это займёт 10 минут.', color: '#EDE9FE', border: '#C4B5FD', iconColor: INDIGO },
+              { num: '02', title: 'Настройте программу лояльности', desc: 'Выберите механики: бонусы, штампики, кэшбэк, уровни. Настройте правила начисления под свой бренд.', color: '#EDFAF3', border: '#B6EDD2', iconColor: GREEN_DARK },
+              { num: '03', title: 'Принимайте партнёров и зарабатывайте', desc: 'Бизнесы сами находят ваше сообщество и отправляют запросы на размещение. Вы принимаете — и получаете доход.', color: '#FFFBF0', border: '#FDE68A', iconColor: '#D97706' },
+            ].map(s => (
+              <div key={s.num} className="rounded-2xl p-7 border" style={{ background: s.color, borderColor: s.border }}>
+                <div className="flex items-center justify-between mb-5">
+                  <div className="w-11 h-11 rounded-xl flex items-center justify-center text-white font-black text-lg" style={{ background: s.iconColor }}>
+                    {s.num}
+                  </div>
+                  <span className="text-4xl font-black" style={{ color: s.iconColor, opacity: 0.15 }}>{s.num}</span>
+                </div>
+                <h3 className="text-lg font-black text-[#111827] mb-2">{s.title}</h3>
+                <p className="text-sm text-[#6B7280] leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div className="divider h-px" />
+
+      {/* Admin CTA */}
+      <footer className="py-24 px-6 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="rounded-3xl p-12 sm:p-16 relative overflow-hidden" style={{ background: 'linear-gradient(140deg, #1e1b4b 0%, #312e81 100%)' }}>
+            <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-white/5" />
+            <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-white/5" />
+            <div className="relative">
+              <div className="flex items-center justify-center gap-2 mb-8">
+                <span className="text-white text-3xl font-black tracking-tight">sagi</span>
+                <span className="text-sm font-semibold border border-white/20 bg-white/10 text-white/80 rounded-full px-3 py-1">Community</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-black text-white mb-5 leading-tight">
+                Запустите своё сообщество<br />и монетизируйте его
+              </h2>
+              <p className="text-white/60 text-lg max-w-xl mx-auto mb-10 leading-relaxed">
+                Создайте пространство для своих клиентов, настройте лояльность и начните зарабатывать на партнёрских размещениях.
+              </p>
+              <a href="mailto:sagibonus@gmail.com" className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-xl font-bold text-base shadow-md text-white" style={{ background: INDIGO }}>
+                Создать сообщество <ArrowRight size={17} />
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </>
+  );
+}
+
+// ─── PAGE: УЧАСТНИК ───────────────────────────────────────────────────────────
+
+function UserPage() {
+  const AMBER = '#D97706';
+  const AMBER_BG = '#FFFBEB';
+
+  return (
+    <>
+      {/* Hero */}
+      <section className="pt-20 pb-28 px-6 overflow-hidden" style={{ background: 'linear-gradient(160deg, #FFFBEB 0%, #FFFFFF 55%)' }}>
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+          <div className="flex-1 text-center lg:text-left">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-7" style={{ background: '#FEF3C7', color: AMBER, border: '1px solid #FDE68A' }}>
+              <Gift size={11} />
+              Для участников сообществ
+            </span>
+            <h1 className="text-5xl lg:text-[3.6rem] font-black leading-[1.08] tracking-tight mb-6 text-[#111827]">
+              Бонусы и привилегии<br />
+              <span style={{ color: AMBER }}>в любимых местах</span>
+            </h1>
+            <p className="text-lg text-[#6B7280] max-w-xl mx-auto lg:mx-0 leading-relaxed mb-10">
+              Вступай в сообщества кафе, магазинов и сервисов своего города. Получай кэшбэк, копи штампики и открывай эксклюзивные предложения.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-14">
+              <a href="mailto:sagibonus@gmail.com" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-bold text-base shadow-md text-white" style={{ background: AMBER }}>
+                Найти сообщества рядом <MapPin size={17} />
+              </a>
+            </div>
+            <div className="flex flex-wrap justify-center lg:justify-start gap-x-10 gap-y-4">
+              {[{ v: '1000+', l: 'сообществ на платформе' }, { v: '3 млн+', l: 'участников' }, { v: 'до 15%', l: 'кэшбэк' }].map(s => (
+                <div key={s.l} className="text-center lg:text-left">
+                  <div className="text-2xl font-black" style={{ color: AMBER }}>{s.v}</div>
+                  <div className="text-xs text-[#9CA3AF] mt-0.5">{s.l}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* User card mockup */}
+          <div className="flex-shrink-0 relative">
+            <div className="relative w-[340px] mx-auto">
+              <div className="absolute -inset-8 rounded-full opacity-20" style={{ background: `radial-gradient(ellipse, ${AMBER}88, transparent 70%)` }} />
+              <div className="community-card relative z-10">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-12 h-12 rounded-2xl flex-shrink-0 overflow-hidden">
+                    <img src="/brands/hani.jpeg" alt="hani" className="w-full h-full object-cover" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-black text-[#111827]">hani</div>
+                    <div className="text-xs text-[#9CA3AF]">Кондитерские-кофейни · Астана</div>
+                  </div>
+                </div>
+                <div className="rounded-xl p-4 mb-4" style={{ background: '#FFFBF0', border: '1px solid #FDE68A' }}>
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center gap-1.5">
+                      <Star size={14} style={{ color: '#F5A623' }} />
+                      <span className="text-sm font-black text-[#111827]">Silver</span>
+                    </div>
+                    <span className="text-xs text-[#9CA3AF]">760 / 2000 бонусов</span>
+                  </div>
+                  <div className="h-2.5 rounded-full bg-[#F3F4F6] mb-2">
+                    <div className="h-2.5 rounded-full" style={{ width: '38%', background: '#F5A623' }} />
+                  </div>
+                  <div className="text-[10px] text-[#9CA3AF]">1 240 бонусов до Gold - кэшбэк 7%</div>
+                </div>
+                <div className="mb-4">
+                  <div className="text-xs font-bold text-[#374151] mb-2">Штамп-карта</div>
+                  <div className="grid grid-cols-5 gap-1.5">
+                    {Array.from({ length: 10 }, (_, i) => (
+                      <div key={i} className="w-full aspect-square rounded-lg flex items-center justify-center text-xs" style={i < 8 ? { background: '#F5A623', color: 'white' } : { background: '#F3F4F6', color: '#9CA3AF', border: '1.5px dashed #D1D5DB' }}>
+                        {i < 8 ? '✓' : ''}
+                      </div>
+                    ))}
+                  </div>
+                  <div className="text-[10px] text-[#9CA3AF] mt-1.5">Ещё 2 визита — бесплатный напиток</div>
+                </div>
+                <button className="w-full py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2 text-white" style={{ background: AMBER }}>
+                  Смотреть предложения <ArrowRight size={15} />
+                </button>
+              </div>
+              <div className="absolute -right-14 top-8 bg-white rounded-2xl shadow-xl px-3 py-2.5 flex items-center gap-2.5 border border-[#F0F0F0] z-20">
+                <div className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: AMBER }}>
+                  <Gift size={15} className="text-white" />
+                </div>
+                <div>
+                  <div className="text-[11px] font-bold text-[#111827]">+120 бонусов</div>
+                  <div className="text-[9px] text-[#9CA3AF]">за последний визит</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="divider h-px" />
+
+      {/* Benefits */}
+      <section className="py-24 px-6 section-alt">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-4" style={{ background: '#FEF3C7', color: AMBER, border: '1px solid #FDE68A' }}>
+              Ваши привилегии
+            </span>
+            <h2 className="text-4xl font-black text-[#111827] mb-4">
+              Каждый визит<br />
+              <span style={{ color: AMBER }}>приносит выгоду</span>
+            </h2>
+            <p className="text-[#6B7280] text-lg max-w-xl mx-auto">
+              Вступайте в сообщества любимых мест и получайте реальную ценность с каждой покупкой.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              { icon: <CreditCard size={22} />, title: 'Кэшбэк бонусами', desc: 'До 15% с каждой покупки возвращается на ваш бонусный счёт. Тратьте бонусы на следующий визит.', color: AMBER, bg: '#FFFBEB', border: '#FDE68A' },
+              { icon: <CheckCircle size={22} />, title: 'Штамп-карты', desc: 'Накопи нужное количество визитов и получи подарок. Кофе, десерт или скидка — на выбор заведения.', color: GREEN_DARK, bg: '#EDFAF3', border: '#B6EDD2' },
+              { icon: <Award size={22} />, title: 'Уровни участника', desc: 'Bronze, Silver, Gold. Чем активнее — тем больше привилегий. На Gold-уровне максимальный кэшбэк.', color: '#4338CA', bg: '#EEF2FF', border: '#C7D2FE' },
+              { icon: <Percent size={22} />, title: 'Эксклюзивные предложения', desc: 'Скидки, акции и специальные условия только для участников сообщества. Не для всех — только для своих.', color: '#DC2626', bg: '#FFF8F8', border: '#FED7D7' },
+            ].map(item => (
+              <div key={item.title} className="rounded-2xl p-6 border card-lift" style={{ background: item.bg, borderColor: item.border }}>
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: item.color, color: 'white' }}>
+                  {item.icon}
+                </div>
+                <h3 className="text-base font-black text-[#111827] mb-2">{item.title}</h3>
+                <p className="text-sm text-[#6B7280] leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div className="divider h-px" />
+
+      {/* How it works */}
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-4" style={{ background: '#FEF3C7', color: AMBER, border: '1px solid #FDE68A' }}>
+              Как это работает
+            </span>
+            <h2 className="text-4xl font-black text-[#111827] mb-4">
+              Три шага<br />
+              <span style={{ color: AMBER }}>до первых бонусов</span>
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { num: '01', title: 'Найди сообщества своих мест', desc: 'В каталоге найди кафе, магазины и сервисы своего города. Вступи в их сообщества в один клик.', color: '#FEF3C7', border: '#FDE68A', iconColor: AMBER },
+              { num: '02', title: 'Совершай покупки и получай бонусы', desc: 'При каждом визите бонусы начисляются автоматически. Штампики тоже — без бумажных карточек.', color: '#EDFAF3', border: '#B6EDD2', iconColor: GREEN_DARK },
+              { num: '03', title: 'Повышай уровень и пользуйся привилегиями', desc: 'Чем больше активности — тем выше уровень. Gold-участники получают максимальный кэшбэк и эксклюзивные предложения.', color: '#EEF2FF', border: '#C7D2FE', iconColor: '#4338CA' },
+            ].map(s => (
+              <div key={s.num} className="rounded-2xl p-7 border" style={{ background: s.color, borderColor: s.border }}>
+                <div className="flex items-center justify-between mb-5">
+                  <div className="w-11 h-11 rounded-xl flex items-center justify-center text-white font-black text-lg" style={{ background: s.iconColor }}>
+                    {s.num}
+                  </div>
+                  <span className="text-4xl font-black" style={{ color: s.iconColor, opacity: 0.15 }}>{s.num}</span>
+                </div>
+                <h3 className="text-lg font-black text-[#111827] mb-2">{s.title}</h3>
+                <p className="text-sm text-[#6B7280] leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div className="divider h-px" />
+
+      {/* User CTA */}
+      <footer className="py-24 px-6 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="rounded-3xl p-12 sm:p-16 relative overflow-hidden" style={{ background: 'linear-gradient(140deg, #78350F 0%, #92400E 100%)' }}>
+            <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-white/5" />
+            <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-white/5" />
+            <div className="relative">
+              <div className="flex items-center justify-center gap-2 mb-8">
+                <span className="text-white text-3xl font-black tracking-tight">sagi</span>
+                <span className="text-sm font-semibold border border-white/20 bg-white/10 text-white/80 rounded-full px-3 py-1">Community</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-black text-white mb-5 leading-tight">
+                Начни зарабатывать бонусы<br />уже сегодня
+              </h2>
+              <p className="text-white/60 text-lg max-w-xl mx-auto mb-10 leading-relaxed">
+                Найди сообщества своих любимых кафе, магазинов и сервисов. Первые бонусы уже при первом визите.
+              </p>
+              <a href="mailto:sagibonus@gmail.com" className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-xl font-bold text-base shadow-md text-white" style={{ background: AMBER }}>
+                Найти сообщества рядом <MapPin size={17} />
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </>
+  );
+}
+
+// ─── MAIN EXPORT ──────────────────────────────────────────────────────────────
+
+export function SagiLanding() {
+  const [tab, setTab] = useState<'business' | 'admin' | 'user'>('business');
+
+  const switchTab = (t: 'business' | 'admin' | 'user') => {
+    setTab(t);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  return (
+    <div className="min-h-screen bg-white text-[#111827]" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif" }}>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+        .btn-green { background: ${GREEN}; color: #fff; transition: background 0.18s; }
+        .btn-green:hover { background: ${GREEN_DARK}; }
+
+        .badge-green { background: #EDFAF3; color: ${GREEN_DARK}; border: 1px solid #B6EDD2; }
+        .icon-green { background: #EDFAF3; color: ${GREEN_DARK}; }
+        .card-border { border: 1.5px solid #F0F0F0; }
+        .card-border:hover { border-color: #B6EDD2; }
+        .card-lift { transition: transform 0.2s, box-shadow 0.2s; }
+        .card-lift:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(42,187,111,0.10); }
+
+        .hero-bg { background: linear-gradient(160deg, #F2FDF7 0%, #FFFFFF 55%); }
+        .section-alt { background: #FAFAFA; }
+
+        .price-card-featured { border: 2px solid ${GREEN} !important; box-shadow: 0 16px 48px rgba(42,187,111,0.12); }
+        .divider { background: linear-gradient(90deg, transparent, #E8E8E8, transparent); }
+        .cta-card { background: linear-gradient(140deg, #1D3828 0%, #0F2218 100%); }
+        .green-text { color: ${GREEN}; }
+
+        .community-card {
+          background: white;
+          border-radius: 20px;
+          padding: 24px;
+          box-shadow: 0 32px 80px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.06);
+        }
+
+        .tab-active { background: white; color: #111827; box-shadow: 0 1px 4px rgba(0,0,0,0.10); }
+        .tab-inactive { color: #6B7280; }
+        .tab-inactive:hover { color: #374151; }
+      `}</style>
+
+      {/* ─── NAV ─── */}
+      <nav className="sticky top-0 z-50 bg-white border-b border-[#F0F0F0]">
+        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
+          <div className="flex items-center gap-2.5 flex-shrink-0">
+            <span className="text-[22px] font-black tracking-tight text-[#111827]">sagi</span>
+            <span className="text-xs font-semibold text-[#2ABB6F] border border-[#B6EDD2] bg-[#EDFAF3] rounded-full px-2.5 py-0.5 ml-1">Community</span>
+          </div>
+          <div className="flex items-center gap-1 bg-[#F3F4F6] rounded-xl p-1">
+            {([
+              { key: 'business', label: 'Для бизнеса' },
+              { key: 'admin', label: 'Для администратора' },
+              { key: 'user', label: 'Для участника' },
+            ] as const).map(t => (
+              <button
+                key={t.key}
+                onClick={() => switchTab(t.key)}
+                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all ${tab === t.key ? 'tab-active' : 'tab-inactive'}`}
+              >
+                {t.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      </nav>
+
+      {tab === 'business' && <BusinessPage />}
+      {tab === 'admin' && <AdminPage />}
+      {tab === 'user' && <UserPage />}
     </div>
   );
 }
