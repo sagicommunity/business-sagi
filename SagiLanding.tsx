@@ -1135,7 +1135,7 @@ export function SagiLanding() {
             <span className="text-[22px] font-black tracking-tight text-[#111827]">sagi</span>
             <span className="text-xs font-semibold text-[#2ABB6F] border border-[#B6EDD2] bg-[#EDFAF3] rounded-full px-2.5 py-0.5 ml-1">Community</span>
           </div>
-          <div className="flex items-center gap-1 bg-[#F3F4F6] rounded-xl p-1">
+          <div className="flex items-center gap-2">
             {([
               { key: 'business', label: 'Для бизнеса' },
               { key: 'admin', label: 'Для администратора' },
@@ -1144,7 +1144,10 @@ export function SagiLanding() {
               <button
                 key={t.key}
                 onClick={() => switchTab(t.key)}
-                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all ${tab === t.key ? 'tab-active' : 'tab-inactive'}`}
+                className="px-4 py-2 rounded-xl text-sm font-semibold transition-all"
+                style={tab === t.key
+                  ? { background: GREEN, color: 'white', boxShadow: '0 2px 8px rgba(42,187,111,0.30)' }
+                  : { background: '#F3F4F6', color: '#6B7280' }}
               >
                 {t.label}
               </button>
