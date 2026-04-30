@@ -676,6 +676,12 @@ function AdminPage() {
   const INDIGO = '#4F46E5';
   const INDIGO_DARK = '#3730A3';
 
+  const badge = (text: string) => (
+    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-4" style={{ background: '#EDE9FE', color: INDIGO_DARK, border: '1px solid #C4B5FD' }}>
+      {text}
+    </span>
+  );
+
   return (
     <>
       {/* Hero */}
@@ -687,22 +693,23 @@ function AdminPage() {
               Для администраторов сообществ
             </span>
             <h1 className="text-5xl lg:text-[3.6rem] font-black leading-[1.08] tracking-tight mb-6 text-[#111827]">
-              Для бизнеса важно<br />
-              <span style={{ color: INDIGO }}>как воздух</span> собирать<br />вокруг себя комьюнити
+              Ваше сообщество —<br />
+              <span style={{ color: INDIGO }}>ваш актив.</span><br />
+              Монетизируйте его.
             </h1>
             <p className="text-lg text-[#6B7280] max-w-xl mx-auto lg:mx-0 leading-relaxed mb-10">
-              Запустите программу лояльности, подключите партнёров и сделайте своё сообщество источником ценности для участников и дохода для себя.
+              Запустите программу лояльности, принимайте предложения от партнёров и зарабатывайте на своей аудитории — пока участники получают реальную ценность.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-14">
               <a href="mailto:sagibonus@gmail.com" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-bold text-base shadow-md text-white" style={{ background: INDIGO }}>
                 Создать сообщество <ArrowRight size={17} />
               </a>
-              <a href="#АдминКакРаботает" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-bold text-base border-2 border-[#E5E7EB] text-[#374151] hover:border-[#C4B5FD] transition" style={{}}>
+              <a href="#АдминКакРаботает" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-bold text-base border-2 border-[#E5E7EB] text-[#374151] hover:border-[#C4B5FD] transition">
                 Как это устроено <ChevronRight size={17} />
               </a>
             </div>
             <div className="flex flex-wrap justify-center lg:justify-start gap-x-10 gap-y-4">
-              {[{ v: '1000+', l: 'сообществ на платформе' }, { v: '3 млн+', l: 'активных участников' }, { v: '500+', l: 'партнёрских интеграций' }].map(s => (
+              {[{ v: '1000+', l: 'сообществ в сети' }, { v: '3 млн+', l: 'активных участников' }, { v: '500+', l: 'партнёров на платформе' }].map(s => (
                 <div key={s.l} className="text-center lg:text-left">
                   <div className="text-2xl font-black" style={{ color: INDIGO }}>{s.v}</div>
                   <div className="text-xs text-[#9CA3AF] mt-0.5">{s.l}</div>
@@ -724,7 +731,12 @@ function AdminPage() {
                   <div className="px-2.5 py-1 rounded-full text-xs font-bold text-white" style={{ background: GREEN }}>Активно</div>
                 </div>
                 <div className="grid grid-cols-2 gap-3 mb-5">
-                  {[{ v: '1 248', l: 'участников', color: INDIGO }, { v: '+34', l: 'за неделю', color: GREEN }, { v: '87%', l: 'вовлечённость', color: '#D97706' }, { v: '6 партнёров', l: 'активны сейчас', color: '#DC2626' }].map(s => (
+                  {[
+                    { v: '1 248', l: 'участников', color: INDIGO },
+                    { v: '+34', l: 'за неделю', color: GREEN },
+                    { v: '87%', l: 'вовлечённость', color: '#D97706' },
+                    { v: '6', l: 'активных партнёров', color: '#DC2626' },
+                  ].map(s => (
                     <div key={s.l} className="rounded-xl p-3 bg-[#FAFAFA] border border-[#F0F0F0]">
                       <div className="text-base font-black" style={{ color: s.color }}>{s.v}</div>
                       <div className="text-[10px] text-[#9CA3AF]">{s.l}</div>
@@ -732,9 +744,9 @@ function AdminPage() {
                   ))}
                 </div>
                 <div className="rounded-xl p-3 mb-4" style={{ background: '#F5F3FF', border: '1px solid #C4B5FD' }}>
-                  <div className="text-xs font-bold text-[#4F46E5] mb-2">Новый запрос от партнёра</div>
-                  <div className="text-xs text-[#374151]">Кафе «Sunrise» хочет разместить предложение для ваших участников</div>
-                  <div className="flex gap-2 mt-3">
+                  <div className="text-xs font-bold mb-1" style={{ color: INDIGO }}>Новый запрос от партнёра</div>
+                  <div className="text-xs text-[#374151] mb-3">Кафе «Sunrise» хочет разместить предложение — 15 000 ₸</div>
+                  <div className="flex gap-2">
                     <button className="flex-1 py-1.5 rounded-lg text-xs font-bold text-white" style={{ background: INDIGO }}>Принять</button>
                     <button className="flex-1 py-1.5 rounded-lg text-xs font-semibold text-[#6B7280] bg-[#F3F4F6]">Отклонить</button>
                   </div>
@@ -748,8 +760,8 @@ function AdminPage() {
                   <DollarSign size={15} className="text-white" />
                 </div>
                 <div>
-                  <div className="text-[11px] font-bold text-[#111827]">Доход +45 000 ₸</div>
-                  <div className="text-[9px] text-[#9CA3AF]">от партнёров за месяц</div>
+                  <div className="text-[11px] font-bold text-[#111827]">+90 000 ₸ / мес</div>
+                  <div className="text-[9px] text-[#9CA3AF]">доход от партнёров</div>
                 </div>
               </div>
             </div>
@@ -759,23 +771,25 @@ function AdminPage() {
 
       <div className="divider h-px" />
 
-      {/* Admin pains */}
+      {/* Pain */}
       <section className="py-24 px-6 section-alt">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-4" style={{ background: '#EDE9FE', color: INDIGO_DARK, border: '1px solid #C4B5FD' }}>
-              С чем вы сталкиваетесь
-            </span>
+            {badge('С чем вы сталкиваетесь')}
             <h2 className="text-4xl font-black text-[#111827] mb-4">
-              Управлять сообществом<br />
-              <span style={{ color: INDIGO }}>сложнее, чем кажется</span>
+              Сообщество требует времени.<br />
+              <span style={{ color: INDIGO }}>Но почти ничего не приносит</span>
             </h2>
+            <p className="text-[#6B7280] text-lg max-w-2xl mx-auto">
+              Вы строите аудиторию, но без правильных инструментов она не работает ни на участников, ни на вас.
+            </p>
           </div>
-          <div className="grid sm:grid-cols-3 gap-5 max-w-4xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
-              { icon: <Users size={20} />, title: 'Участники теряют интерес', desc: 'Без механик удержания вовлечённость падает. Люди вступают и забывают про сообщество через неделю.', bg: '#FFF8F8', border: '#FED7D7', iconBg: '#FEE2E2', iconColor: '#DC2626' },
-              { icon: <DollarSign size={20} />, title: 'Непонятно как монетизировать', desc: 'Вы вкладываете время и силы в сообщество, но нет понятного способа зарабатывать на своей аудитории.', bg: '#FFFBF0', border: '#FDE68A', iconBg: '#FEF3C7', iconColor: '#D97706' },
-              { icon: <Settings size={20} />, title: 'Всё делается вручную', desc: 'Каждая акция, рассылка, отчёт — вручную. Инструментов нет, всё разбросано по разным приложениям.', bg: '#F5F3FF', border: '#C4B5FD', iconBg: '#EDE9FE', iconColor: INDIGO },
+              { icon: <Users size={20} />, title: 'Участники уходят', desc: 'Без механик удержания вовлечённость падает. Люди вступают — и забывают про вас через неделю.', bg: '#FFF8F8', border: '#FED7D7', iconBg: '#FEE2E2', iconColor: '#DC2626' },
+              { icon: <DollarSign size={20} />, title: 'Нет дохода', desc: 'Вы вкладываете время и силы, но аудитория не конвертируется в деньги. Монетизация непонятна.', bg: '#FFFBF0', border: '#FDE68A', iconBg: '#FEF3C7', iconColor: '#D97706' },
+              { icon: <Settings size={20} />, title: 'Всё вручную', desc: 'Акции, рассылки, отчёты — каждый раз с нуля. Инструментов нет, всё разбросано по разным приложениям.', bg: '#F5F3FF', border: '#C4B5FD', iconBg: '#EDE9FE', iconColor: INDIGO },
+              { icon: <Globe size={20} />, title: 'Нет видимости', desc: 'Бизнесы, готовые платить за доступ к вашей аудитории, просто не знают о вашем существовании.', bg: '#F0FDF4', border: '#B6EDD2', iconBg: '#EDFAF3', iconColor: GREEN_DARK },
             ].map(p => (
               <div key={p.title} className="rounded-2xl p-6 border card-lift" style={{ background: p.bg, borderColor: p.border }}>
                 <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style={{ background: p.iconBg }}>
@@ -791,23 +805,151 @@ function AdminPage() {
 
       <div className="divider h-px" />
 
-      {/* Admin features */}
+      {/* Flywheel */}
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            {badge('Механика роста')}
+            <h2 className="text-4xl font-black text-[#111827] mb-4">
+              Чем активнее сообщество —<br />
+              <span style={{ color: INDIGO }}>тем больше оно зарабатывает</span>
+            </h2>
+            <p className="text-[#6B7280] text-lg max-w-2xl mx-auto">
+              Sagi запускает самоусиливающийся цикл: лояльные участники привлекают партнёров, партнёры дают участникам ценность — и цикл повторяется.
+            </p>
+          </div>
+
+          <div className="rounded-2xl p-10 mb-8" style={{ background: 'linear-gradient(140deg, #1e1b4b 0%, #312e81 100%)' }}>
+            <div className="grid md:grid-cols-4 gap-4 items-center">
+              {[
+                { icon: <Users size={20} />, label: 'Вовлечённые участники', sub: 'Лояльность растёт через бонусы и уровни' },
+                { icon: <Target size={20} />, label: 'Партнёры приходят сами', sub: 'Ваша аудитория становится ценной для бизнесов' },
+                { icon: <DollarSign size={20} />, label: 'Вы зарабатываете', sub: 'Партнёры платят за доступ к участникам' },
+                { icon: <TrendingUp size={20} />, label: 'Участники получают больше', sub: 'Эксклюзивные предложения от партнёров' },
+              ].map((item, i) => (
+                <div key={item.label} className="flex flex-col items-center text-center gap-3 relative">
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-white flex-shrink-0" style={{ background: 'rgba(255,255,255,0.12)' }}>
+                    {item.icon}
+                  </div>
+                  <div>
+                    <div className="text-sm font-black text-white mb-1">{item.label}</div>
+                    <div className="text-xs text-white/50 leading-relaxed">{item.sub}</div>
+                  </div>
+                  {i < 3 && (
+                    <div className="hidden md:flex absolute -right-3 top-5 w-6 h-6 items-center justify-center z-10">
+                      <ArrowRight size={16} className="text-white/30" />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+            <div className="mt-8 pt-8 border-t border-white/10 text-center">
+              <div className="text-white/40 text-xs uppercase tracking-widest mb-2">Результат через 3 месяца</div>
+              <div className="flex justify-center gap-10 flex-wrap">
+                {[{ v: '×2.4', l: 'рост вовлечённости' }, { v: '+60%', l: 'удержание участников' }, { v: '6–12 партнёров', l: 'в среднем на сообщество' }].map(s => (
+                  <div key={s.l} className="text-center">
+                    <div className="text-2xl font-black text-white">{s.v}</div>
+                    <div className="text-xs text-white/40 mt-0.5">{s.l}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="divider h-px" />
+
+      {/* Network effect */}
+      <section className="py-24 px-6 section-alt">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            {badge('Сетевой эффект')}
+            <h2 className="text-4xl font-black text-[#111827] mb-4">
+              Вы не один —<br />
+              <span style={{ color: INDIGO }}>вы часть сети из 1000+ сообществ</span>
+            </h2>
+            <p className="text-[#6B7280] text-lg max-w-2xl mx-auto">
+              В одиночку сложно привлечь партнёров и участников. В сети Sagi — партнёры уже здесь, участники уже здесь.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            <div className="rounded-2xl p-8 border border-[#C4B5FD]" style={{ background: 'linear-gradient(160deg, #F5F3FF 0%, #EDE9FE 100%)' }}>
+              <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5" style={{ background: INDIGO, color: 'white' }}>
+                <Target size={22} />
+              </div>
+              <h3 className="text-xl font-black text-[#111827] mb-3">Партнёры сами вас находят</h3>
+              <p className="text-[#6B7280] leading-relaxed mb-5">
+                500+ бизнесов уже зарегистрированы на платформе и активно ищут сообщества, в которых можно разместить предложение. Они фильтруют по нише, городу и размеру — и находят вас.
+              </p>
+              <div className="space-y-2.5">
+                {['Входящие запросы без холодного поиска', 'Фильтр по релевантным для вас нишам', 'Вы сами решаете, чьё предложение принять'].map(t => (
+                  <div key={t} className="flex items-center gap-2 text-sm text-[#374151]">
+                    <CheckCircle size={14} style={{ color: INDIGO }} />
+                    {t}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-2xl p-8 border border-[#B6EDD2]" style={{ background: 'linear-gradient(160deg, #F2FDF7 0%, #EDFAF3 100%)' }}>
+              <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5" style={{ background: GREEN, color: 'white' }}>
+                <Share2 size={22} />
+              </div>
+              <h3 className="text-xl font-black text-[#111827] mb-3">Участники открывают вас через сеть</h3>
+              <p className="text-[#6B7280] leading-relaxed mb-5">
+                3 млн+ пользователей уже в экосистеме Sagi. Когда кто-то пользуется одним сообществом — платформа показывает ему смежные. Ваше сообщество органически растёт внутри сети.
+              </p>
+              <div className="space-y-2.5">
+                {['Кросс-рекомендации между сообществами', 'Участники других сообществ видят вас в каталоге', 'Один профиль — все сообщества в сети'].map(t => (
+                  <div key={t} className="flex items-center gap-2 text-sm text-[#374151]">
+                    <CheckCircle size={14} style={{ color: GREEN }} />
+                    {t}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Network visual */}
+          <div className="rounded-2xl p-8 bg-white border border-[#F0F0F0] text-center">
+            <div className="text-xs font-bold uppercase tracking-widest text-[#9CA3AF] mb-6">Ваше сообщество в сети Sagi</div>
+            <div className="flex flex-wrap justify-center gap-3 max-w-2xl mx-auto">
+              {['Фитнес', 'Кафе и рестораны', 'Красота', 'Retail', 'Образование', 'Медицина', 'Путешествия', 'Спорт', 'Ваше сообщество', 'Еда', 'Технологии', 'Искусство'].map((cat, i) => (
+                <div
+                  key={cat}
+                  className="px-4 py-2 rounded-full text-sm font-semibold"
+                  style={cat === 'Ваше сообщество'
+                    ? { background: INDIGO, color: 'white', boxShadow: `0 0 0 4px ${INDIGO}22` }
+                    : { background: '#F3F4F6', color: '#6B7280' }}
+                >
+                  {cat}
+                </div>
+              ))}
+            </div>
+            <p className="text-sm text-[#9CA3AF] mt-6">Участники любого сообщества в сети могут найти и вступить в ваше</p>
+          </div>
+        </div>
+      </section>
+
+      <div className="divider h-px" />
+
+      {/* Features */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-4" style={{ background: '#EDE9FE', color: INDIGO_DARK, border: '1px solid #C4B5FD' }}>
-              Что вы получаете
-            </span>
+            {badge('Инструменты')}
             <h2 className="text-4xl font-black text-[#111827] mb-4">Всё для управления<br /><span style={{ color: INDIGO }}>и монетизации сообщества</span></h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { icon: <Star size={17} />, t: 'Программа лояльности', d: 'Бонусы, штампики, кэшбэк и уровни. Настройте под свой бренд — участники получают ценность, вы — их лояльность.' },
-              { icon: <DollarSign size={17} />, t: 'Монетизация через партнёров', d: 'Бизнесы платят за доступ к вашей аудитории. Вы принимаете или отклоняете каждый запрос на размещение.' },
-              { icon: <BarChart3 size={17} />, t: 'Аналитика активности', d: 'Кто активен, что работает, как растёт сообщество. Все данные в одном месте в реальном времени.' },
-              { icon: <Bell size={17} />, t: 'Лента и уведомления', d: 'Публикуйте новости, акции и события. Участники получают пуш-уведомления и остаются в курсе.' },
-              { icon: <Award size={17} />, t: 'Геймификация и уровни', d: 'Bronze, Silver, Gold. Чем активнее участник — тем больше привилегий. Это мотивирует возвращаться.' },
-              { icon: <Shield size={17} />, t: 'Модерация и контроль', d: 'Вы управляете тем, кто и что видит. Верифицируйте участников и контролируйте предложения партнёров.' },
+              { icon: <Star size={17} />, t: 'Программа лояльности', d: 'Бонусы, штампики, кэшбэк и уровни под вашим брендом. Участники получают ценность — и возвращаются.' },
+              { icon: <DollarSign size={17} />, t: 'Монетизация через партнёров', d: 'Бизнесы платят за размещение предложений вашим участникам. Вы принимаете или отклоняете каждый запрос.' },
+              { icon: <BarChart3 size={17} />, t: 'Аналитика в реальном времени', d: 'Кто активен, что работает, как растёт аудитория. Все данные в одном месте.' },
+              { icon: <Bell size={17} />, t: 'Лента и пуш-уведомления', d: 'Публикуйте новости, акции и события. Участники получают уведомления и остаются вовлечёнными.' },
+              { icon: <Award size={17} />, t: 'Уровни и геймификация', d: 'Bronze, Silver, Gold. Чем активнее участник — тем выше уровень и больше привилегий. Это мотивирует возвращаться.' },
+              { icon: <Shield size={17} />, t: 'Модерация и контроль', d: 'Вы управляете тем, кто и что видит. Принимайте участников вручную или автоматически — на ваш выбор.' },
             ].map(item => (
               <div key={item.t} className="flex gap-4 p-5 rounded-2xl border card-lift bg-white" style={{ borderColor: '#E0E7FF' }}>
                 <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: '#EDE9FE', color: INDIGO }}>
@@ -825,23 +967,21 @@ function AdminPage() {
 
       <div className="divider h-px" />
 
-      {/* Admin how it works */}
+      {/* How it works + revenue */}
       <section id="АдминКакРаботает" className="py-24 px-6 section-alt">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-4" style={{ background: '#EDE9FE', color: INDIGO_DARK, border: '1px solid #C4B5FD' }}>
-              Как это работает
-            </span>
+            {badge('Как это работает')}
             <h2 className="text-4xl font-black text-[#111827] mb-4">
               От создания<br />
               <span style={{ color: INDIGO }}>до первого дохода</span>
             </h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6 mb-10">
             {[
-              { num: '01', title: 'Создайте сообщество', desc: 'Зарегистрируйте своё сообщество на платформе. Добавьте описание, фото и категорию. Это займёт 10 минут.', color: '#EDE9FE', border: '#C4B5FD', iconColor: INDIGO },
-              { num: '02', title: 'Настройте программу лояльности', desc: 'Выберите механики: бонусы, штампики, кэшбэк, уровни. Настройте правила начисления под свой бренд.', color: '#EDFAF3', border: '#B6EDD2', iconColor: GREEN_DARK },
-              { num: '03', title: 'Принимайте партнёров и зарабатывайте', desc: 'Бизнесы сами находят ваше сообщество и отправляют запросы на размещение. Вы принимаете — и получаете доход.', color: '#FFFBF0', border: '#FDE68A', iconColor: '#D97706' },
+              { num: '01', title: 'Создайте сообщество', desc: 'Зарегистрируйте сообщество на Sagi: добавьте название, описание, категорию и фото. Займёт 10 минут.', color: '#EDE9FE', border: '#C4B5FD', iconColor: INDIGO },
+              { num: '02', title: 'Настройте лояльность', desc: 'Выберите механики: бонусы, штампики, кэшбэк, уровни. Настройте правила начисления — без кода и технических знаний.', color: '#EDFAF3', border: '#B6EDD2', iconColor: GREEN_DARK },
+              { num: '03', title: 'Принимайте партнёров', desc: 'Бизнесы из каталога находят вас и отправляют запросы. Вы принимаете — участники видят предложение, вы получаете доход.', color: '#FFFBF0', border: '#FDE68A', iconColor: '#D97706' },
             ].map(s => (
               <div key={s.num} className="rounded-2xl p-7 border" style={{ background: s.color, borderColor: s.border }}>
                 <div className="flex items-center justify-between mb-5">
@@ -854,6 +994,25 @@ function AdminPage() {
                 <p className="text-sm text-[#6B7280] leading-relaxed">{s.desc}</p>
               </div>
             ))}
+          </div>
+
+          {/* Revenue example */}
+          <div className="rounded-2xl p-8 border border-[#C4B5FD]" style={{ background: 'linear-gradient(160deg, #F5F3FF 0%, #EDE9FE 100%)' }}>
+            <div className="text-xs font-bold uppercase tracking-widest mb-6" style={{ color: INDIGO }}>Пример дохода администратора</div>
+            <div className="grid md:grid-cols-4 gap-4 mb-6">
+              {[
+                { label: 'Участников в сообществе', val: '1 200' },
+                { label: 'Активных партнёров', val: '6' },
+                { label: 'Стоимость одного размещения', val: '15 000 ₸' },
+                { label: 'Доход в месяц', val: '90 000 ₸', highlight: true },
+              ].map(item => (
+                <div key={item.label} className="rounded-xl p-4 text-center" style={{ background: item.highlight ? INDIGO : 'white', borderRadius: 16 }}>
+                  <div className="text-xl font-black mb-1" style={{ color: item.highlight ? 'white' : INDIGO }}>{item.val}</div>
+                  <div className="text-xs leading-relaxed" style={{ color: item.highlight ? 'rgba(255,255,255,0.7)' : '#6B7280' }}>{item.label}</div>
+                </div>
+              ))}
+            </div>
+            <p className="text-sm text-[#6B7280]">Реальные цифры зависят от размера и активности сообщества. Доход растёт вместе с аудиторией.</p>
           </div>
         </div>
       </section>
@@ -872,10 +1031,10 @@ function AdminPage() {
                 <span className="text-sm font-semibold border border-white/20 bg-white/10 text-white/80 rounded-full px-3 py-1">Community</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-black text-white mb-5 leading-tight">
-                Запустите своё сообщество<br />и монетизируйте его
+                Запустите сообщество<br />и начните зарабатывать
               </h2>
               <p className="text-white/60 text-lg max-w-xl mx-auto mb-10 leading-relaxed">
-                Создайте пространство для своих клиентов, настройте лояльность и начните зарабатывать на партнёрских размещениях.
+                Присоединяйтесь к сети из 1000+ сообществ. Настройте лояльность, привлеките партнёров и монетизируйте свою аудиторию.
               </p>
               <a href="mailto:sagibonus@gmail.com" className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-xl font-bold text-base shadow-md text-white" style={{ background: INDIGO }}>
                 Создать сообщество <ArrowRight size={17} />
@@ -892,7 +1051,12 @@ function AdminPage() {
 
 function UserPage() {
   const AMBER = '#D97706';
-  const AMBER_BG = '#FFFBEB';
+
+  const badge = (text: string) => (
+    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-4" style={{ background: '#FEF3C7', color: AMBER, border: '1px solid #FDE68A' }}>
+      {text}
+    </span>
+  );
 
   return (
     <>
@@ -905,11 +1069,11 @@ function UserPage() {
               Для участников сообществ
             </span>
             <h1 className="text-5xl lg:text-[3.6rem] font-black leading-[1.08] tracking-tight mb-6 text-[#111827]">
-              Бонусы и привилегии<br />
-              <span style={{ color: AMBER }}>в любимых местах</span>
+              Один профиль —<br />
+              <span style={{ color: AMBER }}>все любимые места</span>
             </h1>
             <p className="text-lg text-[#6B7280] max-w-xl mx-auto lg:mx-0 leading-relaxed mb-10">
-              Вступай в сообщества кафе, магазинов и сервисов своего города. Получай кэшбэк, копи штампики и открывай эксклюзивные предложения.
+              Кэшбэк, штампики и эксклюзивные предложения в кафе, магазинах и сервисах твоего города. Всё в одном приложении — без бумажных карточек и десяти разных программ.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-14">
               <a href="mailto:sagibonus@gmail.com" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-bold text-base shadow-md text-white" style={{ background: AMBER }}>
@@ -917,7 +1081,7 @@ function UserPage() {
               </a>
             </div>
             <div className="flex flex-wrap justify-center lg:justify-start gap-x-10 gap-y-4">
-              {[{ v: '1000+', l: 'сообществ на платформе' }, { v: '3 млн+', l: 'участников' }, { v: 'до 15%', l: 'кэшбэк' }].map(s => (
+              {[{ v: '1000+', l: 'мест на платформе' }, { v: '3 млн+', l: 'участников в сети' }, { v: 'до 15%', l: 'кэшбэк бонусами' }].map(s => (
                 <div key={s.l} className="text-center lg:text-left">
                   <div className="text-2xl font-black" style={{ color: AMBER }}>{s.v}</div>
                   <div className="text-xs text-[#9CA3AF] mt-0.5">{s.l}</div>
@@ -939,25 +1103,30 @@ function UserPage() {
                     <div className="text-sm font-black text-[#111827]">hani</div>
                     <div className="text-xs text-[#9CA3AF]">Кондитерские-кофейни · Астана</div>
                   </div>
+                  <div className="ml-auto px-2 py-0.5 rounded-full text-[10px] font-bold" style={{ background: '#FEF3C7', color: AMBER }}>Silver</div>
                 </div>
                 <div className="rounded-xl p-4 mb-4" style={{ background: '#FFFBF0', border: '1px solid #FDE68A' }}>
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-1.5">
-                      <Star size={14} style={{ color: '#F5A623' }} />
-                      <span className="text-sm font-black text-[#111827]">Silver</span>
+                      <Star size={13} style={{ color: '#F5A623' }} />
+                      <span className="text-xs font-black text-[#111827]">760 / 2000 бонусов</span>
                     </div>
-                    <span className="text-xs text-[#9CA3AF]">760 / 2000 бонусов</span>
+                    <span className="text-[10px] text-[#9CA3AF]">до Gold</span>
                   </div>
-                  <div className="h-2.5 rounded-full bg-[#F3F4F6] mb-2">
-                    <div className="h-2.5 rounded-full" style={{ width: '38%', background: '#F5A623' }} />
+                  <div className="h-2 rounded-full bg-[#F3F4F6] mb-1.5">
+                    <div className="h-2 rounded-full" style={{ width: '38%', background: '#F5A623' }} />
                   </div>
-                  <div className="text-[10px] text-[#9CA3AF]">1 240 бонусов до Gold - кэшбэк 7%</div>
+                  <div className="text-[10px] text-[#9CA3AF]">Ещё 1 240 бонусов — кэшбэк вырастет до 7%</div>
                 </div>
                 <div className="mb-4">
-                  <div className="text-xs font-bold text-[#374151] mb-2">Штамп-карта</div>
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="text-xs font-bold text-[#374151]">Штамп-карта hani</div>
+                    <div className="text-[10px] text-[#9CA3AF]">8 / 10</div>
+                  </div>
                   <div className="grid grid-cols-5 gap-1.5">
                     {Array.from({ length: 10 }, (_, i) => (
-                      <div key={i} className="w-full aspect-square rounded-lg flex items-center justify-center text-xs" style={i < 8 ? { background: '#F5A623', color: 'white' } : { background: '#F3F4F6', color: '#9CA3AF', border: '1.5px dashed #D1D5DB' }}>
+                      <div key={i} className="w-full aspect-square rounded-lg flex items-center justify-center text-xs font-bold"
+                        style={i < 8 ? { background: '#F5A623', color: 'white' } : { background: '#F3F4F6', color: '#D1D5DB', border: '1.5px dashed #E5E7EB' }}>
                         {i < 8 ? '✓' : ''}
                       </div>
                     ))}
@@ -977,6 +1146,15 @@ function UserPage() {
                   <div className="text-[9px] text-[#9CA3AF]">за последний визит</div>
                 </div>
               </div>
+              <div className="absolute -left-16 bottom-10 bg-white rounded-2xl shadow-xl px-3 py-2.5 flex items-center gap-2.5 border border-[#F0F0F0] z-20">
+                <div className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0 bg-[#EEF2FF]">
+                  <Search size={14} style={{ color: '#4338CA' }} />
+                </div>
+                <div>
+                  <div className="text-[11px] font-bold text-[#111827]">3 новых места рядом</div>
+                  <div className="text-[9px] text-[#9CA3AF]">в сети Sagi</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -984,27 +1162,59 @@ function UserPage() {
 
       <div className="divider h-px" />
 
-      {/* Benefits */}
+      {/* Pain */}
       <section className="py-24 px-6 section-alt">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-4" style={{ background: '#FEF3C7', color: AMBER, border: '1px solid #FDE68A' }}>
-              Ваши привилегии
-            </span>
+            {badge('Знакомо?')}
             <h2 className="text-4xl font-black text-[#111827] mb-4">
-              Каждый визит<br />
-              <span style={{ color: AMBER }}>приносит выгоду</span>
+              Лояльность есть.<br />
+              <span style={{ color: AMBER }}>Но толку от неё мало</span>
             </h2>
-            <p className="text-[#6B7280] text-lg max-w-xl mx-auto">
-              Вступайте в сообщества любимых мест и получайте реальную ценность с каждой покупкой.
+            <p className="text-[#6B7280] text-lg max-w-2xl mx-auto">
+              Старые программы лояльности созданы для бизнеса, а не для вас.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
-              { icon: <CreditCard size={22} />, title: 'Кэшбэк бонусами', desc: 'До 15% с каждой покупки возвращается на ваш бонусный счёт. Тратьте бонусы на следующий визит.', color: AMBER, bg: '#FFFBEB', border: '#FDE68A' },
-              { icon: <CheckCircle size={22} />, title: 'Штамп-карты', desc: 'Накопи нужное количество визитов и получи подарок. Кофе, десерт или скидка — на выбор заведения.', color: GREEN_DARK, bg: '#EDFAF3', border: '#B6EDD2' },
-              { icon: <Award size={22} />, title: 'Уровни участника', desc: 'Bronze, Silver, Gold. Чем активнее — тем больше привилегий. На Gold-уровне максимальный кэшбэк.', color: '#4338CA', bg: '#EEF2FF', border: '#C7D2FE' },
-              { icon: <Percent size={22} />, title: 'Эксклюзивные предложения', desc: 'Скидки, акции и специальные условия только для участников сообщества. Не для всех — только для своих.', color: '#DC2626', bg: '#FFF8F8', border: '#FED7D7' },
+              { icon: <RefreshCw size={20} />, title: 'Бумажные карточки теряются', desc: 'Накопил 9 штампиков — и потерял карточку. Снова начинать с нуля.', bg: '#FFF8F8', border: '#FED7D7', iconBg: '#FEE2E2', iconColor: '#DC2626' },
+              { icon: <Smartphone size={20} />, title: '10 разных приложений', desc: 'У каждого кафе своё приложение. Устанавливать, регистрироваться, запоминать пароли.', bg: '#FFFBF0', border: '#FDE68A', iconBg: '#FEF3C7', iconColor: '#D97706' },
+              { icon: <Bell size={20} />, title: 'Пропускаешь акции', desc: 'Любимое место сделало скидку для постоянных клиентов. Ты узнал об этом через неделю.', bg: '#F5F3FF', border: '#C4B5FD', iconBg: '#EDE9FE', iconColor: '#4338CA' },
+              { icon: <Target size={20} />, title: 'Скидки не для тебя', desc: 'Бонусы сгорают, условия непрозрачные, а «выгодные предложения» доступны всем подряд.', bg: '#F0FDF4', border: '#B6EDD2', iconBg: '#EDFAF3', iconColor: GREEN_DARK },
+            ].map(p => (
+              <div key={p.title} className="rounded-2xl p-6 border card-lift" style={{ background: p.bg, borderColor: p.border }}>
+                <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style={{ background: p.iconBg }}>
+                  <div style={{ color: p.iconColor }}>{p.icon}</div>
+                </div>
+                <h3 className="text-base font-black text-[#111827] mb-2">{p.title}</h3>
+                <p className="text-sm text-[#6B7280] leading-relaxed">{p.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div className="divider h-px" />
+
+      {/* Benefits */}
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            {badge('Что вы получаете')}
+            <h2 className="text-4xl font-black text-[#111827] mb-4">
+              Каждый визит<br />
+              <span style={{ color: AMBER }}>приносит реальную выгоду</span>
+            </h2>
+            <p className="text-[#6B7280] text-lg max-w-xl mx-auto">
+              Вступайте в сообщества любимых мест и получайте ценность с каждой покупкой.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              { icon: <CreditCard size={22} />, title: 'Кэшбэк бонусами', desc: 'До 15% с каждой покупки возвращается на бонусный счёт. Тратьте бонусы на следующий визит.', color: AMBER, bg: '#FFFBEB', border: '#FDE68A' },
+              { icon: <CheckCircle size={22} />, title: 'Штамп-карты', desc: 'Вместо бумажных карточек — цифровая карта в приложении. Не теряется, не мнётся, не сгорает.', color: GREEN_DARK, bg: '#EDFAF3', border: '#B6EDD2' },
+              { icon: <Award size={22} />, title: 'Уровни участника', desc: 'Bronze, Silver, Gold. Чем активнее — тем выше кэшбэк и больше привилегий. Уровень не сгорает.', color: '#4338CA', bg: '#EEF2FF', border: '#C7D2FE' },
+              { icon: <Percent size={22} />, title: 'Эксклюзивные предложения', desc: 'Скидки и акции только для участников сообщества. Не для всех — только для своих.', color: '#DC2626', bg: '#FFF8F8', border: '#FED7D7' },
             ].map(item => (
               <div key={item.title} className="rounded-2xl p-6 border card-lift" style={{ background: item.bg, borderColor: item.border }}>
                 <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: item.color, color: 'white' }}>
@@ -1020,13 +1230,85 @@ function UserPage() {
 
       <div className="divider h-px" />
 
+      {/* Network section */}
+      <section className="py-24 px-6 section-alt">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            {badge('Сетевой эффект')}
+            <h2 className="text-4xl font-black text-[#111827] mb-4">
+              Чем больше мест в сети —<br />
+              <span style={{ color: AMBER }}>тем выгоднее быть участником</span>
+            </h2>
+            <p className="text-[#6B7280] text-lg max-w-2xl mx-auto">
+              Sagi — это 1000+ сообществ в одной экосистеме. Ваш профиль, бонусы и уровень работают во всех из них.
+            </p>
+          </div>
+
+          <div className="rounded-2xl p-10 mb-8" style={{ background: 'linear-gradient(140deg, #78350F 0%, #92400E 100%)' }}>
+            <div className="grid md:grid-cols-3 gap-8 items-center">
+              <div className="md:col-span-2">
+                <div className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#FCD34D' }}>Один профиль — вся сеть</div>
+                <h3 className="text-2xl font-black text-white mb-4">
+                  Вступил в одно сообщество —<br />открыл доступ ко всей сети
+                </h3>
+                <p className="text-white/60 leading-relaxed mb-6">
+                  Ваш профиль Sagi работает во всех сообществах сети. Бонусы, уровень и история — едины. Кафе, спортзал, книжный, барбершоп — всё в одном приложении.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  {['Один аккаунт', 'Все сообщества', 'Без лишних приложений', 'Бонусы не сгорают'].map(tag => (
+                    <span key={tag} className="text-xs font-semibold px-3 py-1.5 rounded-full bg-white/10 text-white/80">{tag}</span>
+                  ))}
+                </div>
+              </div>
+              <div className="flex flex-col gap-3">
+                {[
+                  { icon: <Globe size={16} />, label: 'Откройте новые места', desc: 'Sagi показывает вам другие сообщества по интересам и геолокации' },
+                  { icon: <Share2 size={16} />, label: 'Партнёрские предложения', desc: 'Бизнесы из других сообществ делают вам эксклюзивные предложения' },
+                  { icon: <TrendingUp size={16} />, label: 'Чем больше вы активны', desc: 'Тем быстрее растёт уровень и тем ценнее становится ваш профиль' },
+                ].map(item => (
+                  <div key={item.label} className="flex gap-3 p-4 rounded-xl bg-white/8" style={{ background: 'rgba(255,255,255,0.08)' }}>
+                    <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: 'rgba(255,255,255,0.12)', color: '#FCD34D' }}>
+                      {item.icon}
+                    </div>
+                    <div>
+                      <div className="text-sm font-bold text-white mb-0.5">{item.label}</div>
+                      <div className="text-xs text-white/50 leading-relaxed">{item.desc}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Level progression */}
+          <div className="rounded-2xl p-8 bg-white border border-[#F0F0F0]">
+            <div className="text-xs font-bold uppercase tracking-widest text-[#9CA3AF] mb-6 text-center">Как работают уровни в сети Sagi</div>
+            <div className="grid md:grid-cols-3 gap-4">
+              {[
+                { level: 'Bronze', emoji: '🥉', cashback: '3%', desc: 'Стартовый уровень. Бонусы за каждый визит, доступ к базовым предложениям.', color: '#92400E', bg: '#FEF3C7', border: '#FDE68A', visits: '0+ визитов' },
+                { level: 'Silver', emoji: '🥈', cashback: '7%', desc: 'Повышенный кэшбэк, доступ к закрытым акциям и приоритетные предложения от партнёров.', color: '#374151', bg: '#F3F4F6', border: '#E5E7EB', visits: '500+ бонусов' },
+                { level: 'Gold', emoji: '🥇', cashback: '15%', desc: 'Максимальный кэшбэк, эксклюзивные предложения, ранний доступ к акциям и VIP-привилегии.', color: '#B45309', bg: '#FFFBEB', border: '#FDE68A', visits: '2000+ бонусов' },
+              ].map(l => (
+                <div key={l.level} className="rounded-2xl p-6 border text-center card-lift" style={{ background: l.bg, borderColor: l.border }}>
+                  <div className="text-3xl mb-2">{l.emoji}</div>
+                  <div className="text-lg font-black mb-1" style={{ color: l.color }}>{l.level}</div>
+                  <div className="text-3xl font-black mb-1" style={{ color: l.color }}>{l.cashback}</div>
+                  <div className="text-xs text-[#9CA3AF] mb-3">кэшбэк бонусами · {l.visits}</div>
+                  <p className="text-xs text-[#6B7280] leading-relaxed">{l.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="divider h-px" />
+
       {/* How it works */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-4" style={{ background: '#FEF3C7', color: AMBER, border: '1px solid #FDE68A' }}>
-              Как это работает
-            </span>
+            {badge('Как начать')}
             <h2 className="text-4xl font-black text-[#111827] mb-4">
               Три шага<br />
               <span style={{ color: AMBER }}>до первых бонусов</span>
@@ -1034,9 +1316,9 @@ function UserPage() {
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { num: '01', title: 'Найди сообщества своих мест', desc: 'В каталоге найди кафе, магазины и сервисы своего города. Вступи в их сообщества в один клик.', color: '#FEF3C7', border: '#FDE68A', iconColor: AMBER },
-              { num: '02', title: 'Совершай покупки и получай бонусы', desc: 'При каждом визите бонусы начисляются автоматически. Штампики тоже — без бумажных карточек.', color: '#EDFAF3', border: '#B6EDD2', iconColor: GREEN_DARK },
-              { num: '03', title: 'Повышай уровень и пользуйся привилегиями', desc: 'Чем больше активности — тем выше уровень. Gold-участники получают максимальный кэшбэк и эксклюзивные предложения.', color: '#EEF2FF', border: '#C7D2FE', iconColor: '#4338CA' },
+              { num: '01', title: 'Найди сообщества своих мест', desc: 'В каталоге — 1000+ кафе, магазинов и сервисов. Ищи по городу, категории или рядом с тобой. Вступай в один клик.', color: '#FEF3C7', border: '#FDE68A', iconColor: AMBER },
+              { num: '02', title: 'Совершай покупки — бонусы начисляются сами', desc: 'Просто приходи в заведение. Бонусы и штампики начисляются автоматически. Никаких кассиров и бумажных карточек.', color: '#EDFAF3', border: '#B6EDD2', iconColor: GREEN_DARK },
+              { num: '03', title: 'Повышай уровень и открывай привилегии', desc: 'Чем активнее — тем выше уровень. Gold-участники получают 15% кэшбэк и первыми узнают об эксклюзивных акциях.', color: '#EEF2FF', border: '#C7D2FE', iconColor: '#4338CA' },
             ].map(s => (
               <div key={s.num} className="rounded-2xl p-7 border" style={{ background: s.color, borderColor: s.border }}>
                 <div className="flex items-center justify-between mb-5">
@@ -1067,10 +1349,10 @@ function UserPage() {
                 <span className="text-sm font-semibold border border-white/20 bg-white/10 text-white/80 rounded-full px-3 py-1">Community</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-black text-white mb-5 leading-tight">
-                Начни зарабатывать бонусы<br />уже сегодня
+                Вступи и получи<br />первые бонусы сегодня
               </h2>
               <p className="text-white/60 text-lg max-w-xl mx-auto mb-10 leading-relaxed">
-                Найди сообщества своих любимых кафе, магазинов и сервисов. Первые бонусы уже при первом визите.
+                1000+ сообществ кафе, магазинов и сервисов уже в сети. Один профиль — все любимые места.
               </p>
               <a href="mailto:sagibonus@gmail.com" className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-xl font-bold text-base shadow-md text-white" style={{ background: AMBER }}>
                 Найти сообщества рядом <MapPin size={17} />
