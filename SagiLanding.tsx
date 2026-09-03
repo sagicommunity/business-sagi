@@ -403,7 +403,7 @@ function OffersShowcase() {
       avatarBg: '#2563EB',
       name: 'Meridian School',
       category: 'Школа · Астана',
-      members: '540 участников',
+      members: '2 700 родителей',
       offers: [
         { name: 'BookNook', initials: 'BN', color: '#2563EB', text: '\u221215% на учебники и канцтовары' },
         { name: 'KidsWear', initials: 'KW', color: '#DB2777', text: 'Кэшбэк 10%' },
@@ -416,7 +416,7 @@ function OffersShowcase() {
       avatarBg: '#DC2626',
       name: 'Astana Sport Club',
       category: 'Спортивная ассоциация · Астана',
-      members: '890 участников',
+      members: '25 000 участников',
       offers: [
         { name: 'ProteinLab', initials: 'PL', color: '#DC2626', text: 'Кэшбэк 12%' },
         { name: 'FitGear', initials: 'FG', color: '#0EA5E9', text: '\u221215% на экипировку' },
@@ -428,8 +428,8 @@ function OffersShowcase() {
       icon: <Briefcase size={20} />,
       avatarBg: '#4338CA',
       name: 'Nova Consulting',
-      category: 'Корпоративное сообщество · Алматы',
-      members: '210 участников',
+      category: 'Клуб предпринимателей · Алматы',
+      members: '8 355 предпринимателей',
       offers: [
         { name: 'WorkHub', initials: 'WH', color: '#4338CA', text: '\u221225% на коворкинг' },
         { name: 'BrewBar', initials: 'BB', color: '#92400E', text: 'Кэшбэк 10%' },
