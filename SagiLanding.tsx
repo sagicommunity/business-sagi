@@ -491,6 +491,24 @@ function OffersShowcase() {
             </div>
           ))}
         </div>
+
+        <div className="mt-10 rounded-2xl p-8 sm:p-10 border border-[#B6EDD2] flex flex-col lg:flex-row items-start lg:items-center gap-8" style={{ background: 'linear-gradient(160deg, #F2FDF7 0%, #EDFAF3 100%)' }}>
+          <div className="flex-1">
+            <div className="w-11 h-11 rounded-2xl flex items-center justify-center mb-4" style={{ background: GREEN, color: 'white' }}>
+              <Search size={20} />
+            </div>
+            <h3 className="text-xl font-black text-[#111827] mb-2">Не нашли подходящее сообщество?</h3>
+            <p className="text-[#6B7280] leading-relaxed mb-3">
+              Сообщества на Sagi очень разные - школьные, спортивные, профессиональные, местные землячества и клубы по интересам. Вы и сами наверняка уже состоите в одном из них - и можете разместить своё предложение именно там.
+            </p>
+            <p className="text-[#6B7280] leading-relaxed">
+              А если нужна конкретная аудитория - мамы, родители школьников, предприниматели, спортсмены - оставьте заявку, и мы подберём подходящее сообщество под ваш бизнес.
+            </p>
+          </div>
+          <a href="https://wa.me/77084857101" target="_blank" rel="noopener noreferrer" className="btn-green flex-shrink-0 inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-bold text-base shadow-md">
+            Оставить заявку <ArrowRight size={17} />
+          </a>
+        </div>
       </div>
     </section>
   );
