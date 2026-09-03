@@ -2,7 +2,7 @@ import { useState } from 'react';
 import {
   Shield, Search, Store, Clock, RefreshCw, BarChart3, CheckCircle,
   ArrowRight, Smartphone, Users, TrendingUp, Headphones, GraduationCap,
-  Briefcase, Bell, ChevronRight, Zap, Building2, CircleUser, ShoppingBag,
+  Briefcase, Bell, ChevronRight, Zap, Building2, CircleUser, ShoppingBag, Trophy,
   Globe, Target, Share2, MessageCircle, Star, Layers,
   Gift, Award, CreditCard, Percent, MapPin, Settings, DollarSign,
 } from 'lucide-react';
@@ -396,6 +396,106 @@ function TwoWaysBlock() {
   );
 }
 
+function OffersShowcase() {
+  const communities = [
+    {
+      icon: <GraduationCap size={20} />,
+      avatarBg: '#2563EB',
+      name: 'Meridian School',
+      category: 'Школа · Астана',
+      members: '540 участников',
+      offers: [
+        { name: 'BookNook', initials: 'BN', color: '#2563EB', text: '\u221215% на учебники и канцтовары' },
+        { name: 'KidsWear', initials: 'KW', color: '#DB2777', text: 'Кэшбэк 10%' },
+        { name: 'MathPro', initials: 'MP', color: '#059669', text: 'Первое занятие бесплатно' },
+        { name: 'FamilyCafe', initials: 'FC', color: '#D97706', text: '\u221220% по будням' },
+      ],
+    },
+    {
+      icon: <Trophy size={20} />,
+      avatarBg: '#DC2626',
+      name: 'Astana Sport Club',
+      category: 'Спортивная ассоциация · Астана',
+      members: '890 участников',
+      offers: [
+        { name: 'ProteinLab', initials: 'PL', color: '#DC2626', text: 'Кэшбэк 12%' },
+        { name: 'FitGear', initials: 'FG', color: '#0EA5E9', text: '\u221215% на экипировку' },
+        { name: 'RecoveryZone', initials: 'RZ', color: '#7C3AED', text: '\u221220% на первый сеанс' },
+        { name: 'PulseGym', initials: 'PG', color: '#059669', text: 'Кэшбэк 8%' },
+      ],
+    },
+    {
+      icon: <Briefcase size={20} />,
+      avatarBg: '#4338CA',
+      name: 'Nova Consulting',
+      category: 'Корпоративное сообщество · Алматы',
+      members: '210 участников',
+      offers: [
+        { name: 'WorkHub', initials: 'WH', color: '#4338CA', text: '\u221225% на коворкинг' },
+        { name: 'BrewBar', initials: 'BB', color: '#92400E', text: 'Кэшбэк 10%' },
+        { name: 'CleanPro', initials: 'CP', color: '#0EA5E9', text: '\u221215% на химчистку' },
+        { name: 'LunchBox', initials: 'LB', color: '#D97706', text: 'Кэшбэк 7%' },
+      ],
+    },
+  ];
+
+  return (
+    <section className="py-24 px-6 bg-white">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-14">
+          <span className="badge-green inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-4">
+            Как это выглядит у клиентов
+          </span>
+          <h2 className="text-4xl font-black text-[#111827] mb-4">
+            Ваше предложение — среди тех,<br /><span className="green-text">которыми уже пользуются каждый день</span>
+          </h2>
+          <p className="text-[#6B7280] text-lg max-w-2xl mx-auto">
+            Три разных типа сообществ — школьное, спортивное, профессиональное. Так участники видят вкладку «Партнёры»: рядом с бонусами и штампиками, которыми они и так пользуются, а не в отдельном баннере.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {communities.map(c => (
+            <div key={c.name} className="community-card">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-11 h-11 rounded-2xl flex items-center justify-center flex-shrink-0 text-white" style={{ background: c.avatarBg }}>
+                  {c.icon}
+                </div>
+                <div className="min-w-0">
+                  <div className="text-sm font-black text-[#111827] truncate">{c.name}</div>
+                  <div className="text-[11px] text-[#9CA3AF] truncate">{c.category}</div>
+                </div>
+              </div>
+              <div className="flex items-center justify-between mb-3">
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[10px] font-bold" style={{ background: '#FEF3C7', color: '#D97706' }}>
+                  <Percent size={11} /> Партнёры
+                </div>
+                <span className="text-[10px] font-semibold text-[#9CA3AF]">{c.members}</span>
+              </div>
+              <div>
+                {c.offers.map(o => (
+                  <div key={o.name} className="flex items-center gap-3 py-2.5 border-b border-[#F3F4F6] last:border-0">
+                    <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 text-[11px] font-black text-white" style={{ background: o.color }}>
+                      {o.initials}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="text-xs font-bold text-[#111827] truncate">{o.name}</div>
+                      <div className="text-[11px] text-[#6B7280] truncate">{o.text}</div>
+                    </div>
+                    <div className="px-2 py-0.5 rounded-full text-[10px] font-bold flex-shrink-0" style={{ background: '#EDFAF3', color: GREEN_DARK }}>
+                      Активно
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // ─── PAGE: БИЗНЕС ─────────────────────────────────────────────────────────────
 
 function BusinessPage() {
@@ -507,6 +607,8 @@ function BusinessPage() {
       <div className="divider h-px" />
       <TwoWaysBlock />
       <div className="divider h-px" />
+      <OffersShowcase />
+      <div className="divider h-px" />
       <HowItWorks />
       <div className="divider h-px" />
 
@@ -531,6 +633,7 @@ function BusinessPage() {
               { icon: <Globe size={17} />, t: 'Фильтры по интересам и геолокации', d: 'Сообщества организованы по интересам и городу. Географический таргетинг без лишних показов.' },
               { icon: <BarChart3 size={17} />, t: 'Аналитика размещений', d: 'Охват, просмотры и вовлечённость по каждому предложению в реальном времени.' },
               { icon: <TrendingUp size={17} />, t: 'ROI по каждому каналу', d: 'Понятные данные о возврате инвестиций - сравнивайте эффективность разных сообществ.' },
+              { icon: <CreditCard size={17} />, t: 'Клиентская база растёт', d: 'Каждый, кто откликнулся на предложение, остаётся в вашей CRM - контакты, история визитов, накопленный кэшбэк. Не разовый охват, а актив, который пополняется сам.' },
               { icon: <Users size={17} />, t: 'Мотивированная аудитория', d: 'Участники имеют бонусные уровни и кэшбэк. Они активно следят за предложениями и реагируют на них.' },
               { icon: <Shield size={17} />, t: 'Верифицированные сообщества', d: 'Только реальные активные сообщества с подтверждённой и вовлечённой аудиторией.' },
             ].map(item => (
