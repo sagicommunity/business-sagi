@@ -827,8 +827,11 @@ function AdminPage() {
               Запустите программу лояльности, принимайте предложения от партнёров и зарабатывайте на своей аудитории — пока участники получают реальную ценность.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-14">
-              <a href="mailto:sagibonus@gmail.com" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-bold text-base shadow-md text-white" style={{ background: INDIGO }}>
-                Создать сообщество <ArrowRight size={17} />
+              <a href="https://apps.apple.com/kz/app/id6764310350" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-base shadow-md text-white" style={{ background: INDIGO }}>
+                App Store <ArrowRight size={17} />
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=com.abr.sagi" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-base shadow-md text-white" style={{ background: INDIGO }}>
+                Google Play <ArrowRight size={17} />
               </a>
               <a href="#АдминКакРаботает" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-bold text-base border-2 border-[#E5E7EB] text-[#374151] hover:border-[#C4B5FD] transition">
                 Как это устроено <ChevronRight size={17} />
@@ -1162,9 +1165,14 @@ function AdminPage() {
               <p className="text-white/60 text-lg max-w-xl mx-auto mb-10 leading-relaxed">
                 Присоединяйтесь к сети из 1000+ сообществ. Настройте лояльность, привлеките партнёров и монетизируйте свою аудиторию.
               </p>
-              <a href="mailto:sagibonus@gmail.com" className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-xl font-bold text-base shadow-md text-white" style={{ background: INDIGO }}>
-                Создать сообщество <ArrowRight size={17} />
-              </a>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                <a href="https://apps.apple.com/kz/app/id6764310350" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-base shadow-md text-white" style={{ background: INDIGO }}>
+                  App Store <ArrowRight size={17} />
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.abr.sagi" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-base shadow-md text-white" style={{ background: INDIGO }}>
+                  Google Play <ArrowRight size={17} />
+                </a>
+              </div>
             </div>
           </div>
         </div>
