@@ -1110,9 +1110,9 @@ function AdminPage() {
             <div className="grid md:grid-cols-4 gap-4 mb-6">
               {[
                 { label: 'Участников в сообществе', val: '1 200' },
-                { label: 'Активных партнёров', val: '6' },
-                { label: 'Стоимость одного размещения', val: '15 000 ₸' },
-                { label: 'Доход в месяц', val: '90 000 ₸', highlight: true },
+                { label: 'Активных партнёров', val: '25' },
+                { label: 'Стоимость одного размещения', val: '20 000 ₸' },
+                { label: 'Доход администратора в месяц', val: '250 000 ₸', highlight: true },
               ].map(item => (
                 <div key={item.label} className="rounded-xl p-4 text-center" style={{ background: item.highlight ? INDIGO : 'white', borderRadius: 16 }}>
                   <div className="text-xl font-black mb-1" style={{ color: item.highlight ? 'white' : INDIGO }}>{item.val}</div>
@@ -1120,7 +1120,7 @@ function AdminPage() {
                 </div>
               ))}
             </div>
-            <p className="text-sm text-[#6B7280]">Реальные цифры зависят от размера и активности сообщества. Доход растёт вместе с аудиторией.</p>
+            <p className="text-sm text-[#6B7280]">Администратор получает 50% от суммы, которую платят партнёры за размещение - остальное уходит на инфраструктуру платформы. Реальные цифры зависят от размера и активности сообщества, доход растёт вместе с аудиторией.</p>
           </div>
         </div>
       </section>
