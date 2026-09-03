@@ -5,6 +5,7 @@ import {
   Briefcase, Bell, ChevronRight, Zap, Building2, CircleUser, ShoppingBag, Trophy,
   Globe, Target, Share2, MessageCircle, Star, Layers,
   Gift, Award, CreditCard, Percent, MapPin, Settings, DollarSign,
+  Compass, UserPlus, Footprints, TreePine, Heart, Flame,
 } from 'lucide-react';
 
 const GREEN = '#2ABB6F';
@@ -1185,9 +1186,14 @@ function AdminPage() {
 
 function UserPage() {
   const AMBER = '#D97706';
+  const INDIGO = '#4338CA';
+  const VIOLET = '#7C3AED';
 
-  const badge = (text: string) => (
-    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-4" style={{ background: '#FEF3C7', color: AMBER, border: '1px solid #FDE68A' }}>
+  const APP_STORE_URL = 'https://apps.apple.com/kz/app/id6764310350';
+  const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.abr.sagi';
+
+  const badge = (text: string, color: string = AMBER, bg: string = '#FEF3C7', border: string = '#FDE68A') => (
+    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-4" style={{ background: bg, color, border: `1px solid ${border}` }}>
       {text}
     </span>
   );
@@ -1199,23 +1205,26 @@ function UserPage() {
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-16">
           <div className="flex-1 text-center lg:text-left">
             <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-7" style={{ background: '#FEF3C7', color: AMBER, border: '1px solid #FDE68A' }}>
-              <Gift size={11} />
-              Для участников сообществ
+              <Users size={11} />
+              Sagi Kin — приложение для сообществ
             </span>
             <h1 className="text-5xl lg:text-[3.6rem] font-black leading-[1.08] tracking-tight mb-6 text-[#111827]">
-              Один профиль —<br />
-              <span style={{ color: AMBER }}>все любимые места</span>
+              Найдите своих.<br />
+              <span style={{ color: AMBER }}>Стройте сообщество вместе</span>
             </h1>
             <p className="text-lg text-[#6B7280] max-w-xl mx-auto lg:mx-0 leading-relaxed mb-10">
-              Кэшбэк, штампики и эксклюзивные предложения в кафе, магазинах и сервисах твоего города. Всё в одном приложении — без бумажных карточек и десяти разных программ.
+              Sagi Kin — это сообщества по интересам, семейное древо, шаги и челленджи вместе с близкими, и бонусы в любимых местах. Всё в одном профиле — без десяти разных приложений.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-14">
-              <a href="mailto:sagibonus@gmail.com" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-bold text-base shadow-md text-white" style={{ background: AMBER }}>
-                Найти сообщества рядом <MapPin size={17} />
+            <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-10">
+              <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-bold text-base shadow-md text-white" style={{ background: AMBER }}>
+                App Store <ArrowRight size={17} />
+              </a>
+              <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-bold text-base shadow-md text-white" style={{ background: AMBER }}>
+                Google Play <ArrowRight size={17} />
               </a>
             </div>
             <div className="flex flex-wrap justify-center lg:justify-start gap-x-10 gap-y-4">
-              {[{ v: '1000+', l: 'мест на платформе' }, { v: '3 млн+', l: 'участников в сети' }, { v: 'до 15%', l: 'кэшбэк бонусами' }].map(s => (
+              {[{ v: '1000+', l: 'сообществ на платформе' }, { v: '3 млн+', l: 'участников в сети' }, { v: '15+', l: 'типов сообществ' }].map(s => (
                 <div key={s.l} className="text-center lg:text-left">
                   <div className="text-2xl font-black" style={{ color: AMBER }}>{s.v}</div>
                   <div className="text-xs text-[#9CA3AF] mt-0.5">{s.l}</div>
@@ -1224,54 +1233,30 @@ function UserPage() {
             </div>
           </div>
 
-          {/* User card mockup */}
+          {/* Four pillars mockup */}
           <div className="flex-shrink-0 relative">
             <div className="relative w-[340px] mx-auto">
               <div className="absolute -inset-8 rounded-full opacity-20" style={{ background: `radial-gradient(ellipse, ${AMBER}88, transparent 70%)` }} />
               <div className="community-card relative z-10">
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-12 h-12 rounded-2xl flex-shrink-0 overflow-hidden">
-                    <img src="/brands/hani.jpeg" alt="hani" className="w-full h-full object-cover" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-black text-[#111827]">hani</div>
-                    <div className="text-xs text-[#9CA3AF]">Кондитерские-кофейни · Астана</div>
-                  </div>
-                  <div className="ml-auto px-2 py-0.5 rounded-full text-[10px] font-bold" style={{ background: '#FEF3C7', color: AMBER }}>Silver</div>
-                </div>
-                <div className="rounded-xl p-4 mb-4" style={{ background: '#FFFBF0', border: '1px solid #FDE68A' }}>
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="flex items-center gap-1.5">
-                      <Star size={13} style={{ color: '#F5A623' }} />
-                      <span className="text-xs font-black text-[#111827]">760 / 2000 бонусов</span>
+                <div className="text-xs font-bold uppercase tracking-widest text-[#9CA3AF] mb-5">Всё в одном приложении</div>
+                {[
+                  { icon: <Compass size={18} />, title: 'Сообщества по интересам', desc: 'Школа, спорт, соседи, работа', color: INDIGO, bg: '#EEF2FF' },
+                  { icon: <Footprints size={18} />, title: 'Шаги и челленджи', desc: 'Рейтинг сообщества, призы', color: '#1E9E5A', bg: '#EDFAF3' },
+                  { icon: <TreePine size={18} />, title: 'Семейное древо', desc: 'Родственники, фотоархив', color: VIOLET, bg: '#F5F3FF' },
+                  { icon: <Gift size={18} />, title: 'Бонусы и кэшбэк', desc: 'До 15% в любимых местах', color: AMBER, bg: '#FFFBEB' },
+                ].map((row, i) => (
+                  <div key={row.title} className={`flex items-center gap-3 py-3 ${i < 3 ? 'border-b border-[#F3F4F6]' : ''}`}>
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: row.bg, color: row.color }}>
+                      {row.icon}
                     </div>
-                    <span className="text-[10px] text-[#9CA3AF]">до Gold</span>
+                    <div>
+                      <div className="text-sm font-bold text-[#111827]">{row.title}</div>
+                      <div className="text-xs text-[#9CA3AF]">{row.desc}</div>
+                    </div>
                   </div>
-                  <div className="h-2 rounded-full bg-[#F3F4F6] mb-1.5">
-                    <div className="h-2 rounded-full" style={{ width: '38%', background: '#F5A623' }} />
-                  </div>
-                  <div className="text-[10px] text-[#9CA3AF]">Ещё 1 240 бонусов — кэшбэк вырастет до 7%</div>
-                </div>
-                <div className="mb-4">
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="text-xs font-bold text-[#374151]">Штамп-карта hani</div>
-                    <div className="text-[10px] text-[#9CA3AF]">8 / 10</div>
-                  </div>
-                  <div className="grid grid-cols-5 gap-1.5">
-                    {Array.from({ length: 10 }, (_, i) => (
-                      <div key={i} className="w-full aspect-square rounded-lg flex items-center justify-center text-xs font-bold"
-                        style={i < 8 ? { background: '#F5A623', color: 'white' } : { background: '#F3F4F6', color: '#D1D5DB', border: '1.5px dashed #E5E7EB' }}>
-                        {i < 8 ? '✓' : ''}
-                      </div>
-                    ))}
-                  </div>
-                  <div className="text-[10px] text-[#9CA3AF] mt-1.5">Ещё 2 визита — бесплатный напиток</div>
-                </div>
-                <button className="w-full py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2 text-white" style={{ background: AMBER }}>
-                  Смотреть предложения <ArrowRight size={15} />
-                </button>
+                ))}
               </div>
-              <div className="absolute -right-14 top-8 bg-white rounded-2xl shadow-xl px-3 py-2.5 flex items-center gap-2.5 border border-[#F0F0F0] z-20">
+              <div className="absolute -right-14 top-4 bg-white rounded-2xl shadow-xl px-3 py-2.5 flex items-center gap-2.5 border border-[#F0F0F0] z-20">
                 <div className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: AMBER }}>
                   <Gift size={15} className="text-white" />
                 </div>
@@ -1280,12 +1265,12 @@ function UserPage() {
                   <div className="text-[9px] text-[#9CA3AF]">за последний визит</div>
                 </div>
               </div>
-              <div className="absolute -left-16 bottom-10 bg-white rounded-2xl shadow-xl px-3 py-2.5 flex items-center gap-2.5 border border-[#F0F0F0] z-20">
+              <div className="absolute -left-16 -bottom-8 bg-white rounded-2xl shadow-xl px-3 py-2.5 flex items-center gap-2.5 border border-[#F0F0F0] z-20">
                 <div className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0 bg-[#EEF2FF]">
-                  <Search size={14} style={{ color: '#4338CA' }} />
+                  <Search size={14} style={{ color: INDIGO }} />
                 </div>
                 <div>
-                  <div className="text-[11px] font-bold text-[#111827]">3 новых места рядом</div>
+                  <div className="text-[11px] font-bold text-[#111827]">3 новых сообщества рядом</div>
                   <div className="text-[9px] text-[#9CA3AF]">в сети Sagi</div>
                 </div>
               </div>
@@ -1296,62 +1281,76 @@ function UserPage() {
 
       <div className="divider h-px" />
 
-      {/* Pain */}
-      <section className="py-24 px-6 section-alt">
+      {/* Communities: find or create */}
+      <section className="py-24 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
-            {badge('Знакомо?')}
+            {badge('Сообщества', INDIGO, '#EEF2FF', '#C7D2FE')}
             <h2 className="text-4xl font-black text-[#111827] mb-4">
-              Лояльность есть.<br />
-              <span style={{ color: AMBER }}>Но толку от неё мало</span>
+              Найдите сообщество —<br />
+              <span style={{ color: INDIGO }}>или создайте своё</span>
             </h2>
             <p className="text-[#6B7280] text-lg max-w-2xl mx-auto">
-              Старые программы лояльности созданы для бизнеса, а не для вас.
+              Школьные, спортивные, соседские, профессиональные, семейные — в Sagi Kin сотни сообществ. Не нашли своё? Создайте за пару минут.
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {[
-              { icon: <RefreshCw size={20} />, title: 'Бумажные карточки теряются', desc: 'Накопил 9 штампиков — и потерял карточку. Снова начинать с нуля.', bg: '#FFF8F8', border: '#FED7D7', iconBg: '#FEE2E2', iconColor: '#DC2626' },
-              { icon: <Smartphone size={20} />, title: '10 разных приложений', desc: 'У каждого кафе своё приложение. Устанавливать, регистрироваться, запоминать пароли.', bg: '#FFFBF0', border: '#FDE68A', iconBg: '#FEF3C7', iconColor: '#D97706' },
-              { icon: <Bell size={20} />, title: 'Пропускаешь акции', desc: 'Любимое место сделало скидку для постоянных клиентов. Ты узнал об этом через неделю.', bg: '#F5F3FF', border: '#C4B5FD', iconBg: '#EDE9FE', iconColor: '#4338CA' },
-              { icon: <Target size={20} />, title: 'Скидки не для тебя', desc: 'Бонусы сгорают, условия непрозрачные, а «выгодные предложения» доступны всем подряд.', bg: '#F0FDF4', border: '#B6EDD2', iconBg: '#EDFAF3', iconColor: GREEN_DARK },
-            ].map(p => (
-              <div key={p.title} className="rounded-2xl p-6 border card-lift" style={{ background: p.bg, borderColor: p.border }}>
-                <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style={{ background: p.iconBg }}>
-                  <div style={{ color: p.iconColor }}>{p.icon}</div>
-                </div>
-                <h3 className="text-base font-black text-[#111827] mb-2">{p.title}</h3>
-                <p className="text-sm text-[#6B7280] leading-relaxed">{p.desc}</p>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="rounded-2xl p-8 border card-lift" style={{ background: '#EEF2FF', borderColor: '#C7D2FE' }}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: INDIGO, color: 'white' }}>
+                <Compass size={22} />
               </div>
-            ))}
+              <h3 className="text-xl font-black text-[#111827] mb-2">Найти сообщество</h3>
+              <p className="text-sm text-[#6B7280] leading-relaxed mb-5">
+                Ищите по городу, категории или рядом с вами. Вступайте в один клик — без приглашений и заявок.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {['Школа', 'Спорт', 'Соседи', 'Работа', 'Семья', 'Диаспора'].map(t => (
+                  <span key={t} className="text-xs font-semibold px-3 py-1.5 rounded-full" style={{ background: 'white', color: INDIGO, border: '1px solid #C7D2FE' }}>{t}</span>
+                ))}
+              </div>
+            </div>
+            <div className="rounded-2xl p-8 border card-lift" style={{ background: '#F5F3FF', borderColor: '#DDD6FE' }}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: VIOLET, color: 'white' }}>
+                <UserPlus size={22} />
+              </div>
+              <h3 className="text-xl font-black text-[#111827] mb-2">Создать своё</h3>
+              <p className="text-sm text-[#6B7280] leading-relaxed mb-5">
+                Заведите приватное или открытое сообщество и пригласите людей по ссылке. Готовые инструменты — уже внутри.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {['Посты', 'События', 'Задачи', 'Челленджи', 'Объявления'].map(t => (
+                  <span key={t} className="text-xs font-semibold px-3 py-1.5 rounded-full" style={{ background: 'white', color: VIOLET, border: '1px solid #DDD6FE' }}>{t}</span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <div className="divider h-px" />
 
-      {/* Benefits */}
-      <section className="py-24 px-6 bg-white">
+      {/* Steps & challenges */}
+      <section className="py-24 px-6 section-alt">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
-            {badge('Что вы получаете')}
+            {badge('Активность', '#1E9E5A', '#EDFAF3', '#B6EDD2')}
             <h2 className="text-4xl font-black text-[#111827] mb-4">
-              Каждый визит<br />
-              <span style={{ color: AMBER }}>приносит реальную выгоду</span>
+              Шаги и челленджи —<br />
+              <span style={{ color: '#1E9E5A' }}>вместе с сообществом</span>
             </h2>
-            <p className="text-[#6B7280] text-lg max-w-xl mx-auto">
-              Вступайте в сообщества любимых мест и получайте ценность с каждой покупкой.
+            <p className="text-[#6B7280] text-lg max-w-2xl mx-auto">
+              Подключите телефон — и соревнуйтесь в шагах, книгах, тренировках или своих задачах прямо внутри сообщества.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
-              { icon: <CreditCard size={22} />, title: 'Кэшбэк бонусами', desc: 'До 15% с каждой покупки возвращается на бонусный счёт. Тратьте бонусы на следующий визит.', color: AMBER, bg: '#FFFBEB', border: '#FDE68A' },
-              { icon: <CheckCircle size={22} />, title: 'Штамп-карты', desc: 'Вместо бумажных карточек — цифровая карта в приложении. Не теряется, не мнётся, не сгорает.', color: GREEN_DARK, bg: '#EDFAF3', border: '#B6EDD2' },
-              { icon: <Award size={22} />, title: 'Уровни участника', desc: 'Bronze, Silver, Gold. Чем активнее — тем выше кэшбэк и больше привилегий. Уровень не сгорает.', color: '#4338CA', bg: '#EEF2FF', border: '#C7D2FE' },
-              { icon: <Percent size={22} />, title: 'Эксклюзивные предложения', desc: 'Скидки и акции только для участников сообщества. Не для всех — только для своих.', color: '#DC2626', bg: '#FFF8F8', border: '#FED7D7' },
+              { icon: <Footprints size={22} />, title: 'Шаги автоматически', desc: 'Синхронизация с телефоном — шаги считаются сами, без ручного ввода.' },
+              { icon: <Trophy size={22} />, title: 'Рейтинг сообщества', desc: 'Смотрите, кто активнее на этой неделе. Делитесь результатом — или скройте свой.' },
+              { icon: <Target size={22} />, title: 'Свои челленджи', desc: 'Книги, километры, вода, экономия — любая цель и единица измерения, какую задаст сообщество.' },
+              { icon: <Flame size={22} />, title: 'Призы победителям', desc: 'Админ сообщества назначает награду за месяц — видно только внутри своего круга.' },
             ].map(item => (
-              <div key={item.title} className="rounded-2xl p-6 border card-lift" style={{ background: item.bg, borderColor: item.border }}>
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: item.color, color: 'white' }}>
+              <div key={item.title} className="rounded-2xl p-6 border card-lift bg-white" style={{ borderColor: '#B6EDD2' }}>
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: '#1E9E5A', color: 'white' }}>
                   {item.icon}
                 </div>
                 <h3 className="text-base font-black text-[#111827] mb-2">{item.title}</h3>
@@ -1364,73 +1363,127 @@ function UserPage() {
 
       <div className="divider h-px" />
 
-      {/* Network section */}
-      <section className="py-24 px-6 section-alt">
+      {/* Family tree */}
+      <section className="py-24 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
-            {badge('Сетевой эффект')}
+            {badge('Семья', VIOLET, '#F5F3FF', '#DDD6FE')}
             <h2 className="text-4xl font-black text-[#111827] mb-4">
-              Чем больше мест в сети —<br />
-              <span style={{ color: AMBER }}>тем выгоднее быть участником</span>
+              Родословная,<br />
+              <span style={{ color: VIOLET }}>которую строите вместе</span>
             </h2>
             <p className="text-[#6B7280] text-lg max-w-2xl mx-auto">
-              Sagi — это 1000+ сообществ в одной экосистеме. Ваш профиль, бонусы и уровень работают во всех из них.
+              Семейное сообщество в Sagi Kin — это общее древо, которое пополняют все родственники, а не только вы.
             </p>
           </div>
-
-          <div className="rounded-2xl p-10 mb-8" style={{ background: 'linear-gradient(140deg, #78350F 0%, #92400E 100%)' }}>
-            <div className="grid md:grid-cols-3 gap-8 items-center">
-              <div className="md:col-span-2">
-                <div className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#FCD34D' }}>Один профиль — вся сеть</div>
-                <h3 className="text-2xl font-black text-white mb-4">
-                  Вступил в одно сообщество —<br />открыл доступ ко всей сети
-                </h3>
-                <p className="text-white/60 leading-relaxed mb-6">
-                  Ваш профиль Sagi работает во всех сообществах сети. Бонусы, уровень и история — едины. Кафе, спортзал, книжный, барбершоп — всё в одном приложении.
-                </p>
-                <div className="flex flex-wrap gap-3">
-                  {['Один аккаунт', 'Все сообщества', 'Без лишних приложений', 'Бонусы не сгорают'].map(tag => (
-                    <span key={tag} className="text-xs font-semibold px-3 py-1.5 rounded-full bg-white/10 text-white/80">{tag}</span>
-                  ))}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              { icon: <TreePine size={22} />, title: 'Семейное дерево', desc: 'Стройте древо вместе с родными — каждый добавляет свою ветку.' },
+              { icon: <Users size={22} />, title: 'Кто вам кем приходится', desc: 'Sagi Kin сам покажет родство: троюродный брат, внук дяди — без объяснений на словах.' },
+              { icon: <Heart size={22} />, title: 'Семейный фотоархив', desc: 'Смотрите фото, которые выложили другие ветки семьи — то, что иначе никогда не увидите.' },
+              { icon: <Bell size={22} />, title: 'Дни рождения родни', desc: 'Напоминания даже о дальних родственниках — тех, кого сложно держать в голове.' },
+            ].map(item => (
+              <div key={item.title} className="rounded-2xl p-6 border card-lift" style={{ background: '#F5F3FF', borderColor: '#DDD6FE' }}>
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: VIOLET, color: 'white' }}>
+                  {item.icon}
                 </div>
+                <h3 className="text-base font-black text-[#111827] mb-2">{item.title}</h3>
+                <p className="text-sm text-[#6B7280] leading-relaxed">{item.desc}</p>
               </div>
-              <div className="flex flex-col gap-3">
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div className="divider h-px" />
+
+      {/* Bonuses & cashback — condensed */}
+      <section className="py-24 px-6 section-alt">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-14 items-center">
+            <div>
+              {badge('Бонусы')}
+              <h2 className="text-4xl font-black text-[#111827] mb-4">
+                И бонусы<br />
+                <span style={{ color: AMBER }}>в любимых местах</span>
+              </h2>
+              <p className="text-[#6B7280] text-lg leading-relaxed mb-8">
+                Кафе, магазины и сервисы вашего города тоже в сети Sagi. Один профиль работает во всех сообществах — кэшбэк, штамп-карты и уровень не сгорают и не привязаны к одному месту.
+              </p>
+              <div className="grid grid-cols-2 gap-4 mb-8">
                 {[
-                  { icon: <Globe size={16} />, label: 'Откройте новые места', desc: 'Sagi показывает вам другие сообщества по интересам и геолокации' },
-                  { icon: <Share2 size={16} />, label: 'Партнёрские предложения', desc: 'Бизнесы из других сообществ делают вам эксклюзивные предложения' },
-                  { icon: <TrendingUp size={16} />, label: 'Чем больше вы активны', desc: 'Тем быстрее растёт уровень и тем ценнее становится ваш профиль' },
-                ].map(item => (
-                  <div key={item.label} className="flex gap-3 p-4 rounded-xl bg-white/8" style={{ background: 'rgba(255,255,255,0.08)' }}>
-                    <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: 'rgba(255,255,255,0.12)', color: '#FCD34D' }}>
-                      {item.icon}
+                  { icon: <CreditCard size={18} />, title: 'Кэшбэк бонусами', desc: 'До 15% с покупки' },
+                  { icon: <CheckCircle size={18} />, title: 'Штамп-карты', desc: 'Не теряются, не мнутся' },
+                  { icon: <Award size={18} />, title: 'Уровни участника', desc: 'Bronze, Silver, Gold' },
+                  { icon: <Percent size={18} />, title: 'Только для своих', desc: 'Эксклюзивные предложения' },
+                ].map(b => (
+                  <div key={b.title} className="flex items-start gap-3">
+                    <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: '#FFFBEB', color: AMBER }}>
+                      {b.icon}
                     </div>
                     <div>
-                      <div className="text-sm font-bold text-white mb-0.5">{item.label}</div>
-                      <div className="text-xs text-white/50 leading-relaxed">{item.desc}</div>
+                      <div className="text-sm font-bold text-[#111827]">{b.title}</div>
+                      <div className="text-xs text-[#9CA3AF]">{b.desc}</div>
                     </div>
                   </div>
                 ))}
               </div>
+              <div className="flex flex-wrap gap-3">
+                {[
+                  { level: 'Bronze', emoji: '🥉', cashback: '3%' },
+                  { level: 'Silver', emoji: '🥈', cashback: '7%' },
+                  { level: 'Gold', emoji: '🥇', cashback: '15%' },
+                ].map(l => (
+                  <span key={l.level} className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-2 rounded-full bg-white border border-[#FDE68A]">
+                    {l.emoji} {l.level} · {l.cashback} кэшбэк
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
 
-          {/* Level progression */}
-          <div className="rounded-2xl p-8 bg-white border border-[#F0F0F0]">
-            <div className="text-xs font-bold uppercase tracking-widest text-[#9CA3AF] mb-6 text-center">Как работают уровни в сети Sagi</div>
-            <div className="grid md:grid-cols-3 gap-4">
-              {[
-                { level: 'Bronze', emoji: '🥉', cashback: '3%', desc: 'Стартовый уровень. Бонусы за каждый визит, доступ к базовым предложениям.', color: '#92400E', bg: '#FEF3C7', border: '#FDE68A', visits: '0+ визитов' },
-                { level: 'Silver', emoji: '🥈', cashback: '7%', desc: 'Повышенный кэшбэк, доступ к закрытым акциям и приоритетные предложения от партнёров.', color: '#374151', bg: '#F3F4F6', border: '#E5E7EB', visits: '500+ бонусов' },
-                { level: 'Gold', emoji: '🥇', cashback: '15%', desc: 'Максимальный кэшбэк, эксклюзивные предложения, ранний доступ к акциям и VIP-привилегии.', color: '#B45309', bg: '#FFFBEB', border: '#FDE68A', visits: '2000+ бонусов' },
-              ].map(l => (
-                <div key={l.level} className="rounded-2xl p-6 border text-center card-lift" style={{ background: l.bg, borderColor: l.border }}>
-                  <div className="text-3xl mb-2">{l.emoji}</div>
-                  <div className="text-lg font-black mb-1" style={{ color: l.color }}>{l.level}</div>
-                  <div className="text-3xl font-black mb-1" style={{ color: l.color }}>{l.cashback}</div>
-                  <div className="text-xs text-[#9CA3AF] mb-3">кэшбэк бонусами · {l.visits}</div>
-                  <p className="text-xs text-[#6B7280] leading-relaxed">{l.desc}</p>
+            <div className="flex-shrink-0 relative">
+              <div className="relative w-[320px] mx-auto">
+                <div className="absolute -inset-8 rounded-full opacity-20" style={{ background: `radial-gradient(ellipse, ${AMBER}88, transparent 70%)` }} />
+                <div className="community-card relative z-10">
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className="w-12 h-12 rounded-2xl flex-shrink-0 overflow-hidden">
+                      <img src="/brands/hani.jpeg" alt="hani" className="w-full h-full object-cover" />
+                    </div>
+                    <div>
+                      <div className="text-sm font-black text-[#111827]">hani</div>
+                      <div className="text-xs text-[#9CA3AF]">Кондитерские-кофейни · Астана</div>
+                    </div>
+                    <div className="ml-auto px-2 py-0.5 rounded-full text-[10px] font-bold" style={{ background: '#FEF3C7', color: AMBER }}>Silver</div>
+                  </div>
+                  <div className="rounded-xl p-4 mb-4" style={{ background: '#FFFBF0', border: '1px solid #FDE68A' }}>
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center gap-1.5">
+                        <Star size={13} style={{ color: '#F5A623' }} />
+                        <span className="text-xs font-black text-[#111827]">760 / 2000 бонусов</span>
+                      </div>
+                      <span className="text-[10px] text-[#9CA3AF]">до Gold</span>
+                    </div>
+                    <div className="h-2 rounded-full bg-[#F3F4F6] mb-1.5">
+                      <div className="h-2 rounded-full" style={{ width: '38%', background: '#F5A623' }} />
+                    </div>
+                    <div className="text-[10px] text-[#9CA3AF]">Ещё 1 240 бонусов — кэшбэк вырастет до 7%</div>
+                  </div>
+                  <div>
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="text-xs font-bold text-[#374151]">Штамп-карта hani</div>
+                      <div className="text-[10px] text-[#9CA3AF]">8 / 10</div>
+                    </div>
+                    <div className="grid grid-cols-5 gap-1.5">
+                      {Array.from({ length: 10 }, (_, i) => (
+                        <div key={i} className="w-full aspect-square rounded-lg flex items-center justify-center text-xs font-bold"
+                          style={i < 8 ? { background: '#F5A623', color: 'white' } : { background: '#F3F4F6', color: '#D1D5DB', border: '1.5px dashed #E5E7EB' }}>
+                          {i < 8 ? '✓' : ''}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </div>
@@ -1445,14 +1498,14 @@ function UserPage() {
             {badge('Как начать')}
             <h2 className="text-4xl font-black text-[#111827] mb-4">
               Три шага<br />
-              <span style={{ color: AMBER }}>до первых бонусов</span>
+              <span style={{ color: AMBER }}>до первого сообщества</span>
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { num: '01', title: 'Найди сообщества своих мест', desc: 'В каталоге — 1000+ кафе, магазинов и сервисов. Ищи по городу, категории или рядом с тобой. Вступай в один клик.', color: '#FEF3C7', border: '#FDE68A', iconColor: AMBER },
-              { num: '02', title: 'Совершай покупки — бонусы начисляются сами', desc: 'Просто приходи в заведение. Бонусы и штампики начисляются автоматически. Никаких кассиров и бумажных карточек.', color: '#EDFAF3', border: '#B6EDD2', iconColor: GREEN_DARK },
-              { num: '03', title: 'Повышай уровень и открывай привилегии', desc: 'Чем активнее — тем выше уровень. Gold-участники получают 15% кэшбэк и первыми узнают об эксклюзивных акциях.', color: '#EEF2FF', border: '#C7D2FE', iconColor: '#4338CA' },
+              { num: '01', title: 'Скачайте Sagi Kin и найдите своих', desc: 'Каталог из 1000+ сообществ: школьные, спортивные, семейные, соседские. Или создайте своё за пару минут.', color: '#EEF2FF', border: '#C7D2FE', iconColor: INDIGO },
+              { num: '02', title: 'Участвуйте — всё в одном профиле', desc: 'Посты, шаги и челленджи, семейное древо, бонусы в любимых местах. Ничего не нужно переключать.', color: '#EDFAF3', border: '#B6EDD2', iconColor: '#1E9E5A' },
+              { num: '03', title: 'Растите вместе с сообществом', desc: 'Повышайте уровень, находите родню, соревнуйтесь в активности — чем активнее вы, тем больше пользы.', color: '#FEF3C7', border: '#FDE68A', iconColor: AMBER },
             ].map(s => (
               <div key={s.num} className="rounded-2xl p-7 border" style={{ background: s.color, borderColor: s.border }}>
                 <div className="flex items-center justify-between mb-5">
@@ -1480,17 +1533,22 @@ function UserPage() {
             <div className="relative">
               <div className="flex items-center justify-center gap-2 mb-8">
                 <span className="text-white text-3xl font-black tracking-tight">sagi</span>
-                <span className="text-sm font-semibold border border-white/20 bg-white/10 text-white/80 rounded-full px-3 py-1">Community</span>
+                <span className="text-sm font-semibold border border-white/20 bg-white/10 text-white/80 rounded-full px-3 py-1">Kin</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-black text-white mb-5 leading-tight">
-                Вступи и получи<br />первые бонусы сегодня
+                Скачайте Sagi Kin<br />и найдите своих
               </h2>
               <p className="text-white/60 text-lg max-w-xl mx-auto mb-10 leading-relaxed">
-                1000+ сообществ кафе, магазинов и сервисов уже в сети. Один профиль — все любимые места.
+                Сообщества, семейное древо, шаги и бонусы любимых мест — в одном приложении.
               </p>
-              <a href="mailto:sagibonus@gmail.com" className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-xl font-bold text-base shadow-md text-white" style={{ background: AMBER }}>
-                Найти сообщества рядом <MapPin size={17} />
-              </a>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-base shadow-md text-white" style={{ background: AMBER }}>
+                  App Store <ArrowRight size={17} />
+                </a>
+                <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-base shadow-md text-white" style={{ background: AMBER }}>
+                  Google Play <ArrowRight size={17} />
+                </a>
+              </div>
             </div>
           </div>
         </div>
