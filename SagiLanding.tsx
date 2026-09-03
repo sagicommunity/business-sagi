@@ -5,7 +5,7 @@ import {
   Briefcase, Bell, ChevronRight, Zap, Building2, CircleUser, ShoppingBag, Trophy,
   Globe, Target, Share2, MessageCircle, Star, Layers,
   Gift, Award, CreditCard, Percent, MapPin, Settings, DollarSign,
-  Compass, UserPlus, Footprints, TreePine, Heart, Flame,
+  Compass, UserPlus, Footprints, TreePine, Heart, Flame, Phone, Mail,
 } from 'lucide-react';
 
 const GREEN = '#2ABB6F';
@@ -1557,12 +1557,489 @@ function UserPage() {
   );
 }
 
+// ─── PAGE: ДЛЯ СОТРУДНИКОВ (ENTERPRISE) ────────────────────────────────────
+
+function EnterprisePage() {
+  const FOREST = '#14532D';
+  const GOLD = '#D97706';
+  const PHONE = '+77077000087';
+  const PHONE_DISPLAY = '+7 707 700 00 87';
+  const EMAIL = 'business@sagibonus.com';
+
+  const badge = (text: string, color: string = FOREST, bg: string = '#F0FDF4', border: string = '#BBF7D0') => (
+    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-4" style={{ background: bg, color, border: `1px solid ${border}` }}>
+      {text}
+    </span>
+  );
+
+  return (
+    <>
+      {/* Hero */}
+      <section className="pt-20 pb-28 px-6 overflow-hidden" style={{ background: 'linear-gradient(160deg, #F0FDF4 0%, #FFFFFF 55%)' }}>
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+          <div className="flex-1 text-center lg:text-left">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-7" style={{ background: '#F0FDF4', color: FOREST, border: '1px solid #BBF7D0' }}>
+              <Building2 size={11} />
+              Корпоративная платформа · модель Dubai Esaad для Казахстана
+            </span>
+            <h1 className="text-5xl lg:text-[3.6rem] font-black leading-[1.08] tracking-tight mb-6 text-[#111827]">
+              Умная экосистема<br />
+              <span style={{ color: FOREST }}>привилегий</span> для вашей команды
+            </h1>
+            <p className="text-lg text-[#6B7280] max-w-xl mx-auto lg:mx-0 leading-relaxed mb-10">
+              Цифровая платформа лояльности и структурной коммуникации, встроенная прямо в WhatsApp и Telegram — сотрудникам не нужно ничего устанавливать.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-10">
+              <a href={`tel:${PHONE}`} className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-bold text-base shadow-md text-white" style={{ background: FOREST }}>
+                <Phone size={17} /> {PHONE_DISPLAY}
+              </a>
+              <a href={`mailto:${EMAIL}`} className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-bold text-base border-2 border-[#E5E7EB] text-[#374151] hover:border-[#BBF7D0] transition">
+                <Mail size={17} /> {EMAIL}
+              </a>
+            </div>
+            <div className="flex flex-wrap justify-center lg:justify-start gap-x-10 gap-y-4">
+              {[{ v: '200+', l: 'партнёров сети' }, { v: '10–30%', l: 'скидка у партнёров' }, { v: '10 дней', l: 'от звонка до запуска' }].map(s => (
+                <div key={s.l} className="text-center lg:text-left">
+                  <div className="text-2xl font-black" style={{ color: FOREST }}>{s.v}</div>
+                  <div className="text-xs text-[#9CA3AF] mt-0.5">{s.l}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Quote + stat mockup */}
+          <div className="flex-shrink-0 relative w-full max-w-[380px]">
+            <div className="rounded-2xl p-8 relative overflow-hidden mb-5" style={{ background: 'linear-gradient(140deg, #14532D 0%, #166534 100%)' }}>
+              <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-white/5" />
+              <div className="text-4xl font-black mb-3 relative" style={{ color: GOLD }}>&ldquo;</div>
+              <p className="text-white text-lg font-semibold leading-snug mb-3 relative">
+                Повышайте благосостояние сотрудников, не раздувая ФОТ.
+              </p>
+              <div className="text-xs text-white/50 uppercase tracking-widest relative">— тезис презентации</div>
+            </div>
+            <div className="community-card">
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { v: '25–30%', l: 'снижение текучести' },
+                  { v: '500%', l: 'окупаемость внедрения' },
+                  { v: '810 000 ₸', l: 'выгода на семью в год' },
+                  { v: '0 ₸', l: 'нагрузка на ваш ФОТ' },
+                ].map(s => (
+                  <div key={s.l} className="rounded-xl p-3.5 text-center" style={{ background: '#F0FDF4' }}>
+                    <div className="text-lg font-black mb-0.5" style={{ color: FOREST }}>{s.v}</div>
+                    <div className="text-[10px] text-[#6B7280] leading-tight">{s.l}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="divider h-px" />
+
+      {/* Challenges */}
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            {badge('Вызовы HR в 2025–2026')}
+            <h2 className="text-4xl font-black text-[#111827] mb-4">
+              Три силы, которые<br />
+              <span style={{ color: FOREST }}>забирают ваших лучших людей</span>
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { icon: <TrendingUp size={20} />, title: 'Инфляционное давление', desc: 'Реальные доходы сотрудников снижаются из-за роста цен на 10–15%+. Это заставляет людей постоянно искать работу с более высокой зарплатой.', bg: '#FFF8F8', border: '#FED7D7', iconBg: '#FEE2E2', iconColor: '#DC2626' },
+              { icon: <Layers size={20} />, title: 'Невидимый соцпакет', desc: 'Компания тратит бюджеты на бенефиты, которыми пользуются редко. Сотрудники не ощущают ежедневной заботы.', bg: '#FFFBF0', border: '#FDE68A', iconBg: '#FEF3C7', iconColor: GOLD },
+              { icon: <Users size={20} />, title: 'Битва за таланты', desc: 'Перекупить специалиста на +50 000 ₸ легко. Удержать его через глубокую эмоциональную и финансовую привязанность — гораздо сложнее.', bg: '#F5F3FF', border: '#C4B5FD', iconBg: '#EDE9FE', iconColor: '#4338CA' },
+            ].map(p => (
+              <div key={p.title} className="rounded-2xl p-7 border card-lift" style={{ background: p.bg, borderColor: p.border }}>
+                <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style={{ background: p.iconBg }}>
+                  <div style={{ color: p.iconColor }}>{p.icon}</div>
+                </div>
+                <h3 className="text-lg font-black text-[#111827] mb-2">{p.title}</h3>
+                <p className="text-sm text-[#6B7280] leading-relaxed">{p.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div className="divider h-px" />
+
+      {/* Solution: Esaad model */}
+      <section className="py-24 px-6 section-alt">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            {badge('Sagi Smart OS')}
+            <h2 className="text-4xl font-black text-[#111827] mb-4">
+              Модель Esaad,<br />
+              <span style={{ color: FOREST }}>адаптированная для РК</span>
+            </h2>
+            <p className="text-[#6B7280] text-lg max-w-2xl mx-auto">
+              Мы внедряем в вашу компанию модель, аналогичную правительственной программе Dubai Esaad. Sagi — не новое приложение, а структурный слой прямо в WhatsApp и Telegram.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="rounded-2xl p-7 border card-lift bg-white" style={{ borderColor: '#BBF7D0' }}>
+              <div className="text-xs font-bold text-[#9CA3AF] mb-3">— 01</div>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ background: FOREST, color: 'white' }}>
+                <Percent size={22} />
+              </div>
+              <h3 className="text-lg font-black text-[#111827] mb-2">Центр Привилегий</h3>
+              <p className="text-sm text-[#6B7280] leading-relaxed">Закрытый каталог скидок 10–30% у лучших локальных партнёров.</p>
+            </div>
+            <div className="rounded-2xl p-7 relative overflow-hidden card-lift" style={{ background: 'linear-gradient(140deg, #14532D 0%, #166534 100%)' }}>
+              <div className="absolute -bottom-10 -right-10 w-32 h-32 rounded-full bg-white/5" />
+              <div className="text-xs font-bold text-white/50 mb-3 relative">— 02</div>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 relative" style={{ background: 'rgba(255,255,255,0.15)', color: 'white' }}>
+                <Heart size={22} />
+              </div>
+              <h3 className="text-lg font-black text-white mb-2 relative">Семейный доступ</h3>
+              <p className="text-sm text-white/60 leading-relaxed relative">Возможность подключить супруга/супругу для удвоения выгоды на всю семью.</p>
+            </div>
+            <div className="rounded-2xl p-7 border card-lift bg-white" style={{ borderColor: '#BBF7D0' }}>
+              <div className="text-xs font-bold text-[#9CA3AF] mb-3">— 03</div>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ background: FOREST, color: 'white' }}>
+                <Layers size={22} />
+              </div>
+              <h3 className="text-lg font-black text-[#111827] mb-2">Единый Хаб</h3>
+              <p className="text-sm text-[#6B7280] leading-relaxed">Структурированный доступ к корпоративной базе знаний и контактам коллег.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="divider h-px" />
+
+      {/* Family advantage */}
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-14 items-center">
+            <div>
+              {badge('Family Advantage', '#7C3AED', '#F5F3FF', '#DDD6FE')}
+              <h2 className="text-4xl font-black text-[#111827] mb-8">
+                Счастливая семья —<br />
+                <span style={{ color: '#7C3AED' }}>самый лояльный сотрудник</span>
+              </h2>
+              <div className="space-y-6">
+                {[
+                  { num: '01', title: 'Двойная выгода', desc: 'Скидки на ежедневные нужды — продукты, медицина, детское образование — работают на общий семейный бюджет.' },
+                  { num: '02', title: 'Семейный «Якорь»', desc: 'Когда супруг(а) пользуется бенефитами вашей компании, решение об увольнении становится семейным вопросом.' },
+                  { num: '03', title: 'Эмоциональная лояльность', desc: 'Ваш бренд работодателя проникает в дом сотрудника, создавая мощную эмоциональную связь.' },
+                ].map(item => (
+                  <div key={item.num} className="flex gap-4 pb-6 border-b border-[#F3F4F6] last:border-0 last:pb-0">
+                    <div className="text-xs font-bold text-[#9CA3AF] pt-1 flex-shrink-0">— {item.num}</div>
+                    <div>
+                      <div className="text-base font-black text-[#111827] mb-1">{item.title}</div>
+                      <div className="text-sm text-[#6B7280] leading-relaxed">{item.desc}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="rounded-2xl p-10 relative overflow-hidden" style={{ background: 'linear-gradient(140deg, #14532D 0%, #166534 100%)' }}>
+              <div className="absolute -top-14 -right-14 w-40 h-40 rounded-full bg-white/5" />
+              <div className="absolute -bottom-16 -left-16 w-48 h-48 rounded-full bg-white/5" />
+              <div className="text-4xl font-black mb-4 relative" style={{ color: GOLD }}>&ldquo;</div>
+              <p className="text-white text-2xl font-black leading-snug mb-2 relative">
+                Бизнес делают люди,<br />а людей делает <span style={{ color: GOLD }}>их тыл</span>.
+              </p>
+              <div className="text-xs text-white/50 uppercase tracking-widest mt-6 relative">— принцип Sagi</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="divider h-px" />
+
+      {/* Family budget math */}
+      <section className="py-24 px-6 section-alt">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            {badge('Математика семейного бюджета')}
+            <h2 className="text-4xl font-black text-[#111827] mb-4">
+              Суммарная выгода<br />
+              <span style={{ color: FOREST }}>за год — 810 000 ₸</span>
+            </h2>
+            <p className="text-[#6B7280] text-lg max-w-2xl mx-auto">
+              Расчёт для семьи из 2 взрослых в Казахстане, по средней корзине партнёров Sagi.
+            </p>
+          </div>
+          <div className="rounded-2xl p-8 border" style={{ background: 'white', borderColor: '#BBF7D0' }}>
+            <div className="grid md:grid-cols-4 gap-4 mb-6">
+              {[
+                { label: 'Средние расходы / мес', val: '≈ 450 000 ₸' },
+                { label: 'Средняя экономия', val: '15%' },
+                { label: 'Месяцев в году', val: '12' },
+                { label: 'Годовая выгода', val: '810 000 ₸', highlight: true },
+              ].map(item => (
+                <div key={item.label} className="rounded-xl p-4 text-center" style={{ background: item.highlight ? FOREST : '#F0FDF4' }}>
+                  <div className="text-xl font-black mb-1" style={{ color: item.highlight ? 'white' : FOREST }}>{item.val}</div>
+                  <div className="text-xs leading-relaxed" style={{ color: item.highlight ? 'rgba(255,255,255,0.7)' : '#6B7280' }}>{item.label}</div>
+                </div>
+              ))}
+            </div>
+            <p className="text-sm text-[#6B7280] leading-relaxed">
+              <strong className="text-[#111827]">Сообщение для CEO:</strong> внедрение Sagi эквивалентно выплате каждому сотруднику «тринадцатой зарплаты» в размере 810 000 ₸ — но без фактических затрат из вашего фонда оплаты труда.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div className="divider h-px" />
+
+      {/* Retention economics */}
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            {badge('Экономика удержания')}
+            <h2 className="text-4xl font-black text-[#111827] mb-4">
+              Удержание стоит<br />
+              <span style={{ color: FOREST }}>дешевле, чем найм</span>
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="rounded-2xl p-8" style={{ background: '#111827' }}>
+              <div className="text-xs font-bold uppercase tracking-widest text-white/40 mb-4">Снижение текучести</div>
+              <div className="text-5xl font-black mb-4" style={{ color: GOLD }}>25–30%</div>
+              <p className="text-sm text-white/60 leading-relaxed">Компании с развитой системой lifestyle-привилегий удерживают таланты на 1.5–2 года дольше.</p>
+            </div>
+            <div className="rounded-2xl p-8 border" style={{ background: '#F9FAFB', borderColor: '#E5E7EB' }}>
+              <div className="text-xs font-bold uppercase tracking-widest text-[#9CA3AF] mb-4">Высокий барьер выхода</div>
+              <p className="text-xl font-black text-[#111827] leading-snug">Сотрудник теряет не чат, а <span style={{ color: FOREST }}>финансовую систему экономии</span> для семьи.</p>
+            </div>
+            <div className="rounded-2xl p-8" style={{ background: FOREST }}>
+              <div className="text-xs font-bold uppercase tracking-widest text-white/50 mb-4">Окупаемость</div>
+              <div className="text-5xl font-black text-white mb-4">500%</div>
+              <p className="text-sm text-white/70 leading-relaxed">Удержание 5 ключевых сотрудников в год полностью окупает внедрение Sagi. 3–6 окладов = замена 1 специалиста в РК.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="divider h-px" />
+
+      {/* Local ecosystem categories */}
+      <section className="py-24 px-6 section-alt">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            {badge('200+ партнёров · Алматы · Астана')}
+            <h2 className="text-4xl font-black text-[#111827] mb-4">
+              Категории, где сотрудники<br />
+              <span style={{ color: FOREST }}>тратят каждый день</span>
+            </h2>
+            <p className="text-[#6B7280] text-lg max-w-2xl mx-auto">
+              Партнёры в пешей доступности от офиса — категории повседневных трат, а не разовые бонусы.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              { icon: <Heart size={22} />, title: 'Здоровье', items: ['Медицинские центры', 'Аптечные сети', 'Стоматология', 'Лаборатории'] },
+              { icon: <GraduationCap size={22} />, title: 'Дети', items: ['Образовательные центры', 'Кружки и секции', 'Развивающие игрушки', 'Лагеря и продлёнки'] },
+              { icon: <Store size={22} />, title: 'Дом и быт', items: ['Продуктовые сети', 'Магазины электроники', 'Бытовая химия', 'Услуги для дома'] },
+              { icon: <Star size={22} />, title: 'Досуг', items: ['Рестораны и кофейни', 'Фитнес-залы', 'Кино и театры', 'Семейные активности'] },
+            ].map(cat => (
+              <div key={cat.title} className="rounded-2xl p-6 border card-lift bg-white" style={{ borderColor: '#BBF7D0' }}>
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: FOREST, color: 'white' }}>
+                  {cat.icon}
+                </div>
+                <h3 className="text-base font-black text-[#111827] mb-3">{cat.title}</h3>
+                <div className="space-y-2">
+                  {cat.items.map(it => (
+                    <div key={it} className="text-xs text-[#6B7280] pb-2 border-b border-[#F3F4F6] last:border-0">{it}</div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div className="divider h-px" />
+
+      {/* Comparison table */}
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            {badge('Соцпакет vs Sagi Enterprise')}
+            <h2 className="text-4xl font-black text-[#111827] mb-4">
+              Почему классический<br />
+              <span style={{ color: FOREST }}>соцпакет не работает</span>
+            </h2>
+          </div>
+          <div className="overflow-x-auto">
+            <div className="min-w-[720px] rounded-2xl border border-[#F0F0F0] overflow-hidden">
+              <div className="grid grid-cols-3 bg-[#F9FAFB] px-6 py-4">
+                <div className="text-xs font-bold uppercase tracking-widest text-[#9CA3AF]">Характеристика</div>
+                <div className="text-xs font-bold uppercase tracking-widest text-[#9CA3AF]">Обычный соцпакет</div>
+                <div className="text-xs font-bold uppercase tracking-widest" style={{ color: FOREST }}>Sagi Enterprise</div>
+              </div>
+              {[
+                { label: 'Частота использования', old: 'Раз в месяц / квартал', oldSub: 'Эпизодически', sagi: 'Ежедневно', sagiSub: 'Каждый поход в магазин' },
+                { label: 'Охват семьи', old: 'Часто платно / сложно', oldSub: 'Отдельные договоры', sagi: 'Включено по умолчанию', sagiSub: 'Супруг(а) — одним кликом' },
+                { label: 'Удобство', old: 'Отдельные карты / порталы', oldSub: 'Логины, пароли, приложения', sagi: 'Прямо в WhatsApp', sagiSub: 'Ноль установок' },
+                { label: 'Влияние на лояльность', old: 'Низкое', oldSub: 'Воспринимается как должное', sagi: 'Высокое', sagiSub: 'Ежедневная ощутимая выгода' },
+              ].map((row, i) => (
+                <div key={row.label} className={`grid grid-cols-3 px-6 py-5 ${i % 2 === 0 ? 'bg-white' : 'bg-[#FAFAFA]'}`}>
+                  <div className="text-sm font-bold text-[#111827] pr-4">{row.label}</div>
+                  <div>
+                    <div className="text-sm text-[#374151]">{row.old}</div>
+                    <div className="text-xs text-[#9CA3AF] mt-0.5">{row.oldSub}</div>
+                  </div>
+                  <div>
+                    <div className="text-sm font-bold" style={{ color: FOREST }}>{row.sagi}</div>
+                    <div className="text-xs mt-0.5" style={{ color: '#6B7280' }}>{row.sagiSub}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="divider h-px" />
+
+      {/* Two paths + consultation */}
+      <section className="py-24 px-6 section-alt">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            {badge('Как подключить компанию')}
+            <h2 className="text-4xl font-black text-[#111827] mb-4">
+              Присоединитесь к сети —<br />
+              <span style={{ color: FOREST }}>или создайте своё сообщество</span>
+            </h2>
+            <p className="text-[#6B7280] text-lg max-w-2xl mx-auto">
+              Хотите добавить свою организацию в сообщество Sagi или создать отдельное — только для своих сотрудников? Оба пути начинаются с одного звонка.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6 mb-10">
+            <div className="rounded-2xl p-8 border card-lift" style={{ background: '#F0FDF4', borderColor: '#BBF7D0' }}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: FOREST, color: 'white' }}>
+                <Percent size={22} />
+              </div>
+              <h3 className="text-xl font-black text-[#111827] mb-2">Подключиться к сети Sagi</h3>
+              <p className="text-sm text-[#6B7280] leading-relaxed mb-4">
+                Самый быстрый и выгодный старт: сотрудники сразу получают скидки 10–30% у 200+ партнёров сети — без ожидания, без затрат на поиск партнёров.
+              </p>
+              <div className="flex items-center gap-1.5 text-xs font-bold" style={{ color: FOREST }}>
+                <CheckCircle size={14} /> Главная выгода — готовые скидки уже сегодня
+              </div>
+            </div>
+            <div className="rounded-2xl p-8 border card-lift" style={{ background: '#FFFBF0', borderColor: '#FDE68A' }}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: GOLD, color: 'white' }}>
+                <Building2 size={22} />
+              </div>
+              <h3 className="text-xl font-black text-[#111827] mb-2">Кастомное решение для компании</h3>
+              <p className="text-sm text-[#6B7280] leading-relaxed mb-4">
+                Отдельное закрытое сообщество только для сотрудников вашей организации: свой пул партнёров под профиль команды, брендированный кабинет, отдельная аналитика.
+              </p>
+              <div className="flex items-center gap-1.5 text-xs font-bold" style={{ color: GOLD }}>
+                <Settings size={14} /> Под задачи и бюджет именно вашей компании
+              </div>
+            </div>
+          </div>
+          <div className="rounded-2xl p-8 sm:p-10 text-center" style={{ background: FOREST }}>
+            <div className="text-xs font-bold uppercase tracking-widest text-white/50 mb-3">Консультация и стоимость</div>
+            <p className="text-white text-lg font-semibold max-w-2xl mx-auto mb-7 leading-relaxed">
+              Стоимость, состав пакета и сроки запуска обсуждаются индивидуально — под размер команды и её потребности. Свяжитесь с нами по телефону или почте, и мы предложим решение.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <a href={`tel:${PHONE}`} className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-bold text-base shadow-md text-white" style={{ background: GOLD }}>
+                <Phone size={17} /> {PHONE_DISPLAY}
+              </a>
+              <a href={`mailto:${EMAIL}`} className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-bold text-base text-white" style={{ background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.25)' }}>
+                <Mail size={17} /> {EMAIL}
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="divider h-px" />
+
+      {/* Roadmap */}
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            {badge('Запуск за 10 дней')}
+            <h2 className="text-4xl font-black text-[#111827] mb-4">
+              От первого звонка<br />
+              <span style={{ color: FOREST }}>до запуска — 10 дней</span>
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-4 gap-5">
+            {[
+              { num: '01', tag: 'День 1–3', title: 'Анализ команды', desc: 'Анкетирование сотрудников, выявление приоритетов и категорий трат.' },
+              { num: '02', tag: 'День 4–7', title: 'Пул партнёров', desc: 'Формирование локальной сети мерчантов под профиль вашей команды.' },
+              { num: '03', tag: 'День 8–10', title: 'Запуск хаба', desc: 'Брендированный кабинет в WhatsApp/Telegram, онбординг сотрудников и семей.' },
+              { num: '04', tag: 'Ежемесячно', title: 'Рост и аналитика', desc: 'Отчёт по использованию, расширение списка партнёров, опросы NPS.' },
+            ].map(s => (
+              <div key={s.num} className="rounded-2xl p-6 border" style={{ background: '#F0FDF4', borderColor: '#BBF7D0' }}>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center text-white font-black text-sm" style={{ background: FOREST }}>
+                    {s.num}
+                  </div>
+                  <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: GOLD }}>{s.tag}</span>
+                </div>
+                <h3 className="text-base font-black text-[#111827] mb-2">{s.title}</h3>
+                <p className="text-sm text-[#6B7280] leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div className="divider h-px" />
+
+      {/* Footer CTA */}
+      <footer className="py-24 px-6 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="rounded-3xl p-12 sm:p-16 relative overflow-hidden" style={{ background: 'linear-gradient(140deg, #14532D 0%, #166534 100%)' }}>
+            <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-white/5" />
+            <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-white/5" />
+            <div className="relative">
+              <div className="flex items-center justify-center gap-2 mb-8">
+                <span className="text-white text-3xl font-black tracking-tight">sagi</span>
+                <span className="text-sm font-semibold border border-white/20 bg-white/10 text-white/80 rounded-full px-3 py-1">Enterprise</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-black text-white mb-5 leading-tight">
+                Это больше,<br /><span style={{ color: GOLD }}>чем скидки</span>
+              </h2>
+              <p className="text-white/60 text-lg max-w-xl mx-auto mb-10 leading-relaxed">
+                Это ваша инвестиция в стабильность и благополучие семей ваших сотрудников. Давайте создадим систему, которую невозможно будет променять на лишние 50 тысяч тенге у конкурента.
+              </p>
+              <div className="bg-white rounded-2xl p-6 max-w-sm mx-auto mb-8 text-left">
+                <div className="text-xs font-bold uppercase tracking-widest text-[#9CA3AF] mb-1">Founder & CEO</div>
+                <div className="text-lg font-black text-[#111827] mb-3">Жаксылык Есельбаев</div>
+                <div className="text-sm text-[#6B7280] mb-1">Sagi Community</div>
+                <a href={`tel:${PHONE}`} className="block text-sm font-semibold mb-0.5" style={{ color: FOREST }}>{PHONE_DISPLAY}</a>
+                <a href={`mailto:${EMAIL}`} className="block text-sm font-semibold" style={{ color: FOREST }}>{EMAIL}</a>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <a href={`tel:${PHONE}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-base shadow-md text-white" style={{ background: GOLD }}>
+                  Позвонить <Phone size={17} />
+                </a>
+                <a href={`mailto:${EMAIL}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-base text-white" style={{ background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.25)' }}>
+                  Запросить пилот <ArrowRight size={17} />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </>
+  );
+}
+
+
 // ─── MAIN EXPORT ──────────────────────────────────────────────────────────────
 
 export function SagiLanding() {
-  const [tab, setTab] = useState<'business' | 'admin' | 'user'>('business');
+  const [tab, setTab] = useState<'business' | 'admin' | 'user' | 'enterprise'>('business');
 
-  const switchTab = (t: 'business' | 'admin' | 'user') => {
+  const switchTab = (t: 'business' | 'admin' | 'user' | 'enterprise') => {
     setTab(t);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -1614,6 +2091,7 @@ export function SagiLanding() {
               { key: 'business', label: 'Для бизнеса' },
               { key: 'admin', label: 'Для администратора' },
               { key: 'user', label: 'Для участника' },
+              { key: 'enterprise', label: 'Для сотрудников' },
             ] as const).map(t => (
               <button
                 key={t.key}
@@ -1633,6 +2111,7 @@ export function SagiLanding() {
       {tab === 'business' && <BusinessPage />}
       {tab === 'admin' && <AdminPage />}
       {tab === 'user' && <UserPage />}
+      {tab === 'enterprise' && <EnterprisePage />}
     </div>
   );
 }
