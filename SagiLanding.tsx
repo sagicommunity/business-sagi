@@ -351,7 +351,7 @@ function TwoWaysBlock() {
               </div>
             </div>
             <div className="px-8 pb-8">
-              <a href="mailto:sagibonus@gmail.com" className="btn-green w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-bold text-sm shadow-md">
+              <a href="https://wa.me/77084857101" target="_blank" rel="noopener noreferrer" className="btn-green w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-bold text-sm shadow-md">
                 Создать сообщество <ArrowRight size={15} />
               </a>
             </div>
@@ -385,7 +385,7 @@ function TwoWaysBlock() {
               </div>
             </div>
             <div className="px-8 pb-8">
-              <a href="mailto:sagibonus@gmail.com" className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-bold text-sm border-2 transition" style={{ borderColor: '#4338CA', color: '#4338CA' }}>
+              <a href="https://wa.me/77084857101" target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-bold text-sm border-2 transition" style={{ borderColor: '#4338CA', color: '#4338CA' }}>
                 Найти сообщество <ArrowRight size={15} />
               </a>
             </div>
@@ -716,25 +716,30 @@ function BusinessPage() {
               </div>
               <div className="text-xs font-bold uppercase tracking-widest text-[#9CA3AF]">Для бизнеса</div>
             </div>
-            <div className="flex items-center gap-3 mb-1">
-              <span className="text-5xl font-black text-[#111827]">Бесплатно</span>
-              <span className="text-xl font-semibold text-[#D1D5DB] line-through">10 000 ₸</span>
+            <div className="flex items-baseline gap-2 mb-1">
+              <span className="text-5xl font-black text-[#111827]">19 990 ₸</span>
+              <span className="text-base font-semibold text-[#9CA3AF]">/ мес</span>
             </div>
-            <div className="text-[#9CA3AF] text-sm mb-7">Полный доступ к платформе без скрытых платежей</div>
-            <div className="space-y-2.5 mb-8">
-              {['Аналитика по предложениям', 'Возможность размещать предложения в определённых сообществах'].map(f => (
-                <div key={f} className="flex items-center gap-2 text-sm text-[#374151]">
-                  <CheckCircle size={14} style={{ color: GREEN }} />
+            <div className="text-[#9CA3AF] text-sm mb-7">Размещение вашего предложения в одном выбранном сообществе</div>
+            <div className="space-y-3 mb-8">
+              {[
+                'Целевые клиенты, а не холодная реклама - аудитория одного сообщества, которая реально вам подходит',
+                'Предложение показывается участникам этого сообщества весь месяц, а не разово',
+                'Выглядит как рекомендация внутри сообщества, а не баннер - выше доверие и конверсия',
+                'Аналитика охвата, просмотров и отклика по вашему предложению',
+              ].map(f => (
+                <div key={f} className="flex items-start gap-2 text-sm text-[#374151]">
+                  <CheckCircle size={14} style={{ color: GREEN, marginTop: 3 }} className="flex-shrink-0" />
                   {f}
                 </div>
               ))}
             </div>
-            <a href="mailto:info@sagi.kz" className="btn-green w-full flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-base shadow-md">
+            <a href="https://wa.me/77084857101" target="_blank" rel="noopener noreferrer" className="btn-green w-full flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-base shadow-md">
               Найти своих клиентов в Sagi <ArrowRight size={17} />
             </a>
           </div>
           <p className="text-center text-sm text-[#9CA3AF] mt-6">
-            Корпоративные тарифы и пакеты по запросу на sagibonus@gmail.com
+            Корпоративные тарифы и пакеты по запросу на business@sagibonus.com
           </p>
         </div>
       </section>
@@ -762,7 +767,7 @@ function BusinessPage() {
               <p className="text-white/60 text-lg max-w-xl mx-auto mb-10 leading-relaxed">
                 1000+ сообществ. Найдите свою аудиторию и размещайте предложения там, где находится ваш клиент.
               </p>
-              <a href="mailto:info@sagi.kz" className="btn-green inline-flex items-center justify-center gap-2 px-10 py-4 rounded-xl font-bold text-base shadow-md">
+              <a href="https://wa.me/77084857101" target="_blank" rel="noopener noreferrer" className="btn-green inline-flex items-center justify-center gap-2 px-10 py-4 rounded-xl font-bold text-base shadow-md">
                 Найти своих клиентов в Sagi <Search size={17} />
               </a>
             </div>
