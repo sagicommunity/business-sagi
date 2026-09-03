@@ -1565,6 +1565,7 @@ function EnterprisePage() {
   const PHONE = '+77077000087';
   const PHONE_DISPLAY = '+7 707 700 00 87';
   const EMAIL = 'business@sagibonus.com';
+  const WHATSAPP_URL = 'https://wa.me/77077000087';
 
   const badge = (text: string, color: string = FOREST, bg: string = '#F0FDF4', border: string = '#BBF7D0') => (
     <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold mb-4" style={{ background: bg, color, border: `1px solid ${border}` }}>
@@ -1590,7 +1591,10 @@ function EnterprisePage() {
               Цифровая платформа лояльности и структурной коммуникации, встроенная прямо в WhatsApp и Telegram — сотрудникам не нужно ничего устанавливать.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-10">
-              <a href={`tel:${PHONE}`} className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-bold text-base shadow-md text-white" style={{ background: FOREST }}>
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-bold text-base shadow-md text-white" style={{ background: FOREST }}>
+                <MessageCircle size={17} /> WhatsApp
+              </a>
+              <a href={`tel:${PHONE}`} className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-bold text-base border-2 border-[#111827] text-[#111827] hover:border-[#14532D] hover:text-[#14532D] transition">
                 <Phone size={17} /> {PHONE_DISPLAY}
               </a>
               <a href={`mailto:${EMAIL}`} className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-bold text-base border-2 border-[#E5E7EB] text-[#374151] hover:border-[#BBF7D0] transition">
@@ -1943,10 +1947,13 @@ function EnterprisePage() {
           <div className="rounded-2xl p-8 sm:p-10 text-center" style={{ background: FOREST }}>
             <div className="text-xs font-bold uppercase tracking-widest text-white/50 mb-3">Консультация и стоимость</div>
             <p className="text-white text-lg font-semibold max-w-2xl mx-auto mb-7 leading-relaxed">
-              Стоимость, состав пакета и сроки запуска обсуждаются индивидуально — под размер команды и её потребности. Свяжитесь с нами по телефону или почте, и мы предложим решение.
+              Стоимость, состав пакета и сроки запуска обсуждаются индивидуально — под размер команды и её потребности. Напишите нам в WhatsApp, позвоните или напишите на почту — и мы предложим решение.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a href={`tel:${PHONE}`} className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-bold text-base shadow-md text-white" style={{ background: GOLD }}>
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-bold text-base shadow-md text-white" style={{ background: GOLD }}>
+                <MessageCircle size={17} /> WhatsApp
+              </a>
+              <a href={`tel:${PHONE}`} className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-bold text-base text-white" style={{ background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.25)' }}>
                 <Phone size={17} /> {PHONE_DISPLAY}
               </a>
               <a href={`mailto:${EMAIL}`} className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-bold text-base text-white" style={{ background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.25)' }}>
@@ -2015,14 +2022,18 @@ function EnterprisePage() {
                 <div className="text-lg font-black text-[#111827] mb-3">Жаксылык Есельбаев</div>
                 <div className="text-sm text-[#6B7280] mb-1">Sagi Community</div>
                 <a href={`tel:${PHONE}`} className="block text-sm font-semibold mb-0.5" style={{ color: FOREST }}>{PHONE_DISPLAY}</a>
-                <a href={`mailto:${EMAIL}`} className="block text-sm font-semibold" style={{ color: FOREST }}>{EMAIL}</a>
+                <a href={`mailto:${EMAIL}`} className="block text-sm font-semibold mb-0.5" style={{ color: FOREST }}>{EMAIL}</a>
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="block text-sm font-semibold" style={{ color: FOREST }}>WhatsApp</a>
               </div>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <a href={`tel:${PHONE}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-base shadow-md text-white" style={{ background: GOLD }}>
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-base shadow-md text-white" style={{ background: GOLD }}>
+                  WhatsApp <MessageCircle size={17} />
+                </a>
+                <a href={`tel:${PHONE}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-base text-white" style={{ background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.25)' }}>
                   Позвонить <Phone size={17} />
                 </a>
                 <a href={`mailto:${EMAIL}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-base text-white" style={{ background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.25)' }}>
-                  Запросить пилот <ArrowRight size={17} />
+                  Написать <Mail size={17} />
                 </a>
               </div>
             </div>
