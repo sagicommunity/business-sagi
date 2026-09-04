@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useState } from 'react';
 import {
   Shield, Search, Store, Clock, RefreshCw, BarChart3, CheckCircle,
   ArrowRight, Smartphone, Users, TrendingUp, Headphones, GraduationCap,
@@ -2048,28 +2048,81 @@ function EnterprisePage() {
 // ─── MAIN EXPORT ──────────────────────────────────────────────────────────────
 
 export function SagiLanding() {
-  useEffect(() => {
-    window.location.replace('https://sagikin.com/business')
-  }, [])
+  const [tab, setTab] = useState<'business' | 'admin' | 'user' | 'enterprise'>('business');
+
+  const switchTab = (t: 'business' | 'admin' | 'user' | 'enterprise') => {
+    setTab(t);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
-    <div
-      className="min-h-screen bg-white flex items-center justify-center px-6 text-center"
-      style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif" }}
-    >
-      <div>
-        <div className="text-2xl font-black tracking-tight text-[#111827] mb-6">sagi</div>
-        <p className="text-[#374151] text-lg font-semibold mb-2">Мы переехали на sagikin.com</p>
-        <p className="text-[#6B7280] mb-1">Сейчас перенаправим вас на новую страницу…</p>
-        <p className="text-[#9CA3AF] text-sm mb-8">We&apos;ve moved to sagikin.com — redirecting you now.</p>
-        <a
-          href="https://sagikin.com/business"
-          className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-base text-white"
-          style={{ background: GREEN }}
-        >
-          Перейти на sagikin.com <ArrowRight size={17} />
-        </a>
-      </div>
+    <div className="min-h-screen bg-white text-[#111827]" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif" }}>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+        .btn-green { background: ${GREEN}; color: #fff; transition: background 0.18s; }
+        .btn-green:hover { background: ${GREEN_DARK}; }
+
+        .badge-green { background: #EDFAF3; color: ${GREEN_DARK}; border: 1px solid #B6EDD2; }
+        .icon-green { background: #EDFAF3; color: ${GREEN_DARK}; }
+        .card-border { border: 1.5px solid #F0F0F0; }
+        .card-border:hover { border-color: #B6EDD2; }
+        .card-lift { transition: transform 0.2s, box-shadow 0.2s; }
+        .card-lift:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(42,187,111,0.10); }
+
+        .hero-bg { background: linear-gradient(160deg, #F2FDF7 0%, #FFFFFF 55%); }
+        .section-alt { background: #FAFAFA; }
+
+        .price-card-featured { border: 2px solid ${GREEN} !important; box-shadow: 0 16px 48px rgba(42,187,111,0.12); }
+        .divider { background: linear-gradient(90deg, transparent, #E8E8E8, transparent); }
+        .cta-card { background: linear-gradient(140deg, #1D3828 0%, #0F2218 100%); }
+        .green-text { color: ${GREEN}; }
+
+        .community-card {
+          background: white;
+          border-radius: 20px;
+          padding: 24px;
+          box-shadow: 0 32px 80px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.06);
+        }
+
+        .tab-active { background: white; color: #111827; box-shadow: 0 1px 4px rgba(0,0,0,0.10); }
+        .tab-inactive { color: #6B7280; }
+        .tab-inactive:hover { color: #374151; }
+      `}</style>
+
+      {/* ─── NAV ─── */}
+      <nav className="sticky top-0 z-50 bg-white border-b border-[#F0F0F0]">
+        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
+          <div className="flex items-center gap-2.5 flex-shrink-0">
+            <span className="text-[22px] font-black tracking-tight text-[#111827]">sagi</span>
+            <span className="text-xs font-semibold text-[#2ABB6F] border border-[#B6EDD2] bg-[#EDFAF3] rounded-full px-2.5 py-0.5 ml-1">Community</span>
+          </div>
+          <div className="flex items-center gap-2">
+            {([
+              { key: 'business', label: 'Для бизнеса' },
+              { key: 'admin', label: 'Для администратора' },
+              { key: 'user', label: 'Для участника' },
+              { key: 'enterprise', label: 'Для сотрудников' },
+            ] as const).map(t => (
+              <button
+                key={t.key}
+                onClick={() => switchTab(t.key)}
+                className="px-4 py-2 rounded-xl text-sm font-semibold transition-all"
+                style={tab === t.key
+                  ? { background: GREEN, color: 'white', boxShadow: '0 2px 8px rgba(42,187,111,0.30)' }
+                  : { background: '#F3F4F6', color: '#6B7280' }}
+              >
+                {t.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      </nav>
+
+      {tab === 'business' && <BusinessPage />}
+      {tab === 'admin' && <AdminPage />}
+      {tab === 'user' && <UserPage />}
+      {tab === 'enterprise' && <EnterprisePage />}
     </div>
   );
 }
